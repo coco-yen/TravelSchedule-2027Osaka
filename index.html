@@ -80,6 +80,37 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
 .back-to-top:focus{outline:3px solid #e8a99a;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 
+
+ul.checklist-interactive {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0;
+    }
+    ul.checklist-interactive li {
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: .92rem;
+    }
+    ul.checklist-interactive li:last-child {
+      border: 0;
+    }
+    ul.checklist-interactive label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    ul.checklist-interactive input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--orange);
+      cursor: pointer;
+    }
+    ul.checklist-interactive input[type="checkbox"]:checked + span,
+    ul.checklist-interactive label:has(input:checked) {
+      color: var(--muted);
+      text-decoration: line-through;
+    }
 </style>
 </head>
 <body>
@@ -240,6 +271,12 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
   <section id="checklist">
     <h2 class="section-title">🎒 出發前確認清單</h2>
     <div class="panel">
+      <h3>入境申報填寫</h3>
+      <ul class="checklist">
+        <li>先在網路上幫大家填寫完成</li>        
+      </ul>
+    </div>
+    <div class="panel">
       <h3>自駕與冬季安全</h3>
       <ul class="checklist">
         <li>確認租車公司、取還車時間、兒童安全座椅、ETC 與保險內容。</li>
@@ -265,6 +302,103 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
         <li>保暖外套、帽子、手套、防滑鞋；北京都可採洋蔥式穿搭。</li>
         <li>兒童備用衣物、濕紙巾、常用藥品、暈車／防暈用品（依個人需求）。</li>
         <li>行動電源、充電器、網路／eSIM、現金與信用卡。</li>
+      </ul>
+    </div>    
+    <h2 class="section-title">🎒 行李清單</h2>
+    <div class="panel">
+      <h3>📁 必帶重要物品</h3>
+      <ul class="checklist-interactive">
+        <li><label><input type="checkbox" id="chk_1"> 4 本護照（2 大 2 小） ➔ 隨身行李</label></li>
+        <li><label><input type="checkbox" id="chk_2"> 2 張台灣駕照</label></li>
+        <li><label><input type="checkbox" id="chk_3"> 2 份日文譯本</label></li>
+        <li><label><input type="checkbox" id="chk_4"> 信用卡</label></li>
+        <li><label><input type="checkbox" id="chk_5"> 日幣現金</label></li>
+        <li><label><input type="checkbox" id="chk_6"> 手機 ➔ 隨身行李</label></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>👶 小孩隨身包</h3>
+      <ul class="checklist-interactive">
+        <li><label><input type="checkbox" id="chk_7"> 尿布（夜用／白天）</label></li>
+        <li><label><input type="checkbox" id="chk_8"> 水壺 × 2</label></li>
+        <li><label><input type="checkbox" id="chk_9"> 零食（飛機上吃）</label></li>
+        <li><label><input type="checkbox" id="chk_10"> 替換衣物</label></li>
+        <li><label><input type="checkbox" id="chk_11"> 平板 ➔ 隨身行李</label></li>
+        <li><label><input type="checkbox" id="chk_12"> 濕紙巾</label></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>👕 衣物與防寒（建議洋蔥式穿搭）</h3>
+      <ul class="checklist-interactive">
+        <li><label><input type="checkbox" id="chk_13"> 2 大人衣物（衣服、褲子、內衣褲、襪子）</label></li>
+        <li><label><input type="checkbox" id="chk_14"> 2 小孩衣物（衣服、褲子、內褲、襪子）</label></li>
+        <li><label><input type="checkbox" id="chk_15"> 厚外套 × 4</label></li>
+        <li><label><input type="checkbox" id="chk_16"> 毛帽 × 4</label></li>
+        <li><label><input type="checkbox" id="chk_17"> 芮 kitty 耳罩</label></li>
+        <li><label><input type="checkbox" id="chk_18"> 手套 × 4</label></li>
+        <li><label><input type="checkbox" id="chk_19"> 暖暖包（大人、小孩）</label></li>
+        <li><label><input type="checkbox" id="chk_20"> 口罩（大人、小孩）</label></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>🛁 盥洗與個人用品</h3>
+      <ul class="checklist-interactive">
+        <li><label><input type="checkbox" id="chk_21"> 眼鏡、隱形眼鏡</label></li>
+        <li><label><input type="checkbox" id="chk_22"> 化妝包、洗面乳</label></li>
+        <li><label><input type="checkbox" id="chk_23"> 牙刷、牙膏</label></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>🔌 充電 / 3C 用品</h3>
+      <ul class="checklist-interactive">
+        <li><label><input type="checkbox" id="chk_24"> 手機充電器 × 2、充電頭 × 2</label></li>
+        <li><label><input type="checkbox" id="chk_25"> USB-C / Lightning 充電線</label></li>
+        <li><label><input type="checkbox" id="chk_26"> 行動電源 ➔ 隨身行李（不可託運）</label></li>
+        <li><label><input type="checkbox" id="chk_27"> Apple Watch 充電器</label></li>
+        <li><label><input type="checkbox" id="chk_28"> AirPods ➔ 隨身行李</label></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>🍼 奶瓶 / 奶粉</h3>
+      <ul class="checklist-interactive">
+        <li><label><input type="checkbox" id="chk_29"> 奶粉 × 5 天量</label></li>
+        <li><label><input type="checkbox" id="chk_30"> 奶瓶 × 2</label></li>
+        <li><label><input type="checkbox" id="chk_31"> 冷水壺、保溫瓶</label></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>💊 備用藥品</h3>
+      <ul class="checklist-interactive">
+        <li><label><input type="checkbox" id="chk_32"> 退燒藥水、感冒藥水</label></li>
+        <li><label><input type="checkbox" id="chk_33"> 腸胃藥、OK 繃</label></li>
+        <li><label><input type="checkbox" id="chk_34"> 克流感、塞劑、酸痛貼布</label></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>🎒 其他雜項</h3>
+      <ul class="checklist-interactive">
+        <li><label><input type="checkbox" id="chk_35"> 購物袋（去超商／超市買東西裝）</label></li>
+        <li><label><input type="checkbox" id="chk_36"> 備用行李袋（回國打包用）</label></li>
+        <li><label><input type="checkbox" id="chk_37"> 食物剪刀 ➔ 託運（不可隨身）</label></li>
+        <li><label><input type="checkbox" id="chk_38"> 指甲剪 ➔ 託運（不可隨身）</label></li>
+        <li><label><input type="checkbox" id="chk_39"> 兒童餐具</label></li>
+        <li><label><input type="checkbox" id="chk_40"> 推車 × 1 ➔ 機邊託運</label></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>🚗 自駕與行程備忘</h3>
+      <ul class="checklist-interactive">
+        <li><label><input type="checkbox" id="chk_41"> 確認租車公司、取還車時間、兒童安全座椅、ETC 與雪胎。</label></li>
+        <li><label><input type="checkbox" id="chk_42"> 11/1 起嘗試預訂伊根舟屋住宿，確認最多入住人數及餐食。</label></li>
+        <li><label><input type="checkbox" id="chk_43"> 確認大阪飯店能否跨入住日寄放行李。</label></li>
       </ul>
     </div>
   </section>
@@ -310,6 +444,23 @@ if('IntersectionObserver' in window){
   button.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 })();
 </script>
-
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkboxes = document.querySelectorAll('.checklist-interactive input[type="checkbox"]');
+      
+      // 讀取已儲存的勾選狀態
+      checkboxes.forEach(cb => {
+        const savedState = localStorage.getItem('packing_' + cb.id);
+        if (savedState === 'true') {
+          cb.checked = true;
+        }
+        
+        // 當勾選狀能改變時，自動寫入 localStorage
+        cb.addEventListener('change', (e) => {
+          localStorage.setItem('packing_' + e.target.id, e.target.checked);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
