@@ -66,6 +66,20 @@ summary{cursor:pointer;font-weight:800;font-size:.9rem}
 footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
 @media(min-width:650px){.quick{grid-template-columns:repeat(3,1fr)}.day{padding:22px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.back-to-top{
+  position:fixed;right:18px;bottom:calc(22px + env(safe-area-inset-bottom, 0px));z-index:50;
+  width:50px;height:50px;border:0;border-radius:50%;
+  background:#d98256;color:#fff;box-shadow:0 5px 18px rgba(91,58,43,.25);
+  display:flex;align-items:center;justify-content:center;
+  font-size:25px;font-weight:800;cursor:pointer;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s ease,transform .2s ease,visibility .2s;
+}
+.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:focus{outline:3px solid #e8a99a;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+
 </style>
 </head>
 <body>
@@ -93,17 +107,37 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
   <section id="flights">
     <h2 class="section-title">✈️ 航班資訊</h2>
     <div class="panel two-col">
-      <div><h3>去程｜2/5（五）</h3><p><strong>桃園 TPE → 關西 KIX</strong></p><p>起飛 11:15　抵達 14:55</p></div>
-      <div><h3>回程｜2/10（三）</h3><p><strong>關西 KIX → 桃園 TPE</strong></p><p>起飛 16:15　抵達 18:30</p></div>
+      <div><h3>去程｜2/5（五）・國泰航空 CX564</h3><p><strong>桃園 TPE T1 → 關西 KIX T1</strong></p><p>起飛 11:15　抵達 14:45</p><p class="small">飛行時間約 2 小時 30 分</p></div>
+      <div><h3>回程｜2/10（三）・國泰航空 CX565</h3><p><strong>關西 KIX T1 → 桃園 TPE T1</strong></p><p>起飛 16:15　抵達 18:30</p><p class="small">飛行時間約 3 小時 15 分</p></div>
     </div>
     <div class="note info">建議回程當天約 13:00 抵達關西機場，預留還車／交通、托運行李與出境時間。實際仍依航空公司及租車公司規定調整。</div>
+    <div class="panel">
+      <h3>🧳 行李額度｜國泰航空</h3>
+      <div class="two-col">
+        <div>
+          <span class="tag">去程｜台北 → 大阪</span>
+          <p><strong>手提行李</strong></p>
+          <p>每人 1 件，每件最多 7 公斤；尺寸不可超過 56 × 36 × 23 公分。</p>
+          <p><strong>託運行李</strong></p>
+          <p>每人 1 件，每件最多 23 公斤。</p>
+        </div>
+        <div>
+          <span class="tag">回程｜大阪 → 台北</span>
+          <p><strong>手提行李</strong></p>
+          <p>每人 1 件，每件最多 7 公斤；尺寸不可超過 56 × 36 × 23 公分。</p>
+          <p><strong>託運行李</strong></p>
+          <p>每人 1 件，每件最多 23 公斤。</p>
+        </div>
+      </div>
+      <div class="note warn">以上依你提供的票價規定截圖整理。出發前請再以訂位紀錄及國泰航空官方行李規定確認；嬰幼兒、特殊行李及額外行李可能另有規範。自駕時也要先安排好大型行李數量，避免車內空間不足。</div>
+    </div>
   </section>
 
   <section id="day1" class="day">
     <div class="day-head"><div class="day-no">D1</div><div><h2>抵達關西・臨空城 Outlet</h2><div class="date">2/5（五）｜先適應節奏，不排太滿</div></div></div>
     <span class="tag">購物</span><span class="tag">入住大阪</span>
     <div class="timeline">
-      <div class="stop"><h3>14:55｜抵達關西機場</h3><p>入境、領行李、整理小朋友用品。若入境或領行李時間較久，Outlet 停留時間彈性縮短。</p></div>
+      <div class="stop"><h3>14:45｜抵達關西機場</h3><p>入境、領行李、整理小朋友用品。若入境或領行李時間較久，Outlet 停留時間彈性縮短。</p></div>
       <div class="stop"><h3>下午／傍晚｜臨空城 Outlet</h3><p>前往 Rinku Premium Outlets 逛街、吃晚餐。先鎖定想買的品牌，避免第一天走太久。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rinku+Premium+Outlets">📍 Google 地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.premiumoutlets.co.jp/cht/rinku/">官方網站</a></div></div>
       <div class="stop"><h3>晚上｜前往大阪住宿</h3><p>入住 ESLEAD HOTEL Namba Daikokucho，補齊隔天自駕用品、確認租車取車時間。</p></div>
     </div>
@@ -264,5 +298,18 @@ if('IntersectionObserver' in window){
   sections.forEach(s=>io.observe(s));
 }
 </script>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="回到最上方" title="回到最上方">↑</button>
+<script>
+(() => {
+  const button = document.getElementById('backToTop');
+  if (!button) return;
+  const updateButton = () => button.classList.toggle('visible', window.scrollY > 320);
+  window.addEventListener('scroll', updateButton, {passive:true});
+  updateButton();
+  button.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+})();
+</script>
+
 </body>
 </html>
