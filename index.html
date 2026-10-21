@@ -3,63 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f7eee8">
+<meta name="theme-color" content="#8B5E3C">
 <title>關西親子自駕旅遊手冊｜2027.02.05–02.10</title>
 <style>
 :root{
-  --bg:#fffaf7;--paper:#ffffff;--ink:#342f2c;--muted:#776d67;
-  --pink:#e8a99a;--pink2:#f8e3dc;--orange:#d98256;--orange2:#fff0e4;
-  --line:#f0dfd7;--blue:#dceaf3;--blue-ink:#31566c;--shadow:0 8px 24px rgba(91,58,43,.08);
+  --bg:#F5EFE3;--paper:#FFF9EC;--ink:#4A3321;--muted:#7D6650;
+  --brown:#8B5E3C;--brown-dark:#6B4429;--yellow:#F2C94C;--yellow-soft:#FBEBB5;
+  --line:#E6D9C0;--cream2:#F8EFD8;--shadow:0 8px 24px rgba(139,94,60,.12);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.65}
-a{color:#a84e36;text-decoration:none}
-a:focus,button:focus{outline:3px solid #e7b09b;outline-offset:2px}
-.hero{padding:30px 20px 25px;background:linear-gradient(145deg,#f7ded5,#fff0e3 60%,#f5e9de);border-radius:0 0 28px 28px}
+a{color:var(--brown-dark);text-decoration:none}
+a:focus,button:focus{outline:3px solid var(--yellow);outline-offset:2px}
+.hero{padding:30px 20px 25px;background:linear-gradient(145deg,#EBDDBF,#F5EFE3 65%,#FFF9EC);border-bottom:4px solid var(--yellow);border-radius:0 0 28px 28px}
 .hero-inner{max-width:820px;margin:auto}
-.eyebrow{font-size:.78rem;letter-spacing:.12em;color:#875d50;font-weight:800}
-h1{font-size:clamp(1.75rem,6vw,2.65rem);line-height:1.2;margin:9px 0 12px}
-.hero p{margin:0;color:#65544c}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;color:var(--brown);font-weight:800}
+h1{font-size:clamp(1.75rem,6vw,2.65rem);line-height:1.2;margin:9px 0 12px;color:var(--brown)}
+.hero p{margin:0;color:#6B5240}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.pill{background:#ffffffb8;border:1px solid #fff;border-radius:999px;padding:6px 11px;font-size:.82rem}
+.pill{background:var(--paper);border:1px solid var(--yellow);border-radius:999px;padding:6px 11px;font-size:.82rem}
 .quick{max-width:820px;margin:16px auto;padding:0 14px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
 .quick a{display:block;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:12px 8px;text-align:center;color:var(--ink);box-shadow:var(--shadow);font-size:.85rem}
-.quick strong{display:block;font-size:1rem;color:var(--orange)}
-.sticky{position:sticky;top:0;z-index:10;background:#fffaf7ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:8px 10px}
+.quick strong{display:block;font-size:1rem;color:var(--brown)}
+.sticky{position:sticky;top:0;z-index:10;background:var(--brown);backdrop-filter:blur(12px);border-bottom:1px solid var(--brown-dark);padding:8px 10px}
 .nav{max-width:820px;margin:auto;display:flex;gap:7px;overflow-x:auto;padding:2px 0;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
-.nav a{white-space:nowrap;flex:0 0 auto;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.84rem;color:var(--ink)}
-.nav a.active{background:var(--orange);color:white;border-color:var(--orange)}
+.nav a{white-space:nowrap;flex:0 0 auto;padding:8px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--paper);font-size:.84rem;color:var(--brown-dark)}
+.nav a.active{background:var(--yellow);color:#4A3321;border-color:var(--yellow);font-weight:800}
 main{max-width:820px;margin:20px auto;padding:0 14px 50px}
-.section-title{font-size:1.25rem;margin:28px 4px 12px}
+.section-title{font-size:1.25rem;margin:28px 4px 12px;color:var(--brown)}
 .day{background:var(--paper);border:1px solid var(--line);border-radius:20px;margin:14px 0;padding:18px;box-shadow:var(--shadow);scroll-margin-top:90px}
 .day-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px}
-.day-no{flex:0 0 48px;height:48px;border-radius:15px;background:var(--pink2);display:grid;place-items:center;color:#8c4f40;font-weight:900}
-.day h2{font-size:1.12rem;line-height:1.4;margin:0 0 3px}
+.day-no{flex:0 0 48px;height:48px;border-radius:15px;background:var(--yellow);display:grid;place-items:center;color:#4A3321;font-weight:900}
+.day h2{font-size:1.12rem;line-height:1.4;margin:0 0 3px;color:var(--brown)}
 .date{font-size:.83rem;color:var(--muted)}
-.tag{display:inline-block;background:var(--orange2);color:#8c512e;border-radius:7px;padding:3px 8px;font-size:.75rem;font-weight:700;margin:3px 4px 3px 0}
+.tag{display:inline-block;background:var(--yellow-soft);color:#5C3A1E;border-radius:7px;padding:3px 8px;font-size:.75rem;font-weight:700;margin:3px 4px 3px 0}
 .timeline{border-left:2px solid var(--line);margin:15px 0 8px 8px;padding-left:17px}
 .stop{position:relative;margin:0 0 17px}
-.stop:before{content:"";position:absolute;left:-24px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--pink);border:2px solid white;box-shadow:0 0 0 1px var(--pink)}
-.stop h3{font-size:.98rem;margin:0 0 4px}
-.stop p{margin:3px 0;color:#625954;font-size:.91rem}
+.stop:before{content:"";position:absolute;left:-24px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--yellow);border:2px solid var(--paper);box-shadow:0 0 0 1px var(--brown)}
+.stop h3{font-size:.98rem;margin:0 0 4px;color:var(--brown-dark)}
+.stop p{margin:3px 0;color:#5E4a3a;font-size:.91rem}
 .meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.meta span{font-size:.78rem;padding:5px 8px;background:#f7f3f0;border-radius:8px;color:#675c56}
+.meta span{font-size:.78rem;padding:5px 8px;background:var(--cream2);border-radius:8px;color:#675040}
 .note{border-radius:13px;padding:12px 13px;margin:12px 0;font-size:.89rem}
-.note.warn{background:#fff1e8;border:1px solid #f5d0b9}
-.note.info{background:#edf5fa;border:1px solid #d4e6f0;color:#31566c}
-.note.good{background:#f7f0eb;border:1px solid #ead9ce}
+.note.warn{background:var(--yellow-soft);border:1px solid var(--yellow)}
+.note.info{background:var(--cream2);border:1px solid var(--line);color:var(--brown-dark)}
+.note.good{background:var(--cream2);border:1px solid var(--line)}
 .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:9px 12px;font-size:.84rem;font-weight:700}
-.btn.primary{background:var(--orange);color:white;border-color:var(--orange)}
-.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:9px 12px;font-size:.84rem;font-weight:700}
+.btn.primary{background:var(--brown);color:#FFF9EC;border-color:var(--brown)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}
 .panel h3{margin:0 0 8px;font-size:1.02rem}
 ul.checklist{list-style:none;padding:0;margin:8px 0}
 ul.checklist li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
 ul.checklist li:last-child{border:0}
-ul.checklist li:before{content:"□";margin-right:9px;color:var(--orange);font-weight:800}
-.hotel-price{font-size:1.35rem;font-weight:900;color:#a84e36}
+ul.checklist li:before{content:"□";margin-right:9px;color:var(--brown);font-weight:800}
+.hotel-price{font-size:1.35rem;font-weight:900;color:var(--brown)}
 .small{font-size:.82rem;color:var(--muted)}
 details{border-top:1px solid var(--line);padding-top:10px;margin-top:12px}
 summary{cursor:pointer;font-weight:800;font-size:.9rem}
@@ -70,14 +70,14 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
 .back-to-top{
   position:fixed;right:18px;bottom:calc(22px + env(safe-area-inset-bottom, 0px));z-index:50;
   width:50px;height:50px;border:0;border-radius:50%;
-  background:#d98256;color:#fff;box-shadow:0 5px 18px rgba(91,58,43,.25);
+  background:var(--brown);color:#FFF9EC;box-shadow:0 5px 18px rgba(139,94,60,.35);
   display:flex;align-items:center;justify-content:center;
   font-size:25px;font-weight:800;cursor:pointer;
   opacity:0;visibility:hidden;transform:translateY(8px);
   transition:opacity .2s ease,transform .2s ease,visibility .2s;
 }
 .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
-.back-to-top:focus{outline:3px solid #e8a99a;outline-offset:3px}
+.back-to-top:focus{outline:3px solid var(--yellow);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 
 ul.checklist-interactive {
@@ -117,7 +117,7 @@ ul.checklist-interactive {
   <div class="hero-inner">
     <div class="eyebrow">FAMILY TRIP · KANSAI, JAPAN</div>
     <h1>關西親子自駕<br>6 天 5 夜旅遊手冊</h1>
-    <p>大阪・伊根舟屋・天橋立・京都・環球影城</p>
+    <p>大阪・天橋立・伊根・京都・嵐山・環球影城</p>
     <div class="pills">
       <span class="pill">📅 2027/02/05（五）— 02/10（三）</span>
       <span class="pill">👨‍👩‍👧‍👦 5 位大人＋2 位小朋友</span>
@@ -131,7 +131,7 @@ ul.checklist-interactive {
   <a href="#checklist"><strong>🎒 出發前</strong>重要清單</a>
 </div>
 <div class="sticky"><nav class="nav" aria-label="行程日選單">
-  <a href="#day1">D1 抵達／Outlet</a><a href="#day2">D2 天橋立／伊根</a><a href="#day3">D3 伊根／京都</a><a href="#day4">D4 京都／大阪</a><a href="#day5">D5 USJ</a><a href="#day6">D6 市場／返台</a>
+  <a href="#day1">D1 抵達／Outlet</a><a href="#day2">D2 天橋立／智恩寺</a><a href="#day3">D3 伊根／錦市場</a><a href="#day4">D4 嵐山／映畫村</a><a href="#day5">D5 USJ</a><a href="#day6">D6 神社／返台</a>
 </nav></div>
 <main>
   <section id="flights">
@@ -140,7 +140,7 @@ ul.checklist-interactive {
       <div><h3>去程｜2/5（五）・國泰航空 CX564</h3><p><strong>桃園 TPE T1 → 關西 KIX T1</strong></p><p>起飛 11:15　抵達 14:45</p><p class="small">飛行時間約 2 小時 30 分</p></div>
       <div><h3>回程｜2/10（三）・國泰航空 CX565</h3><p><strong>關西 KIX T1 → 桃園 TPE T1</strong></p><p>起飛 16:15　抵達 18:30</p><p class="small">飛行時間約 3 小時 15 分</p></div>
     </div>
-    <div class="note info">建議回程當天約 13:00 抵達關西機場，預留還車／交通、托運行李與出境時間。實際仍依航空公司及租車公司規定調整。</div>
+    <div class="note info">建議回程當天約12:00搭車前往關西機場， 13:00 抵達關西機場</div>
     <div class="panel">
       <h3>🧳 行李額度｜國泰航空</h3>
       <div class="two-col">
@@ -159,85 +159,106 @@ ul.checklist-interactive {
           <p>每人 1 件，每件最多 23 公斤。</p>
         </div>
       </div>
-      <div class="note warn">以上依你提供的票價規定截圖整理。出發前請再以訂位紀錄及國泰航空官方行李規定確認；嬰幼兒、特殊行李及額外行李可能另有規範。自駕時也要先安排好大型行李數量，避免車內空間不足。</div>
     </div>
   </section>
 
   <section id="day1" class="day">
-    <div class="day-head"><div class="day-no">D1</div><div><h2>抵達關西・臨空城 Outlet</h2><div class="date">2/5（五）｜先適應節奏，不排太滿</div></div></div>
+    <div class="day-head"><div class="day-no">D1</div><div><h2>抵達大阪・臨空城 Outlet</h2><div class="date">2/5（五）｜大眾運輸（不租車）</div></div></div>
     <span class="tag">購物</span><span class="tag">入住大阪</span>
     <div class="timeline">
-      <div class="stop"><h3>14:45｜抵達關西機場</h3><p>入境、領行李、整理小朋友用品。若入境或領行李時間較久，Outlet 停留時間彈性縮短。</p></div>
-      <div class="stop"><h3>下午／傍晚｜臨空城 Outlet</h3><p>前往 Rinku Premium Outlets 逛街、吃晚餐。先鎖定想買的品牌，避免第一天走太久。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rinku+Premium+Outlets">📍 Google 地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.premiumoutlets.co.jp/cht/rinku/">官方網站</a></div></div>
-      <div class="stop"><h3>晚上｜前往大阪住宿</h3><p>入住 ESLEAD HOTEL Namba Daikokucho，補齊隔天自駕用品、確認租車取車時間。</p></div>
+      <div class="stop"><h3>11:15｜桃園機場起飛（CX564）</h3><p>建議預先確認護照、登機文件與孩子用品。</p></div>
+      <div class="stop"><h3>14:45｜抵達關西機場</h3><p>15:00–16:00 入境、領行李，時間依現場狀況調整。</p></div>
+      <div class="stop"><h3>16:00–17:00｜前往臨空城 Outlet</h3><p>搭乘大眾交通前往 Rinku Premium Outlets。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rinku+Premium+Outlets">📍 Google 地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.premiumoutlets.co.jp/cht/rinku/">官方網站</a></div></div>
+      <div class="stop"><h3>17:00–20:00｜Outlet 購物、吃晚餐</h3><p>若不餓，可以回大阪市區再吃；依小朋友體力與店家營業時間彈性調整。</p></div>
+      <div class="stop"><h3>20:00–21:00｜搭車回大阪飯店</h3><p>前往 ESLEAD HOTEL Namba Daikokucho。</p></div>
+      <div class="stop"><h3>21:00｜Check-in，詢問行李寄放事宜</h3><p>先詢問飯店是否可寄放行李，因 2/6 退房後會自駕前往京都北部，2/8 傍晚才回大阪入住。</p></div>
     </div>
-    <div class="note good">住宿：大阪 ESLEAD HOTEL Namba Daikokucho（已訂）。第一晚不建議安排太多景點，保留體力給隔天長途自駕。</div>
+    <div class="note good">住宿：ESLEAD HOTEL Namba Daikokucho（2/5–2/6）。請先取得飯店對跨夜寄放行李的明確確認。</div>
   </section>
 
   <section id="day2" class="day">
-    <div class="day-head"><div class="day-no">D2</div><div><h2>天橋立・伊根舟屋</h2><div class="date">2/6（六）｜自駕日，路程較長</div></div></div>
-    <span class="tag">自駕</span><span class="tag">冬季路況</span><span class="tag">住宿待確認</span>
+    <div class="day-head"><div class="day-no">D2</div><div><h2>大阪 → 天橋立 View Land → 智恩寺 → 宮津住宿</h2><div class="date">2/6（六）｜取車自駕</div></div></div>
+    <span class="tag">住宿已訂</span><span class="tag">自駕</span><span class="tag">冬季路況</span>
     <div class="timeline">
-      <div class="stop"><h3>07:30–08:00｜大阪取車</h3><p>實際取車時間依租車店營業時間確認。取車時確認兒童安全座椅、ETC、保險與雪胎。</p></div>
-      <div class="stop"><h3>上午至中午｜天橋立 View Land</h3><p>搭單軌／登山纜車上展望區，欣賞「飛龍觀」景色。冬季營業時間與交通方式請出發前再確認。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Amanohashidate+View+Land">📍 Google 地圖</a></div></div>
-      <div class="stop"><h3>中午｜天橋立周邊午餐</h3><p>以海鮮、當地簡餐為主，避免用餐排隊拖延後續行程。</p></div>
-      <div class="stop"><h3>下午｜伊根舟屋散策</h3><p>沿伊根灣散步、拍舟屋景色；若時間與船班合適，可搭伊根灣遊覽船餵海鷗。冬天日落早，船班需先查詢。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ine+Funaya">📍 Google 地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.ine-kankou.jp/">伊根觀光協會</a></div></div>
-      <div class="stop"><h3>晚上｜入住伊根或天橋立周邊</h3><p>11/1 起嘗試預訂伊根舟屋住宿；訂到就以伊根過夜為優先，未訂到則改住天橋立周邊並調整順序。</p></div>
+      <div class="stop"><h3>07:00–08:00｜早餐、退房、前往取車</h3><p>取車時確認兒童安全座椅、ETC、保險及雪胎；不帶走的行李先依飯店確認結果寄放。</p></div>
+      <div class="stop"><h3>08:00–11:00｜開車前往天橋立</h3><p>預留約 3 小時，冬季道路狀況可能影響車程，中途可安排短暫休息。</p></div>
+      <div class="stop"><h3>11:00–12:30｜吃午餐</h3><p>先吃午餐，再安排展望台；若餐廳排隊，彈性調整後續時間。</p></div>
+      <div class="stop"><h3>12:30–14:00｜天橋立 View Land（搭單軌電車）</h3><p>搭單軌電車上展望台，欣賞「飛龍觀」。冬季營業時間與設施運行狀況需出發前確認。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Amanohashidate+View+Land">View Land 地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.viewland.jp/cn/">官方網站</a></div></div>
+      <div class="stop"><h3>14:00–15:00｜智恩寺參拜</h3><p>參拜文殊菩薩、看看扇子籤，並可在附近買智慧餅。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chionji+Temple+Amanohashidate">智恩寺地圖</a></div></div>
+      <div class="stop"><h3>15:00–16:00｜周邊散步購物</h3><p>視體力與店家營業時間，簡單散步、買伴手禮。</p></div>
+      <div class="stop"><h3>16:00–17:00｜吃晚餐（或買回民宿吃）</h3><p>建議準備便利商店或外帶餐點，住宿周邊晚間選擇可能較少。</p></div>
+      <div class="stop"><h3>17:00–17:30｜前往宮津民宿</h3><p>地址：3956-7 Hioki, Miyazu, Kyoto 626-0225, Japan（〒626-0225 京都府宮津市日置小字芒草 3956-7）。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=〒626-0225+京都府宮津市日置小字芒草3956-7">住宿地圖</a></div></div>
+      <div class="stop"><h3>17:30–18:00｜Check-in、全家超商採買補給</h3><p>採買隔天早餐、飲料與小朋友零食，回住宿休息。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=FamilyMart+Miyazu+Hioki">FamilyMart 地圖</a></div></div>
     </div>
-    <div class="note warn"><strong>行程分支尚未定案：</strong><br>方案 A：訂到伊根住宿 → 天橋立 → 伊根，傍晚入住伊根。<br>方案 B：未訂到伊根住宿 → 需重新評估伊根與天橋立先後順序、景點營業時間及住宿位置。不要把兩套順序當成已確認的固定行程。</div>
-    <div class="panel"><h3>伊根住宿候選</h3>
-      <p><strong>與謝荘（WATER FRONT INN Yosasou）</strong><br><a target="_blank" rel="noopener" href="https://www.yosasou278.com/">官方網站 ↗</a></p>
-      <p><strong>海辺の宿 かもめ</strong><br><a target="_blank" rel="noopener" href="https://www.ine-kankou.jp/inn/kamome">伊根觀光協會介紹 ↗</a>　／　<a target="_blank" rel="noopener" href="https://ine-kamome.com/">住宿網站 ↗</a></p>
-      <p class="small">住宿能否容納全團、房型、餐食、訂房開放日及取消條款，以業者回覆為準；其中部分舟屋住宿可能有人數上限。</p>
-    </div>
-    <div class="note warn">❄️ 2 月北京都可能有積雪、結冰或低溫。租車務必確認雪胎及保險，出發前查看道路資訊；若天候不佳，優先縮減景點，不要勉強趕路。</div>
+    <div class="note good"><strong>2/6 宮津住宿已訂：</strong>Airbnb 位於天橋立與伊根之間，費用約 NT$17,000，按 5 人分攤約 NT$3,400／人（以你提供的估算為準）。</div>
+    <div class="note warn">❄️ 2 月北部京都可能有積雪、結冰或低溫。請確認雪胎與保險，出發前查看道路資訊；若天候不佳，優先縮減景點。</div>
   </section>
 
   <section id="day3" class="day">
-    <div class="day-head"><div class="day-no">D3</div><div><h2>伊根／天橋立・京都・嵐山</h2><div class="date">2/7（日）｜依 D2 住宿結果調整</div></div></div>
-    <span class="tag">景觀散步</span><span class="tag">京都入住</span>
+    <div class="day-head"><div class="day-no">D3</div><div><h2>伊根舟屋 → 錦市場 → 京都車站</h2><div class="date">2/7（日）｜自駕</div></div></div>
+    <span class="tag">伊根搭船</span><span class="tag">錦市場美食</span><span class="tag">京都住宿已訂</span>
     <div class="timeline">
-      <div class="stop"><h3>上午｜伊根灣遊覽船（若前一天未搭）</h3><p>若入住伊根，可先確認遊覽船班次，再出發前往京都；若已在 D2 搭乘，上午可安排舟屋附近散步或直接移動。</p></div>
-      <div class="stop"><h3>中午至下午｜開車前往京都</h3><p>預留冬季路況與休息時間。建議這天只選 2–3 個重點，避免伊根、天橋立、京都市區全部塞進同一天。</p></div>
-      <div class="stop"><h3>下午｜嵐山重點散策</h3><p>可選渡月橋、竹林小徑、Rilakkuma 茶房／商店（營業狀況先確認）。人潮多時以外圍散步為主。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge+Arashiyama">渡月橋地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rilakkuma+Sabo+Arashiyama">Rilakkuma 地圖</a></div></div>
-      <div class="stop"><h3>晚上｜京都市區飯店</h3><p>入住京都市區住宿（尚未訂房），晚餐以飯店附近為主，讓小朋友早點休息。</p></div>
+      <div class="stop"><h3>07:00–08:00｜超商買早餐、前往伊根</h3><p>先買早餐與車上點心，前往伊根搭船集合地點。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=FamilyMart+Miyazu+Hioki">FamilyMart 地圖</a></div></div>
+      <div class="stop"><h3>08:00–10:30｜伊根搭船（餵海鷗）</h3><p>依已安排的行程進行，請遵循船方規定並確認是否可餵食。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ine+Bay+Sightseeing+Boat">伊根搭船地圖</a></div></div>
+      <div class="stop"><h3>10:30–13:30｜開車前往京都錦市場</h3><p>車程約 3 小時，冬季路況可能延長，車上準備點心；若延誤請勿冒險趕路，午餐順延。請先查好錦市場周邊停車場。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto">錦市場周邊地圖</a></div></div>
+      <div class="stop"><h3>13:30–15:00｜錦市場吃美食</h3><p>請在購買店家前或店內食用，不要邊走邊吃。</p></div>
+      <div class="stop"><h3>15:00–16:00｜錦天滿宮、周邊逛街</h3><p>錦市場東側盡頭即是錦天滿宮，順路參拜，再逛周邊商店街。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nishiki+Tenmangu+Kyoto">錦天滿宮地圖</a></div></div>
+      <div class="stop"><h3>16:00–17:00｜飯店 Check-in ＆ 停車</h3><p>前往 Kevin's Place Annex，地址：34-4 Higashikujō Higashiiwamotochō, Minami Ward, Kyoto, 601-8006, Japan。停車位需提前預約，每晚 ¥800；請確認已收到預約回覆，並核對車位尺寸及進出方式。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=34-4+Higashikujo+Higashiiwamotocho+Minami+Ward+Kyoto+601-8006">京都住宿地圖</a></div></div>
+      <div class="stop"><h3>17:00–20:00｜京都車站周邊散步、吃晚餐</h3><p>可逛 Yodobashi、Uniqlo、GU，晚餐選京都車站周邊，方便帶孩子用餐。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=restaurants+near+Kyoto+Station">京都車站晚餐地圖</a></div></div>
+      <div class="stop"><h3>20:00–21:30｜逛唐吉訶德或超市</h3><p>若孩子還有體力再去採買；否則回住宿休息。</p></div>
     </div>
-    <div class="note info">京都住宿地點建議優先考量停車、隔天市區步行／大眾運輸，以及 7 人團體的房型。京都市區部分道路與停車位較狹窄，先確認飯店停車規則。</div>
+    <div class="note warn">伊根開車到京都市區約 3 小時，又要找錦市場停車位，午餐與逛街時間可能順延；冬季道路安全優先。</div>
   </section>
 
   <section id="day4" class="day">
-    <div class="day-head"><div class="day-no">D4</div><div><h2>京都散步・回大阪購物</h2><div class="date">2/8（一）｜京都行程可依團員喜好調整</div></div></div>
-    <span class="tag">老街散步</span><span class="tag">還車</span><span class="tag">心齋橋</span>
+    <div class="day-head"><div class="day-no">D4</div><div><h2>嵐山・太秦映畫村・心齋橋</h2><div class="date">2/8（一）｜自駕（傍晚回大阪還車）</div></div></div>
+    <span class="tag">嵐山</span><span class="tag">映畫村</span><span class="tag">心齋橋夜遊</span>
     <div class="timeline">
-      <div class="stop"><h3>上午｜錦市場周邊</h3><p>錦市場吃小吃、逛錦天滿宮；依人潮及小朋友體力決定停留時間。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto">錦市場地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nishiki+Tenmangu">錦天滿宮地圖</a></div></div>
-      <div class="stop"><h3>中午／下午｜鴨川・祇園白川（擇一或兩者）</h3><p>以輕鬆散步、拍照為主；若大家更想逛老街，可把時間留給祇園白川周邊，不必趕景點打卡。</p></div>
-      <div class="stop"><h3>下午｜開車回大阪、先放行李</h3><p>回到 ESLEAD HOTEL Namba Daikokucho，先確認能否領取／寄放行李，再決定還車動線。</p></div>
-      <div class="stop"><h3>傍晚至晚上｜還車・心齋橋／道頓堀</h3><p>理想流程是先將行李送到飯店，再到租車公司還車，之後步行逛街吃晚餐。租車門市與飯店位置需依實際預約確認。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shinsaibashi+Osaka">心齋橋地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka">道頓堀地圖</a></div></div>
+      <div class="stop"><h3>08:00–08:30｜準備出門</h3><p>京都住宿退房（10:00 前），行李帶上車。</p></div>
+      <div class="stop"><h3>08:30–09:00｜開車前往嵐山</h3><p>預留停車時間，先確認嵐山停車場位置與費用。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Parking">嵐山停車場地圖</a></div></div>
+      <div class="stop"><h3>09:00–12:00｜竹林小徑 ➔ 渡月橋 ➔ Rilakkuma 商店</h3><p>依步行動線安排；Rilakkuma 商店的開店時間出發前先確認，若尚未開門可調整順序。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove">竹林小徑地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge+Arashiyama">渡月橋地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rilakkuma+Sabo+Arashiyama">Rilakkuma 商店地圖</a></div></div>
+      <div class="stop"><h3>12:00–13:00｜嵐山午餐</h3><p>建議先挑一間主選與一間備選；熱門店可能排隊，太久就改備選。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Arashiyama+restaurants+near+Togetsukyo+Bridge">嵐山餐廳地圖</a></div></div>
+      <div class="stop"><h3>13:00–13:30｜前往太秦映畫村</h3></div>
+      <div class="stop"><h3>13:30–16:00｜太秦映畫村玩樂</h3><p>官方營業時間會依日期及整修安排變動，2027 年 2 月的實際開園時間、休村日與票價需接近出發時再查。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.eigamura.com/hours-tickets/">官方營業時間／票價 ↗</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=東映太秦映画村">太秦映畫村地圖</a></div></div>
+      <div class="stop"><h3>16:00–18:00｜開車回大阪市區</h3><p>預留塞車、加油與還車前整理時間。</p></div>
+      <div class="stop"><h3>18:00–18:30｜Check-in ＋ 拿寄放的行李</h3><p>ESLEAD HOTEL Namba Daikokucho（2/8–2/10）。</p></div>
+      <div class="stop"><h3>18:30–19:00｜還車</h3><p>還車點與加油站位置請先確認，避免繞路。</p></div>
+      <div class="stop"><h3>19:00–20:00｜吃晚餐</h3></div>
+      <div class="stop"><h3>20:00–21:30｜心齋橋、道頓堀拍照逛街</h3><p>看固力果招牌（出發前確認是否仍在維修），依孩子體力彈性調整。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka">道頓堀地圖</a></div></div>
+      <div class="stop"><h3>21:30–22:00｜回飯店休息</h3></div>
     </div>
-    <div class="note warn">京都景點是彈性方案，不是全部必去。若前兩天車程疲累，建議保留錦市場＋祇園白川或鴨川，再提早回大阪。</div>
+    <div class="note warn"><strong>提醒：</strong>這天從京都開到嵐山、映畫村再回大阪還車，行程偏滿，且兩位小朋友年紀小；若嵐山或映畫村玩得比預期久，可縮短一處，確保 18:30 前後順利還車。</div>
   </section>
 
   <section id="day5" class="day">
-    <div class="day-head"><div class="day-no">D5</div><div><h2>日本環球影城 USJ</h2><div class="date">2/9（二）｜整天主行程</div></div></div>
+    <div class="day-head"><div class="day-no">D5</div><div><h2>日本環球影城 USJ</h2><div class="date">2/9（二）｜大眾運輸</div></div></div>
     <span class="tag">親子重點</span><span class="tag">需提前準備</span>
     <div class="timeline">
-      <div class="stop"><h3>早上｜提早出發到 USJ</h3><p>開園時間可能提前，請以官方公告及票券資訊為準。先確認入園規則、App、整理券／預約方式與小朋友身高限制。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.usj.co.jp/web/zh/tw">USJ 官方網站</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan">📍 Google 地圖</a></div></div>
-      <div class="stop"><h3>白天｜依孩子體力安排設施</h3><p>先玩最想玩的區域，安排午餐、休息與室內設施。同行有 2 歲及 4 歲小朋友，避免連續排隊太久。</p></div>
-      <div class="stop"><h3>晚上｜彈性加碼阿倍野 HARUKAS 300</h3><p>若離開 USJ 時仍有體力、時間與交通銜接，再前往阿倍野看夜景；若已疲累就回飯店休息，不列為必去。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=HARUKAS+300+Observatory">阿倍野展望台地圖</a></div></div>
+      <div class="stop"><h3>06:00–06:30｜起床、買早餐（9:00 開園）</h3><p>若改為 8:00 開園，全部提早 1 小時：05:00 起床、05:30 出門、06:30 到場。到時再確認實際開園時間。</p></div>
+      <div class="stop"><h3>06:30–07:30｜出門前往環球影城</h3><p>06:30 出門，目標 07:30 到達。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.usj.co.jp/web/zh/tw">USJ 官方網站</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan">📍 Google 地圖</a></div></div>
+      <div class="stop"><h3>07:30–09:00｜排隊等進場（邊吃早餐）</h3><p>先確認入園規則、App、整理券／預約方式與小朋友身高限制。</p></div>
+      <div class="stop"><h3>09:00–17:30｜USJ 暢玩一整天</h3><p>先玩最想玩的區域，安排午餐、休息與室內設施。同行有 2 歲及 4 歲小朋友，避免連續排隊太久。</p></div>
+      <div class="stop"><h3>17:30–18:30｜返回大阪市區</h3></div>
+      <div class="stop"><h3>19:00–20:00｜吃晚餐</h3></div>
+      <div class="stop"><h3>20:00–21:30｜逛唐吉訶德／藥妝／超市</h3><p>依孩子體力彈性調整，太累就直接回飯店。</p></div>
+      <div class="stop"><h3>21:30–22:00｜回飯店休息</h3></div>
     </div>
     <div class="note info">USJ 門票、快速通關、開園時間與熱門區域規則，建議接近出發時再確認。不要只依一般營業時間推估實際入園時段。</div>
   </section>
 
   <section id="day6" class="day">
-    <div class="day-head"><div class="day-no">D6</div><div><h2>黑門市場・難波八阪神社・返台</h2><div class="date">2/10（三）｜保留機場緩衝</div></div></div>
-    <span class="tag">市場早餐</span><span class="tag">返程日</span>
+    <div class="day-head"><div class="day-no">D6</div><div><h2>難波八阪神社・返台</h2><div class="date">2/10（三）｜大眾運輸，保留機場緩衝</div></div></div>
+    <span class="tag">返程日</span><span class="tag">神社拍照</span>
     <div class="timeline">
-      <div class="stop"><h3>早上｜黑門市場</h3><p>原本考慮木津市場，但週三可能休市，因此以黑門市場作為備案。各店開店時間不同，想吃的店先確認營業資訊。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka">黑門市場地圖</a></div></div>
-      <div class="stop"><h3>上午｜難波八阪神社</h3><p>拍巨大獅子殿，停留時間不必太長。若行李很多，先確認飯店退房後的寄放安排。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Namba+Yasaka+Shrine">神社地圖</a></div></div>
-      <div class="stop"><h3>中午前後｜前往關西機場</h3><p>建議約 13:00 抵達機場；依實際交通方式、行李與團體移動速度再往前抓時間。</p></div>
-      <div class="stop"><h3>16:15｜關西機場起飛</h3><p>返回桃園，結束旅程。</p></div>
+      <div class="stop"><h3>08:00–09:00｜起床、整理行李、退房</h3></div>
+      <div class="stop"><h3>09:00–10:00｜吃特色早餐</h3><p>選飯店附近的店，避免排隊或繞路；出發前確認營業時間。</p></div>
+      <div class="stop"><h3>10:00–10:45｜難波八阪神社參拜拍照</h3><p>拍巨大獅子殿，停留時間不必太長。行李先寄放飯店。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Namba+Yasaka+Shrine">神社地圖</a></div></div>
+      <div class="stop"><h3>10:45–11:30｜回飯店取行李、前往車站</h3></div>
+      <div class="stop"><h3>11:30–12:30｜前往關西機場</h3></div>
+      <div class="stop"><h3>13:00–16:15｜抵達機場、報到／托運／逛免稅店</h3></div>
+      <div class="stop"><h3>16:15｜關西機場起飛（CX565）</h3><p>18:30 抵達桃園機場，結束旅程。</p></div>
     </div>
-    <div class="note warn">返程日不要再排遠距離景點；若交通或天氣有變，優先取消市場停留，確保準時到機場。</div>
+    <div class="note warn">返程日不要再排遠距離景點；若交通或天氣有變，優先縮短神社停留，確保準時到機場。</div>
   </section>
 
   <section id="hotel">
@@ -245,36 +266,46 @@ ul.checklist-interactive {
     <div class="panel">
       <h3>大阪｜ESLEAD HOTEL Namba Daikokucho</h3>
       <p>已訂日期：<strong>2/5–2/6（1 晚）</strong>、<strong>2/8–2/10（2 晚）</strong></p>
+      <p>入住安排：2/5 21:00 抵達；2/8 約 18:00 入住；2/10 08:00–09:00 退房。</p>
       <p>房型資訊：同一房間入住 5 位大人＋2 位小朋友，3 張雙人床，附簡易廚房、1 間浴室（依訂房內容為準）。</p>
       <p class="hotel-price">目前顯示合計 NT$11,077</p>
-      <p class="small">第一段 NT$3,634；第二段 NT$7,443。尚未實際扣款，最終金額以訂房平台／帳單為準。</p>
+      <p><strong>按 5 人分攤：約 NT$2,215／人</strong>（精算 NT$2,215.4／人）。</p>
+      <p class="small">第一段 NT$3,634；第二段 NT$7,443。兩段合計 NT$11,077 ÷ 5 人。尚未實際扣款，最終金額以訂房平台／帳單為準。</p>
       <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.booking.com/Share-TL8xGpZ">查看大阪訂房</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESLEAD+HOTEL+Namba+Daikokucho">飯店地圖</a></div>
+    </div>
+    <div class="panel">
+      <h3>京都北部｜Airbnb（2/6，1 晚）</h3>
+      <p><strong>住宿地址：</strong>〒626-0225 京都府宮津市日置小字芒草 3956-7</p>
+      <p><strong>位置與安排：</strong>位於天橋立與伊根之間；2/6 先玩天橋立、智恩寺，晚上入住，2/7 一早再前往伊根。</p>
+      <div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=〒626-0225+京都府宮津市日置小字芒草3956-7">📍 用住宿地址開啟 Google 地圖</a></div>
+      <p><strong>住宿費用：</strong>約 NT$17,000；按 5 人分攤約 <strong>NT$3,400／人</strong>（此為使用者提供的估算，最終以 Airbnb 訂單為準）。</p>
+      <p><strong>附近補給：</strong>FamilyMart 宮津日置店（ファミリーマート 宮津日置店，24 小時；建議導航前再核對路線是否順路）。可先買早餐、飲料與孩子零食。</p>
+      <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.airbnb.com.tw/rooms/1515579300252466166?unique_share_id=8408b2e9-484d-4c87-a4d0-292f525551a4&viralityEntryPoint=1&s=76">查看 Airbnb 訂房 ↗</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=FamilyMart+Miyazu+Hioki">FamilyMart 地圖 ↗</a></div>
+    </div>
+    <div class="panel">
+      <h3>京都市區｜Kevin's Place Annex（2/7–2/8，1 晚，南區東九條）</h3>
+      <p><strong>地址：</strong>34-4 Higashikujō Higashiiwamotochō, Minami Ward, Kyoto, 601-8006, Japan</p>
+      <p><strong>入住：</strong>2/7（日）15:00 後（預計 16:00–17:00 抵達並停車）；<strong>退房：</strong>2/8（一）10:00 前。</p>
+      <p class="hotel-price">住宿費用：NT$6,407</p>
+      <p><strong>按 5 人分攤：約 NT$1,281／人</strong>（精算 NT$1,281.4／人）。</p>
+      <p><strong>停車：</strong>需事先預約，¥800／晚。請確認停車預約已成功，並確認車位可容納租用車型。</p>
+      <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.airbnb.com.tw/rooms/1670074389679264421?unique_share_id=07bc90b4-7cf9-4bf0-baca-aecd2b8d129b&viralityEntryPoint=1&s=76">查看京都 Airbnb ↗</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=34-4+Higashikujo+Higashiiwamotocho+Minami+Ward+Kyoto+601-8006">京都住宿地圖</a></div>
     </div>
     <div class="panel">
       <h3>行李寄放計畫（務必再確認）</h3>
       <ul class="checklist">
-        <li>2/6 退房後，只帶 1–2 件行李自駕前往北京都。</li>
-        <li>希望其餘行李寄放大阪飯店，2/8 回大阪後取回。</li>
+        <li>2/6 退房後，只帶 1–2 件行李自駕前往京都北部。</li>
+        <li>希望其餘行李寄放大阪飯店，2/8 約 18:00 回大阪 Check-in 時取回；2/10 退房後也要寄放行李，10:45 回飯店取。</li>
         <li>飯店回覆：可協助處理 4 件行李，但行李架空間有限，寄放位置需視當天情況由櫃檯安排。</li>
-        <li>目前尚未明確保證能從 2/6 退房後寄放到 2/8 再入住，請再次取得書面確認。</li>
+        <li>目前尚未明確保證能從 2/6 退房後寄放到 2/8 再入住，請再次取得書面確認；也請確認 2/10 退房後可繼續寄放到 10:45。</li>
         <li>若飯店無法寄放，提前查找其他行李寄存服務；大型行李與多件行李不一定放得進車站置物櫃。</li>
       </ul>
       <div class="note warn">不要在未確認前把「可寄放兩晚」視為已保證。若行李安排不確定，需重新比較飯店寄存、付費行李寄存服務或調整租車／住宿方案。</div>
-    </div>
-    <div class="panel">
-      <h3>京都｜2/7（1 晚）</h3>
-      <p>尚未訂房。優先確認 7 人房型、停車方案、入住時間與取消條款；若使用自駕，飯店附設停車位或附近停車場會影響便利性。</p>
     </div>
   </section>
 
   <section id="checklist">
     <h2 class="section-title">🎒 出發前確認清單</h2>
-    <div class="panel">
-      <h3>入境申報填寫</h3>
-      <ul class="checklist">
-        <li>先在網路上幫大家填寫完成</li>        
-      </ul>
-    </div>
     <div class="panel">
       <h3>自駕與冬季安全</h3>
       <ul class="checklist">
@@ -287,11 +318,12 @@ ul.checklist-interactive {
     <div class="panel">
       <h3>訂房與門票</h3>
       <ul class="checklist">
-        <li>11/1 起嘗試預訂伊根舟屋住宿，確認最多入住人數及餐食。</li>
+        <li>已訂 2/6 天橋立與伊根之間 Airbnb；確認入住方式、停車位與入住時間。</li>
         <li>確認大阪飯店能否跨入住日寄放行李，並取得明確回覆。</li>
-        <li>訂京都住宿並確認停車／房型。</li>
-        <li>接近出發時確認 USJ 營業時間、票券、快速通關及兒童設施限制。</li>
-        <li>確認天橋立 View Land、伊根遊覽船的冬季營業時間及船班。</li>
+        <li>2/7 伊根搭船後開車前往京都錦市場，確認錦市場周邊停車場。</li>
+        <li>2/8 確認嵐山停車位置、Rilakkuma 商店營業時間，以及還車點與營業時間。</li>
+                <li>接近出發時確認 USJ 開園時間（9:00 開園 06:30 出門；8:00 開園 05:30 出門）、營業時間、票券、快速通關及兒童設施限制。</li>
+        <li>確認天橋立 View Land、智恩寺、伊根搭船活動、錦市場與嵐山店家營業時間。</li>
       </ul>
     </div>
     <div class="panel">
@@ -302,7 +334,7 @@ ul.checklist-interactive {
         <li>兒童備用衣物、濕紙巾、常用藥品、暈車／防暈用品（依個人需求）。</li>
         <li>行動電源、充電器、網路／eSIM、現金與信用卡。</li>
       </ul>
-    </div>    
+    </div>
     <h2 class="section-title">🎒 行李清單</h2>
     <div class="panel">
       <h3>📁 必帶重要物品</h3>
@@ -406,10 +438,11 @@ ul.checklist-interactive {
     <h2 class="section-title">📌 目前仍待定案</h2>
     <div class="panel">
       <ul class="checklist">
-        <li>伊根住宿是否訂得到；結果會影響 D2、D3 順序。</li>
+        <li>確認 Airbnb 入住資訊、停車方式，以及 FamilyMart 的實際路線。</li>
         <li>大阪飯店能否從 2/6 寄放行李至 2/8。</li>
-        <li>京都飯店位置、房型與停車。</li>
-        <li>租車取車點、還車點與實際路線。</li>
+        <li>2/7 錦市場停車、2/8 嵐山及太秦映畫村停車安排；京都住宿停車位需預約（¥800／晚）。</li>
+        <li>租車取車點（2/6 早上）、還車點（2/8 18:30）與實際路線。</li>
+        <li>USJ 實際開園時間（9:00 或 8:00）。</li>
         <li>冬季天氣與景點營業時間。</li>
       </ul>
       <p class="small">這份手冊是目前規劃版，未確認的時刻與順序都保留彈性。出發前請再核對官方公告、訂房回覆及道路資訊。</p>
