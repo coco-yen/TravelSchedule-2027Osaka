@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>關西親子自駕旅遊手冊｜2027.02.05–02.10</title>
+<title>🐻 旅遊手冊雲端資料庫</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
@@ -29,16 +29,8 @@
   --shadow-sm: 2px 2px 0px #3E3A39;
 }
 
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 76px;
-}
-
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; scroll-padding-top: 82px; }
 body {
   margin: 0;
   background-color: var(--bg);
@@ -50,642 +42,322 @@ body {
 
 /* 頂端固定選單 */
 .top-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: sticky; top: 0; z-index: 100;
   background-color: var(--rilakkuma-yellow);
   border-bottom: var(--border-w) solid var(--ink);
   padding: 10px 12px;
 }
-
 .nav-inner {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
+  max-width: 780px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center; gap: 6px;
 }
-
-.nav-links {
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
+.nav-links { display: flex; gap: 5px; overflow-x: auto; scrollbar-width: none; }
 .nav-links::-webkit-scrollbar { display: none; }
-
 .nav-links a {
-  text-decoration: none;
-  color: var(--ink);
-  background: var(--paper);
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  padding: 5px 10px;
-  font-size: 0.84rem;
-  white-space: nowrap;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.1s;
-}
-.nav-links a:active {
-  transform: translate(2px, 2px);
-  box-shadow: none;
-}
-
-.edit-toggle-btn {
-  background: var(--korilakkuma-pink);
-  color: var(--ink);
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  padding: 5px 11px;
-  font-family: inherit;
-  font-size: 0.84rem;
-  font-weight: bold;
-  cursor: pointer;
-  white-space: nowrap;
+  text-decoration: none; color: var(--ink); background: var(--paper);
+  border: 2px solid var(--ink); border-radius: 999px;
+  padding: 4px 10px; font-size: 0.84rem; white-space: nowrap;
   box-shadow: var(--shadow-sm);
 }
-.edit-toggle-btn.active {
-  background: var(--korilakkuma-red);
-  color: #FFF;
+.nav-btns { display: flex; gap: 6px; flex-shrink: 0; }
+.btn-top {
+  background: var(--paper); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 999px;
+  padding: 4px 11px; font-family: inherit; font-size: 0.84rem;
+  font-weight: bold; cursor: pointer; white-space: nowrap; box-shadow: var(--shadow-sm);
+}
+.btn-top.edit-btn { background: var(--korilakkuma-pink); }
+.btn-top.edit-btn.active { background: var(--korilakkuma-red); color: #FFF; }
+
+/* 資料庫與旅程切換列 */
+.control-bar {
+  max-width: 780px; margin: 12px auto 0; padding: 0 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.trip-switcher-box {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  background: var(--paper); border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md); padding: 10px 14px; box-shadow: var(--shadow-sm);
+}
+.trip-select {
+  flex: 1; min-width: 180px; padding: 6px 10px;
+  border: 2px solid var(--ink); border-radius: 10px;
+  font-family: inherit; font-size: 0.95rem; font-weight: bold;
+  background: var(--korilakkuma-cream); color: var(--ink);
+}
+.sync-pill {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  background: var(--paper); border: 2px solid var(--ink); border-radius: 999px;
+  padding: 5px 14px; font-size: 0.83rem; box-shadow: var(--shadow-sm);
+}
+.btn-sync-refresh {
+  background: var(--korilakkuma-cream); border: 2px solid var(--ink);
+  border-radius: 999px; padding: 2px 10px; font-family: inherit;
+  font-size: 0.8rem; cursor: pointer; white-space: nowrap;
 }
 
-/* 容器 */
-main {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 16px;
-}
-
-/* 卡片通用 */
+main { max-width: 780px; margin: 0 auto; padding: 14px 16px; }
 .card {
-  background: var(--paper);
-  border: var(--border-w) solid var(--ink);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  margin-bottom: 24px;
+  background: var(--paper); border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px;
   box-shadow: var(--shadow);
 }
 
-/* 首頁插圖 + 標題 */
-.hero-card {
-  background: var(--korilakkuma-cream);
+/* 空白引導畫面 */
+.empty-state {
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  background: var(--korilakkuma-cream);
+  padding: 36px 20px;
 }
 
+/* 首頁卡片 */
+.hero-card { background: var(--korilakkuma-cream); text-align: center; position: relative; }
 .hero-badge {
-  display: inline-block;
-  background: var(--rilakkuma-yellow);
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  padding: 4px 14px;
-  font-size: 0.85rem;
-  margin-bottom: 10px;
+  display: inline-block; background: var(--rilakkuma-yellow);
+  border: 2px solid var(--ink); border-radius: 999px;
+  padding: 4px 14px; font-size: 0.85rem; margin-bottom: 8px;
 }
+.hero-title { font-size: clamp(1.55rem, 5vw, 2.15rem); margin: 6px 0 8px; }
+.hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.pill { background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; padding: 4px 12px; font-size: 0.85rem; }
 
-.hero-title {
-  font-size: clamp(1.6rem, 5vw, 2.2rem);
-  margin: 6px 0 8px;
-  color: var(--ink);
-}
-
-.hero-sub {
-  font-size: 0.95rem;
-  margin: 0 0 14px;
-}
-
-.hero-pills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.pill {
-  background: var(--paper);
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  padding: 4px 12px;
-  font-size: 0.85rem;
-}
-
-/* SVG 動畫 */
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(2deg); }
-}
-@keyframes wiggle {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
-}
-
-.svg-float {
-  animation: floatSlow 3.5s ease-in-out infinite;
-  transform-origin: center;
-}
-.svg-wiggle {
-  animation: wiggle 2.8s ease-in-out infinite;
-  transform-origin: bottom center;
-}
-
+@keyframes floatSlow { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-6px) rotate(2deg); } }
+@keyframes wiggle { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+.svg-float { animation: floatSlow 3.5s ease-in-out infinite; }
+.svg-wiggle { animation: wiggle 2.8s ease-in-out infinite; transform-origin: bottom center; }
 @media (prefers-reduced-motion: reduce) {
-  .svg-float, .svg-wiggle, .day-content {
-    animation: none !important;
-    transition: none !important;
-  }
+  .svg-float, .svg-wiggle, .day-content { animation: none !important; transition: none !important; }
 }
 
-/* 區塊標題 */
-.sec-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.35rem;
-  margin: 28px 0 14px;
-  color: var(--ink);
-}
+.sec-title { display: flex; align-items: center; gap: 8px; font-size: 1.3rem; margin: 26px 0 12px; }
 
-/* 航班卡片 */
-.flight-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-@media (min-width: 600px) {
-  .flight-grid { grid-template-columns: 1fr 1fr; }
-}
-
-.flight-box {
-  background: var(--korilakkuma-cream);
-  border: var(--border-w) solid var(--ink);
-  border-radius: var(--radius-md);
-  padding: 16px;
-}
-.flight-box.return {
-  background: #FFF2F4;
-}
-
+/* 航班 */
+.flight-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 600px) { .flight-grid { grid-template-columns: 1fr 1fr; } }
+.flight-box { background: var(--korilakkuma-cream); border: var(--border-w) solid var(--ink); border-radius: var(--radius-md); padding: 16px; position: relative; }
+.flight-box.return { background: #FFF2F4; }
 .flight-route {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1.2rem;
-  margin: 8px 0;
-  padding: 8px 0;
-  border-top: 2px dashed var(--ink);
-  border-bottom: 2px dashed var(--ink);
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 1.15rem; margin: 8px 0; padding: 8px 0;
+  border-top: 2px dashed var(--ink); border-bottom: 2px dashed var(--ink);
 }
-
 .baggage-note {
-  background: var(--rilakkuma-yellow);
-  border: 2px solid var(--ink);
-  border-radius: var(--radius-sm);
-  padding: 10px 14px;
-  font-size: 0.88rem;
-  margin-top: 14px;
+  background: var(--rilakkuma-yellow); border: 2px solid var(--ink);
+  border-radius: var(--radius-sm); padding: 10px 14px; font-size: 0.88rem; margin-top: 14px;
 }
 
-/* 每日行程日期切換 */
-.day-tabs {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 4px 2px 12px;
-  scrollbar-width: none;
-}
+/* 日期切換 */
+.day-tabs { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px; scrollbar-width: none; }
 .day-tabs::-webkit-scrollbar { display: none; }
-
 .day-tab {
-  flex: 1 0 auto;
-  min-width: 78px;
-  background: var(--paper);
-  border: var(--border-w) solid var(--ink);
-  border-radius: var(--radius-md);
-  padding: 8px 10px;
-  text-align: center;
-  font-family: inherit;
-  font-size: 0.9rem;
-  color: var(--ink);
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s;
+  flex: 1 0 auto; min-width: 76px; background: var(--paper);
+  border: var(--border-w) solid var(--ink); border-radius: var(--radius-md);
+  padding: 8px 10px; text-align: center; font-family: inherit;
+  font-size: 0.9rem; color: var(--ink); cursor: pointer; box-shadow: var(--shadow-sm);
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-
-.day-tab strong {
-  display: block;
-  font-size: 1.05rem;
-}
-
-.day-tab.active {
-  background: var(--rilakkuma-brown);
-  color: #FFF;
-  transform: translateY(-4px) scale(1.03);
-}
+.day-tab strong { display: block; font-size: 1.05rem; }
+.day-tab.active { background: var(--rilakkuma-brown); color: #FFF; transform: translateY(-4px) scale(1.03); }
 
 @keyframes bounceIn {
-  0% { opacity: 0; transform: scale(0.95) translateY(10px); }
-  60% { opacity: 1; transform: scale(1.01) translateY(-3px); }
+  0% { opacity: 0; transform: scale(0.96) translateY(8px); }
+  60% { opacity: 1; transform: scale(1.01) translateY(-2px); }
   100% { opacity: 1; transform: scale(1) translateY(0); }
 }
-
-.day-content {
-  animation: bounceIn 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
+.day-content { animation: bounceIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
 
 .day-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--korilakkuma-cream);
-  border: var(--border-w) solid var(--ink);
-  border-radius: var(--radius-md);
-  padding: 14px 16px;
-  margin-bottom: 18px;
-  gap: 12px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--korilakkuma-cream); border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md); padding: 14px 16px; margin-bottom: 18px; gap: 12px;
 }
 
 /* 時間軸 */
-.timeline {
-  position: relative;
-  padding-left: 24px;
-  margin-left: 8px;
-  border-left: 3px dashed var(--ink);
-}
-
+.timeline { position: relative; padding-left: 24px; margin-left: 8px; border-left: 3px dashed var(--ink); }
 .stop-item {
-  position: relative;
-  background: var(--paper);
-  border: var(--border-w) solid var(--ink);
-  border-radius: var(--radius-md);
-  padding: 14px 16px;
-  margin-bottom: 16px;
-  box-shadow: var(--shadow-sm);
+  position: relative; background: var(--paper); border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md); padding: 14px 16px; margin-bottom: 16px; box-shadow: var(--shadow-sm);
 }
-
 .stop-item::before {
-  content: "";
-  position: absolute;
-  left: -34px;
-  top: 18px;
-  width: 16px;
-  height: 16px;
-  background: var(--rilakkuma-yellow);
-  border: 3px solid var(--ink);
-  border-radius: 50%;
+  content: ""; position: absolute; left: -34px; top: 18px; width: 16px; height: 16px;
+  background: var(--rilakkuma-yellow); border: 3px solid var(--ink); border-radius: 50%;
 }
-
-.stop-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-
-.stop-time {
-  background: var(--ink);
-  color: #FFF;
-  border-radius: 8px;
-  padding: 2px 8px;
-  font-size: 0.85rem;
-}
-
-.badge-must {
-  background: var(--korilakkuma-red);
-  color: #FFF;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  padding: 1px 9px;
-  font-size: 0.78rem;
-}
-
-.badge-trans {
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  padding: 1px 9px;
-  font-size: 0.78rem;
-}
+.stop-header { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 6px; }
+.stop-time { background: var(--ink); color: #FFF; border-radius: 8px; padding: 2px 8px; font-size: 0.85rem; }
+.badge-must { background: var(--korilakkuma-red); color: #FFF; border: 2px solid var(--ink); border-radius: 999px; padding: 1px 9px; font-size: 0.78rem; }
+.badge-trans { border: 2px solid var(--ink); border-radius: 999px; padding: 1px 9px; font-size: 0.78rem; }
 .trans-car { background: var(--tag-car); }
 .trans-train { background: var(--tag-train); }
 .trans-walk { background: var(--tag-walk); }
+.stop-title { font-size: 1.06rem; margin: 4px 0; }
+.stop-desc { font-size: 0.92rem; margin: 4px 0 10px; color: #55504E; }
+.stop-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn-map, .btn-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  color: var(--ink); text-decoration: none; border: 2px solid var(--ink);
+  border-radius: 10px; padding: 5px 11px; font-size: 0.85rem; box-shadow: var(--shadow-sm);
+}
+.btn-map { background: var(--rilakkuma-yellow); }
+.btn-link { background: var(--korilakkuma-cream); }
 
-.stop-title {
-  font-size: 1.08rem;
-  margin: 4px 0;
-  color: var(--ink);
-}
+/* 編輯控制按鈕 */
+.edit-controls { display: none; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+body.edit-mode .edit-controls { display: flex; }
+.admin-only { display: none; }
+body.is-admin.edit-mode .admin-only { display: inline-block; }
 
-.stop-desc {
-  font-size: 0.92rem;
-  margin: 4px 0 10px;
-  color: #55504E;
-}
-
-.stop-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-
-.btn-map {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--rilakkuma-yellow);
-  color: var(--ink);
-  text-decoration: none;
-  border: 2px solid var(--ink);
-  border-radius: 10px;
-  padding: 5px 11px;
-  font-size: 0.85rem;
-  box-shadow: var(--shadow-sm);
-}
-.btn-map:active {
-  transform: translate(2px, 2px);
-  box-shadow: none;
-}
-
-.btn-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: var(--korilakkuma-cream);
-  color: var(--ink);
-  text-decoration: none;
-  border: 2px solid var(--ink);
-  border-radius: 10px;
-  padding: 5px 11px;
-  font-size: 0.85rem;
-}
-
-/* 編輯控制項 */
-.edit-controls {
-  display: none;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-left: auto;
-}
-body.edit-mode .edit-controls {
-  display: flex;
-}
 .btn-mini {
-  background: #EEE;
-  border: 2px solid var(--ink);
-  border-radius: 8px;
-  padding: 3px 7px;
-  font-family: inherit;
-  font-size: 0.78rem;
-  cursor: pointer;
+  background: #F4F1EA; border: 2px solid var(--ink); border-radius: 8px;
+  padding: 3px 7px; font-family: inherit; font-size: 0.78rem; cursor: pointer;
 }
-.btn-mini.move {
-  background: var(--korilakkuma-cream);
-  padding: 3px 6px;
-}
-.btn-mini.del {
-  background: var(--korilakkuma-pink);
-}
-.btn-mini:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
+.btn-mini:disabled { opacity: 0.35; cursor: not-allowed; }
+.btn-mini.del { background: var(--korilakkuma-pink); }
 
-.add-stop-bar {
-  display: none;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background: #FFF2F4;
-  border: 3px dashed var(--ink);
-  border-radius: var(--radius-md);
-  padding: 12px 16px;
-  margin-top: 12px;
-  gap: 10px;
+.edit-bar {
+  display: none; justify-content: flex-start; align-items: center; flex-wrap: wrap;
+  background: #FFF2F4; border: 3px dashed var(--ink); border-radius: var(--radius-md);
+  padding: 10px 14px; margin-top: 12px; gap: 8px;
 }
-body.edit-mode .add-stop-bar {
-  display: flex;
-}
-
+body.edit-mode .edit-bar { display: flex; }
 .btn-action {
-  background: var(--rilakkuma-yellow);
-  border: 2px solid var(--ink);
-  border-radius: 12px;
-  padding: 8px 14px;
-  font-family: inherit;
-  font-size: 0.9rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  background: var(--rilakkuma-yellow); border: 2px solid var(--ink); border-radius: 12px;
+  padding: 7px 13px; font-family: inherit; font-size: 0.88rem; cursor: pointer; box-shadow: var(--shadow-sm);
 }
-.btn-action.reset {
-  background: var(--paper);
-}
+.btn-action.reset { background: var(--paper); }
+.btn-action.pink { background: var(--korilakkuma-pink); }
 
-/* 住宿卡片 */
-.hotel-item {
-  border-bottom: 2px dashed var(--ink);
-  padding-bottom: 14px;
-  margin-bottom: 14px;
+/* 注意事項 & 清單 */
+.note-item {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;
+  background: var(--korilakkuma-cream); border: 2px solid var(--ink);
+  border-radius: var(--radius-sm); padding: 10px 12px; margin-bottom: 10px; font-size: 0.93rem;
 }
-.hotel-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 0;
+.pack-group { margin-bottom: 16px; }
+.pack-group-head {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--korilakkuma-cream); border: 2px solid var(--ink);
+  border-radius: 10px; padding: 6px 12px; margin: 0 0 8px;
 }
-.price-tag {
-  display: inline-block;
-  background: var(--korilakkuma-pink);
-  border: 2px solid var(--ink);
-  border-radius: 8px;
-  padding: 2px 10px;
-  font-size: 0.9rem;
-  margin: 4px 0;
-}
-
-/* 行李清單與待確認清單 */
-.pack-group {
-  margin-bottom: 18px;
-}
-.pack-group-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--korilakkuma-cream);
-  border: 2px solid var(--ink);
-  border-radius: 10px;
-  padding: 6px 12px;
-  margin: 0 0 8px;
-  gap: 8px;
-}
-.pack-group-header h3 {
-  font-size: 1.02rem;
-  margin: 0;
-}
-.pack-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+.pack-list { list-style: none; padding: 0; margin: 0; }
 .pack-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 7px 4px;
-  border-bottom: 1px dashed #CCC;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 7px 4px; border-bottom: 1px dashed #CCC;
 }
-.pack-list label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 0.94rem;
-  flex: 1;
-}
+.pack-list label { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.94rem; flex: 1; }
 .pack-list input[type="checkbox"] {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2.5px solid var(--ink);
-  border-radius: 6px;
-  background: var(--paper);
-  display: grid;
-  place-content: center;
-  flex-shrink: 0;
-  cursor: pointer;
+  appearance: none; width: 20px; height: 20px; border: 2.5px solid var(--ink);
+  border-radius: 6px; background: var(--paper); display: grid; place-content: center; flex-shrink: 0; cursor: pointer;
 }
-.pack-list input[type="checkbox"]:checked {
-  background: var(--rilakkuma-yellow);
-}
-.pack-list input[type="checkbox"]:checked::before {
-  content: "✔";
-  font-size: 13px;
-  color: var(--ink);
-}
-.pack-list label:has(input:checked) span {
-  text-decoration: line-through;
-  color: #888;
-}
+.pack-list input[type="checkbox"]:checked { background: var(--rilakkuma-yellow); }
+.pack-list input[type="checkbox"]:checked::before { content: "✔"; font-size: 13px; color: var(--ink); }
+.pack-list label:has(input:checked) span { text-decoration: line-through; color: #888; }
 
-/* 旅遊注意事項卡片 */
-.notice-item {
-  background: var(--korilakkuma-cream);
-  border: 2.5px solid var(--ink);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-  margin-bottom: 12px;
-  box-shadow: var(--shadow-sm);
-}
-.notice-item.warn {
-  background: #FFF2F4;
-}
-.notice-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-.notice-title {
-  font-size: 1rem;
-  margin: 0;
-  color: var(--ink);
-}
-.notice-desc {
-  font-size: 0.9rem;
-  margin: 0;
-  color: #55504E;
-}
+/* 住宿 */
+.hotel-item { border-bottom: 2px dashed var(--ink); padding-bottom: 14px; margin-bottom: 14px; }
+.hotel-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+.price-tag { display: inline-block; background: var(--korilakkuma-pink); border: 2px solid var(--ink); border-radius: 8px; padding: 2px 10px; font-size: 0.88rem; margin: 4px 0; }
 
-/* Modal 編輯視窗與自訂提示框 */
+/* Modal */
 .modal-backdrop {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(62, 58, 57, 0.55);
-  z-index: 200;
-  padding: 16px;
-  align-items: center;
-  justify-content: center;
+  display: none; position: fixed; inset: 0; background: rgba(62, 58, 57, 0.55);
+  z-index: 200; padding: 16px; align-items: center; justify-content: center;
 }
-.modal-backdrop.open {
-  display: flex;
-}
+.modal-backdrop.open { display: flex; }
 .modal-box {
-  background: var(--bg);
-  border: 3px solid var(--ink);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  width: 100%;
-  max-width: 460px;
-  box-shadow: 6px 6px 0 var(--ink);
-  max-height: 90vh;
-  overflow-y: auto;
+  background: var(--bg); border: 3px solid var(--ink); border-radius: var(--radius-lg);
+  padding: 20px; width: 100%; max-width: 480px; box-shadow: 6px 6px 0 var(--ink);
+  max-height: 90vh; overflow-y: auto;
 }
-.form-group {
-  margin-bottom: 12px;
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; font-size: 0.9rem; margin-bottom: 4px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 8px 10px; border: 2.5px solid var(--ink);
+  border-radius: 10px; font-family: inherit; font-size: 0.95rem; background: var(--paper);
 }
-.form-group label {
-  display: block;
-  font-size: 0.9rem;
-  margin-bottom: 4px;
+.modal-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+.help-box {
+  background: var(--korilakkuma-cream); border: 2px dashed var(--ink);
+  border-radius: 12px; padding: 10px 12px; font-size: 0.84rem; margin-bottom: 12px;
 }
-.form-group input[type="text"], .form-group select, .form-group textarea {
-  width: 100%;
-  padding: 8px 10px;
-  border: 2.5px solid var(--ink);
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  background: var(--paper);
-}
-.modal-footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-top: 16px;
-}
+.hidden { display: none !important; }
 </style>
 </head>
 <body>
 
-<!-- 頂端固定選單 -->
-<nav class="top-nav" aria-label="主導覽選單">
+<nav class="top-nav">
   <div class="nav-inner">
     <div class="nav-links">
       <a href="#sec-flights">✈️ 航班</a>
       <a href="#sec-itinerary">🗓️ 行程</a>
+      <a href="#sec-notes">⚠️ 注意</a>
       <a href="#sec-hotels">🏨 住宿</a>
-      <a href="#sec-notices">⚠️ 注意</a>
-      <a href="#sec-todo">📋 待確認</a>
+      <a href="#sec-todo">📋 待辦</a>
       <a href="#sec-packing">🎒 行李</a>
     </div>
-    <button type="button" class="edit-toggle-btn" id="toggleEditBtn">✏️ 編輯模式</button>
+    <div class="nav-btns">
+      <button type="button" class="btn-top" id="btnOpenDbModal">⚙️ 資料庫</button>
+      <button type="button" class="btn-top edit-btn hidden" id="toggleEditBtn">✏️ 編輯</button>
+    </div>
   </div>
 </nav>
 
-<main>
-  <!-- 首頁插圖 + 標題 -->
+<div class="control-bar">
+  <div class="trip-switcher-box hidden" id="tripSwitcherBox">
+    <span style="font-weight:bold;">📖 選擇手冊：</span>
+    <select id="tripSelect" class="trip-select" aria-label="選擇旅遊手冊"></select>
+    <div class="edit-controls" style="margin-left:0;">
+      <button type="button" class="btn-mini admin-only" id="btnNewTrip">➕ 新旅程</button>
+      <button type="button" class="btn-mini" id="btnEditTripMeta">✏️ 改標題/密碼</button>
+      <button type="button" class="btn-mini del admin-only" id="btnDeleteTrip">🗑️ 刪除此手冊</button>
+    </div>
+  </div>
+  <div class="sync-pill">
+    <span id="syncStatus">📌 尚未連線資料庫，請點擊右上角「⚙️ 資料庫」</span>
+    <button type="button" class="btn-sync-refresh" id="btnManualSync">🔄 重新讀取</button>
+  </div>
+</div>
+
+<!-- 尚未連線或無資料時的引導畫面 -->
+<main id="emptyView">
+  <section class="card empty-state">
+    <div class="svg-float" style="max-width: 180px; margin: 0 auto 12px;">
+      <svg viewBox="0 0 180 120" width="100%" height="auto">
+        <circle cx="55" cy="30" r="14" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/>
+        <circle cx="125" cy="30" r="14" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/>
+        <ellipse cx="90" cy="60" rx="44" ry="36" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/>
+        <ellipse cx="90" cy="66" rx="18" ry="14" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+        <circle cx="72" cy="52" r="4" fill="#3E3A39"/>
+        <circle cx="108" cy="52" r="4" fill="#3E3A39"/>
+        <ellipse cx="90" cy="61" rx="4.5" ry="3.2" fill="#3E3A39"/>
+        <path d="M90,64 L90,71 M83,73 L90,69 L97,73" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h2 style="margin: 0 0 8px;">🐻 歡迎使用旅遊手冊雲端資料庫</h2>
+    <p id="emptyMsg" style="margin: 0 0 18px; color: #55504E;">
+      目前尚未連線到 Google Sheet 資料庫，或尚未輸入存取密碼。<br>
+      請點擊下方按鈕設定資料庫網址與通行密碼！
+    </p>
+    <button type="button" class="btn-action" onclick="openDbModal()" style="font-size: 1rem; padding: 10px 20px;">
+      ⚙️ 設定 Google Sheet 網址與密碼
+    </button>
+  </section>
+</main>
+
+<!-- 旅遊手冊主內容（連線並取得授權資料後才顯示） -->
+<main id="tripView" class="hidden">
   <section class="card hero-card">
-    <div class="hero-badge">KANSAI FAMILY TRIP · 2027</div>
-    <!-- SVG 插圖：拉拉熊與小白熊開自駕車遊關西 -->
-    <div class="svg-float" style="max-width: 300px; margin: 4px auto 8px;">
-      <svg viewBox="0 0 320 155" width="100%" height="auto" aria-label="拉拉熊與小白熊關西自駕繪本插圖">
-        <!-- 背景富士山 -->
+    <div class="hero-badge" id="heroBadge">FAMILY TRIP · TRAVEL LOG</div>
+    <div class="svg-float" style="max-width: 280px; margin: 4px auto 8px;">
+      <svg viewBox="0 0 320 155" width="100%" height="auto">
         <path d="M25,115 Q45,65 80,65 Q115,65 135,115 Z" fill="#DFBA94" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
         <path d="M62,82 L80,65 L98,82 L88,87 L80,80 L72,87 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
-        <!-- 紅色鳥居 -->
         <g transform="translate(230, 58)">
           <rect x="12" y="14" width="7" height="44" fill="#E85A60" stroke="#3E3A39" stroke-width="3"/>
           <rect x="45" y="14" width="7" height="44" fill="#E85A60" stroke="#3E3A39" stroke-width="3"/>
           <path d="M2,10 Q32,16 62,10 L65,17 Q32,22 -1,17 Z" fill="#E85A60" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
           <rect x="7" y="25" width="50" height="6" fill="#E85A60" stroke="#3E3A39" stroke-width="3"/>
         </g>
-        <!-- 地面線 -->
         <line x1="12" y1="138" x2="308" y2="138" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-        <!-- 拉拉熊 (駕駛) -->
         <g transform="translate(95, 52)">
           <circle cx="12" cy="12" r="10" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/>
           <circle cx="12" cy="12" r="5" fill="#F7D358"/>
@@ -698,7 +370,6 @@ body.edit-mode .add-stop-bar {
           <ellipse cx="32" cy="31" rx="3" ry="2.2" fill="#3E3A39"/>
           <path d="M32,33 L32,37 M28,38 L32,36 L36,38" fill="none" stroke="#3E3A39" stroke-width="2.3" stroke-linecap="round"/>
         </g>
-        <!-- 小白熊 (副駕) -->
         <g transform="translate(162, 58)">
           <circle cx="10" cy="10" r="8.5" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3"/>
           <circle cx="10" cy="10" r="4" fill="#F5B2B8"/>
@@ -712,443 +383,498 @@ body.edit-mode .add-stop-bar {
           <ellipse cx="27" cy="27" rx="2.5" ry="2" fill="#3E3A39"/>
           <path d="M24,31 Q27,34 30,31" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round"/>
         </g>
-        <!-- 黃色自駕車身 -->
         <path d="M72,96 L236,96 Q252,96 254,114 L254,126 Q254,132 246,132 L68,132 Q60,132 60,124 L60,110 Q60,96 72,96 Z" fill="#F7D358" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
         <rect x="64" y="109" width="186" height="8" fill="#E85A60" stroke="#3E3A39" stroke-width="2.5"/>
-        <!-- 車輪 -->
-        <circle cx="102" cy="132" r="13" fill="#3E3A39"/>
-        <circle cx="102" cy="132" r="6" fill="#FFFFFF"/>
-        <circle cx="212" cy="132" r="13" fill="#3E3A39"/>
-        <circle cx="212" cy="132" r="6" fill="#FFFFFF"/>
+        <circle cx="102" cy="132" r="13" fill="#3E3A39"/><circle cx="102" cy="132" r="6" fill="#FFFFFF"/>
+        <circle cx="212" cy="132" r="13" fill="#3E3A39"/><circle cx="212" cy="132" r="6" fill="#FFFFFF"/>
       </svg>
     </div>
-
-    <h1 class="hero-title">關西親子自駕 6 天 5 夜</h1>
-    <p class="hero-sub">大阪 ・ 天橋立 ・ 伊根舟屋 ・ 京都嵐山 ・ 環球影城</p>
-    <div class="hero-pills">
-      <span class="pill">📅 2027/02/05（五）– 02/10（三）</span>
-      <span class="pill">👨‍👩‍👧‍👦 5 大 2 小</span>
-      <span class="pill">🚗 2/6–2/8 自駕</span>
-    </div>
+    <h1 class="hero-title" id="heroTitle"></h1>
+    <p style="margin:0 0 12px;" id="heroSub"></p>
+    <div class="hero-pills" id="heroPills"></div>
   </section>
 
-  <!-- 航班卡片 -->
-  <h2 class="sec-title" id="sec-flights">✈️ 國泰航空航班資訊</h2>
+  <!-- 航班 -->
+  <h2 class="sec-title" id="sec-flights">✈️ 航班與行李資訊</h2>
   <section class="card">
-    <div class="flight-grid">
-      <div class="flight-box">
-        <div style="display:flex;justify-content:space-between;align-items:center;">
-          <strong>去程｜2/5（五）</strong>
-          <span class="pill" style="background:var(--rilakkuma-yellow);">CX564</span>
-        </div>
-        <div class="flight-route">
-          <div><strong>11:15</strong><div style="font-size:0.8rem;">桃園 TPE T1</div></div>
-          <div>🛫 ➔ 🛬</div>
-          <div style="text-align:right;"><strong>14:45</strong><div style="font-size:0.8rem;">關西 KIX T1</div></div>
-        </div>
-        <div style="font-size:0.85rem;">⏱️ 飛行約 2 小時 30 分</div>
-      </div>
-
-      <div class="flight-box return">
-        <div style="display:flex;justify-content:space-between;align-items:center;">
-          <strong>回程｜2/10（三）</strong>
-          <span class="pill" style="background:var(--korilakkuma-pink);">CX565</span>
-        </div>
-        <div class="flight-route">
-          <div><strong>16:15</strong><div style="font-size:0.8rem;">關西 KIX T1</div></div>
-          <div>🛫 ➔ 🛬</div>
-          <div style="text-align:right;"><strong>18:30</strong><div style="font-size:0.8rem;">桃園 TPE T1</div></div>
-        </div>
-        <div style="font-size:0.85rem;">⏱️ 建議 12:00 搭車、13:00 抵機場</div>
-      </div>
-    </div>
-    <div class="baggage-note">
-      🧳 <strong>行李額度：</strong>每人手提 1 件（限 7 kg，56×36×23 cm）＋ 託運 1 件（限 23 kg）。行動電源、平板、護照務必放隨身行李！
+    <div class="flight-grid" id="flightsGrid"></div>
+    <div class="baggage-note" id="baggageNote"></div>
+    <div class="edit-bar">
+      <button type="button" class="btn-action" id="btnAddFlight">➕ 新增航班</button>
+      <button type="button" class="btn-action reset" id="btnEditBaggage">✏️ 編輯行李規定備註</button>
     </div>
   </section>
 
   <!-- 每日行程 -->
   <h2 class="sec-title" id="sec-itinerary">🗓️ 每日行程與路線導航</h2>
   <section class="card">
-    <div class="day-tabs" id="dayTabs" role="tablist"></div>
+    <div class="day-tabs" id="dayTabs"></div>
     <div id="dayContent" class="day-content"></div>
-    <div class="add-stop-bar">
+    <div class="edit-bar">
       <button type="button" class="btn-action" id="btnAddStop">➕ 新增當日行程</button>
-      <button type="button" class="btn-action reset" id="btnResetData">🔄 還原預設行程</button>
+      <button type="button" class="btn-action reset" id="btnEditDayInfo">✏️ 修改當日標題</button>
+      <button type="button" class="btn-action reset" id="btnAddDay">📅 新增一天</button>
+      <button type="button" class="btn-action pink" id="btnDelDay">🗑️ 刪除此天</button>
     </div>
   </section>
 
-  <!-- 住宿資訊 -->
-  <h2 class="sec-title" id="sec-hotels">🏨 住宿與行李寄放</h2>
+  <!-- 注意事項 -->
+  <h2 class="sec-title" id="sec-notes">⚠️ 旅遊重要注意事項</h2>
   <section class="card">
-    <div class="hotel-item">
-      <strong>1. 大阪｜ESLEAD HOTEL Namba Daikokucho</strong>
-      <div><span class="price-tag">2/5–2/6 (1晚) ＋ 2/8–2/10 (2晚)｜合計 NT$11,077（約 NT$2,215/人）</span></div>
-      <p style="font-size:0.9rem;margin:6px 0;">5 大 2 小同房（3 張雙人床、附簡易廚房）。2/6 退房自駕北上時，僅帶 1–2 件行李，其餘先確認寄放飯店櫃檯。</p>
-      <div class="stop-actions">
-        <a class="btn-map" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=ESLEAD+HOTEL+Namba+Daikokucho">🗺️ Google 路線</a>
-        <a class="btn-link" target="_blank" rel="noopener" href="https://www.booking.com/Share-TL8xGpZ">🔗 訂房資訊</a>
-      </div>
-    </div>
-
-    <div class="hotel-item">
-      <strong>2. 京都北部｜宮津市 Airbnb 包棟民宿</strong>
-      <div><span class="price-tag">2/6（1晚）｜約 NT$17,000（約 NT$3,400/人）</span></div>
-      <p style="font-size:0.9rem;margin:6px 0;">地址：〒626-0225 京都府宮津市日置小字芒草 3956-7（位於天橋立與伊根之間，附近有 24H FamilyMart 宮津日置店）。</p>
-      <div class="stop-actions">
-        <a class="btn-map" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=3956-7+Hioki,+Miyazu,+Kyoto+626-0225">🗺️ 民宿路線</a>
-        <a class="btn-map" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=FamilyMart+Miyazu+Hioki">🏪 全家超商路線</a>
-      </div>
-    </div>
-
-    <div class="hotel-item">
-      <strong>3. 京都市區｜Kevin's Place Annex（南區東九條）</strong>
-      <div><span class="price-tag">2/7–2/8（1晚）｜NT$6,407（約 NT$1,281/人）</span></div>
-      <p style="font-size:0.9rem;margin:6px 0;">地址：34-4 Higashikujō Higashiiwamotochō, Minami Ward, Kyoto。停車位需提前預約（¥800/晚）。</p>
-      <div class="stop-actions">
-        <a class="btn-map" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=34-4+Higashikujo+Higashiiwamotocho,+Minami+Ward,+Kyoto+601-8006">🗺️ 京都住宿路線</a>
-      </div>
+    <div id="notesList"></div>
+    <div class="edit-bar">
+      <button type="button" class="btn-action" id="btnAddNote">➕ 新增注意事項</button>
     </div>
   </section>
 
-  <!-- 旅遊注意事項 -->
-  <h2 class="sec-title" id="sec-notices">⚠️ 旅遊注意事項</h2>
+  <!-- 住宿 -->
+  <h2 class="sec-title" id="sec-hotels">🏨 住宿與交通資訊</h2>
   <section class="card">
-    <div id="noticesContainer"></div>
-    <div class="add-stop-bar">
-      <button type="button" class="btn-action" id="btnAddNotice">➕ 新增注意事項</button>
-      <button type="button" class="btn-action reset" id="btnResetNotices">🔄 還原預設提醒</button>
+    <div id="hotelsList"></div>
+    <div class="edit-bar">
+      <button type="button" class="btn-action" id="btnAddHotel">➕ 新增住宿資訊</button>
     </div>
   </section>
 
-  <!-- 出發前待確認事項 -->
+  <!-- 出發前待確認 -->
   <h2 class="sec-title" id="sec-todo">📋 出發前待確認事項</h2>
   <section class="card">
     <div id="todoContainer"></div>
-    <div class="add-stop-bar">
-      <button type="button" class="btn-action" id="btnAddTodo">➕ 新增待確認事項</button>
-      <button type="button" class="btn-action reset" id="btnResetTodo">🔄 還原預設事項</button>
+    <div class="edit-bar">
+      <button type="button" class="btn-action" id="btnAddTodo">➕ 新增待辦項目</button>
     </div>
   </section>
 
   <!-- 行李清單 -->
-  <h2 class="sec-title" id="sec-packing">🎒 親子行李清單（自動儲存勾選）</h2>
+  <h2 class="sec-title" id="sec-packing">🎒 親子行李清單</h2>
   <section class="card">
     <div id="packingContainer"></div>
-    <div class="add-stop-bar">
-      <span style="font-size:0.86rem;color:var(--rilakkuma-brown);">💡 點擊各分類右側「➕ 新增」可增加物品</span>
-      <button type="button" class="btn-action reset" id="btnResetPacking">🔄 還原預設行李</button>
+    <div class="edit-bar">
+      <button type="button" class="btn-action" id="btnAddPackGroup">➕ 新增行李分類</button>
     </div>
   </section>
 </main>
 
-<!-- 編輯行程彈窗 -->
-<div class="modal-backdrop" id="editModal">
+<!-- 1. Google Sheet 資料庫與密碼設定視窗 -->
+<div class="modal-backdrop" id="dbModal">
   <div class="modal-box">
-    <h3 id="modalTitle" style="margin-top:0;">✏️ 編輯行程項目</h3>
-    <div id="modalWarnMsg" style="display:none;background:#FFF2F4;border:2px solid #E85A60;border-radius:10px;padding:8px 12px;margin-bottom:10px;font-size:0.88rem;color:#E85A60;">⚠️ 請輸入行程標題！</div>
-    <div class="form-group">
-      <label for="fTime">時間</label>
-      <input type="text" id="fTime" placeholder="例如：09:00–12:00">
+    <h3 style="margin-top:0;">⚙️ 連線 Google Sheet 資料庫</h3>
+    <div class="help-box">
+      <strong>🔐 權限說明：</strong><br>
+      • <strong>旅伴</strong>：輸入主辦人給的「資料庫網址」與「該趟旅遊密碼」，即可讀取並共同編輯該本手冊。<br>
+      • <strong>版主（管理員）</strong>：輸入「管理員總密碼」，可解鎖管理試算表內所有旅遊手冊與設定各自密碼。
     </div>
     <div class="form-group">
-      <label for="fTitle">行程標題</label>
-      <input type="text" id="fTitle" placeholder="例如：天橋立 View Land">
+      <label for="inputGasUrl">Google Apps Script 網址（/exec）</label>
+      <input type="url" id="inputGasUrl" placeholder="https://script.google.com/macros/s/xxxxx/exec">
     </div>
     <div class="form-group">
-      <label for="fTrans">交通方式</label>
-      <select id="fTrans">
-        <option value="car">🚗 自駕開車</option>
-        <option value="train">🚃 大眾運輸 / 搭船 / 飛機</option>
-        <option value="walk">🚶 步行 / 逛街 / 住宿</option>
-      </select>
+      <label for="inputTripPwd">通行密碼（旅遊專屬密碼 或 管理員總密碼）</label>
+      <input type="password" id="inputTripPwd" placeholder="請輸入密碼（若為公開手冊可留空）">
     </div>
-    <div class="form-group">
-      <label><input type="checkbox" id="fMust"> ⭐ 標記為「必去」重點行程</label>
-    </div>
-    <div class="form-group">
-      <label for="fDesc">備註說明</label>
-      <textarea id="fDesc" rows="3" placeholder="輸入注意事項或提醒..."></textarea>
-    </div>
-    <div class="form-group">
-      <label for="fMap">Google 地圖導航地點（留空則不顯示按鈕）</label>
-      <input type="text" id="fMap" placeholder="例如：Rinku Premium Outlets">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+      <button type="button" class="btn-action reset" id="btnLogoutDb">登出並清除本機設定</button>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn-action reset" id="btnCancelModal">取消</button>
-      <button type="button" class="btn-action" id="btnSaveModal">💾 儲存</button>
+      <button type="button" class="btn-action reset" onclick="closeModal('dbModal')">取消</button>
+      <button type="button" class="btn-action" id="btnSaveDbConfig">🔑 連線並載入手冊</button>
     </div>
   </div>
 </div>
 
-<!-- 通用項目編輯彈窗（注意事項 / 待確認 / 行李） -->
-<div class="modal-backdrop" id="itemModal">
+<!-- 2. 通用表單彈窗 -->
+<div class="modal-backdrop" id="genericModal">
   <div class="modal-box">
-    <h3 id="itemModalTitle" style="margin-top:0;">✏️ 編輯項目</h3>
-    <div id="itemModalWarn" style="display:none;background:#FFF2F4;border:2px solid #E85A60;border-radius:10px;padding:8px 12px;margin-bottom:10px;font-size:0.88rem;color:#E85A60;">⚠️ 請輸入內容！</div>
-    <div class="form-group" id="itemLevelGroup" style="display:none;">
-      <label for="fItemLevel">重要程度</label>
-      <select id="fItemLevel">
-        <option value="warn">🚨 重要提醒（粉紅底）</option>
-        <option value="info">💡 一般叮嚀（奶油底）</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="fItemTitle" id="fItemTitleLabel">項目名稱</label>
-      <input type="text" id="fItemTitle" placeholder="請輸入內容...">
-    </div>
-    <div class="form-group" id="itemDescGroup" style="display:none;">
-      <label for="fItemDesc">詳細說明</label>
-      <textarea id="fItemDesc" rows="3" placeholder="請輸入詳細提醒說明..."></textarea>
-    </div>
+    <h3 id="gModalTitle" style="margin-top:0;">編輯</h3>
+    <div id="gModalBody"></div>
     <div class="modal-footer">
-      <button type="button" class="btn-action reset" id="btnCancelItemModal">取消</button>
-      <button type="button" class="btn-action" id="btnSaveItemModal">💾 儲存</button>
-    </div>
-  </div>
-</div>
-
-<!-- 自訂確認視窗（取代原生 confirm） -->
-<div class="modal-backdrop" id="confirmModal">
-  <div class="modal-box" style="max-width:360px;text-align:center;">
-    <h3 style="margin-top:0;">🐻 確認操作</h3>
-    <p id="confirmText" style="margin:12px 0 20px;font-size:0.95rem;"></p>
-    <div class="modal-footer" style="justify-content:center;">
-      <button type="button" class="btn-action reset" id="btnConfirmCancel">取消</button>
-      <button type="button" class="btn-action" style="background:var(--korilakkuma-pink);" id="btnConfirmOk">確定執行</button>
+      <button type="button" class="btn-action reset" onclick="closeModal('genericModal')">取消</button>
+      <button type="button" class="btn-action" id="gModalSaveBtn">💾 儲存</button>
     </div>
   </div>
 </div>
 
 <script>
-const DEFAULT_ITINERARY = [
-  {
-    day: "D1", date: "2/5 (五)", title: "抵達大阪・臨空城 Outlet",
-    sub: "大眾運輸（不租車）｜入住大阪",
-    svgType: "plane",
-    stops: [
-      { time: "11:15", title: "桃園機場起飛（CX564）", trans: "train", must: false, desc: "預先確認護照、登機文件與孩子隨身用品。", map: "Taoyuan International Airport Terminal 1" },
-      { time: "14:45", title: "抵達關西機場 KIX", trans: "train", must: false, desc: "15:00–16:00 入境、領行李，時間依現場狀況彈性調整。", map: "Kansai International Airport" },
-      { time: "16:00–20:00", title: "臨空城 Outlet 購物・晚餐", trans: "train", must: true, desc: "搭大眾交通前往 Rinku Premium Outlets 逛街吃晚餐；若不餓可回大阪市區再吃。", map: "Rinku Premium Outlets", link: "https://www.premiumoutlets.co.jp/cht/rinku/", linkText: "官網" },
-      { time: "20:00–21:00", title: "入住大阪飯店・確認寄放行李", trans: "train", must: false, desc: "前往 ESLEAD HOTEL Namba Daikokucho Check-in，確認 2/6 退房跨夜寄放行李事宜。", map: "ESLEAD HOTEL Namba Daikokucho" }
-    ]
-  },
-  {
-    day: "D2", date: "2/6 (六)", title: "天橋立 View Land・智恩寺・宮津住宿",
-    sub: "取車自駕｜注意冬季積雪路況",
-    svgType: "amanohashidate",
-    stops: [
-      { time: "07:00–08:00", title: "退房寄放行李・前往取車", trans: "car", must: false, desc: "只帶 1–2 件行李北上；取車時務必確認兒童安全座椅、ETC、保險與雪胎。", map: "Namba Station Osaka" },
-      { time: "08:00–12:30", title: "開車前往天橋立・享用午餐", trans: "car", must: false, desc: "車程預留約 3 小時（視冬季路況調整），抵達後先吃午餐。", map: "Amanohashidate" },
-      { time: "12:30–14:00", title: "天橋立 View Land（搭單軌電車）", trans: "train", must: true, desc: "搭單軌電車上展望台欣賞「飛龍觀」絕景。", map: "Amanohashidate View Land", link: "https://www.viewland.jp/cn/", linkText: "官網" },
-      { time: "14:00–16:00", title: "智恩寺參拜・周邊散步", trans: "walk", must: true, desc: "參拜文殊菩薩、抽可愛扇子籤、品嚐智慧餅與買伴手禮。", map: "Chionji Temple Amanohashidate" },
-      { time: "16:00–18:00", title: "採買晚餐・入住宮津 Airbnb", trans: "car", must: false, desc: "先買好晚餐與全家超商補給（早餐/零食），前往宮津市日置小字芒草 3956-7 Check-in。", map: "3956-7 Hioki, Miyazu, Kyoto 626-0225" }
-    ]
-  },
-  {
-    day: "D3", date: "2/7 (日)", title: "伊根舟屋遊覽船・錦市場・京都車站",
-    sub: "自駕移動｜京都住宿已訂",
-    svgType: "ine",
-    stops: [
-      { time: "07:00–08:00", title: "超商買早餐・出發前往伊根", trans: "car", must: false, desc: "先至 FamilyMart 宮津日置店買早餐與車上點心，前往伊根搭船處。", map: "FamilyMart Miyazu Hioki" },
-      { time: "08:00–10:30", title: "伊根灣遊覽船（餵海鷗）", trans: "train", must: true, desc: "欣賞海上舟屋群，依船方規定體驗餵海鷗（小心老鷹）。", map: "Ine Bay Sightseeing Boat" },
-      { time: "10:30–13:30", title: "開車前往京都錦市場", trans: "car", must: false, desc: "車程約 3 小時，冬季安全優先；先找好錦市場周邊停車場。", map: "Nishiki Market Kyoto" },
-      { time: "13:30–16:00", title: "錦市場美食・錦天滿宮參拜", trans: "walk", must: true, desc: "請在店家前或店內食用（勿邊走邊吃），順路逛東側盡頭的錦天滿宮。", map: "Nishiki Tenmangu Kyoto" },
-      { time: "16:00–17:00", title: "入住 Kevin's Place Annex ＆ 停車", trans: "car", must: false, desc: "地址：34-4 Higashikujō Higashiiwamotochō。確認已預約車位（¥800/晚）。", map: "34-4 Higashikujo Higashiiwamotocho, Minami Ward, Kyoto 601-8006" },
-      { time: "17:00–21:30", title: "京都車站晚餐・逛街採買", trans: "walk", must: false, desc: "逛 Yodobashi、Uniqlo、GU 並吃晚餐，視體力逛唐吉訶德或超市。", map: "Kyoto Station" }
-    ]
-  },
-  {
-    day: "D4", date: "2/8 (一)", title: "嵐山・拉拉熊茶房・映畫村・心齋橋",
-    sub: "自駕｜18:30 回大阪還車",
-    svgType: "arashiyama",
-    stops: [
-      { time: "08:00–09:00", title: "京都退房・開車前往嵐山", trans: "car", must: false, desc: "10:00 前退房行李上車，前往嵐山停車場。", map: "Arashiyama Parking" },
-      { time: "09:00–12:00", title: "竹林小徑 ➔ 渡月橋 ➔ Rilakkuma 商店", trans: "walk", must: true, desc: "散步拍照並逛嵐山拉拉熊茶房／商店（出發前確認開店時間）。", map: "Rilakkuma Sabo Arashiyama" },
-      { time: "12:00–13:00", title: "嵐山享用午餐", trans: "walk", must: false, desc: "建議準備主選與備選餐廳，避免排隊影響下午行程。", map: "Togetsukyo Bridge Arashiyama" },
-      { time: "13:30–16:00", title: "東映太秦映畫村", trans: "car", must: true, desc: "親子體驗江戶時代街景與設施（接近出發時再核對 2027 年 2 月營業時間）。", map: "Toei Kyoto Studio Park", link: "https://www.eigamura.com/hours-tickets/", linkText: "官網票價" },
-      { time: "16:00–19:00", title: "開回大阪・Check-in・加油還車", trans: "car", must: false, desc: "18:00 先回 ESLEAD HOTEL 放行李與領寄放行李，18:30 前完成加油還車。", map: "ESLEAD HOTEL Namba Daikokucho" },
-      { time: "19:00–21:30", title: "心齋橋、道頓堀晚餐逛街", trans: "walk", must: false, desc: "看固力果招牌、吃大阪美食，依孩子體力彈性回飯店休息。", map: "Dotonbori Osaka" }
-    ]
-  },
-  {
-    day: "D5", date: "2/9 (二)", title: "日本環球影城 USJ 暢玩整天",
-    sub: "大眾運輸｜親子重點日",
-    svgType: "usj",
-    stops: [
-      { time: "06:30–07:30", title: "出門前往環球影城", trans: "train", must: false, desc: "若 9:00 開園則 06:30 出門；若提早至 8:00 開園則全部提早 1 小時（05:30 出門）。", map: "Universal Studios Japan", link: "https://www.usj.co.jp/web/zh/tw", linkText: "USJ 官網" },
-      { time: "07:30–17:30", title: "USJ 環球影城全天體驗", trans: "walk", must: true, desc: "排隊時邊吃早餐；先攻最想玩的區域，適時安排室內設施與休息（2 歲與 4 歲幼兒避免連續久排）。", map: "Universal Studios Japan" },
-      { time: "17:30–21:30", title: "返回大阪市區晚餐・採買", trans: "train", must: false, desc: "回難波吃晚餐，視體力逛唐吉訶德、藥妝或超市。", map: "Namba Osaka" }
-    ]
-  },
-  {
-    day: "D6", date: "2/10 (三)", title: "難波八阪神社・關西機場返台",
-    sub: "大眾運輸｜預留充足機場緩衝",
-    svgType: "shrine",
-    stops: [
-      { time: "08:00–10:00", title: "整理行李退房・飯店附近早餐", trans: "walk", must: false, desc: "行李先寄放飯店櫃檯，就近享用特色早餐。", map: "ESLEAD HOTEL Namba Daikokucho" },
-      { time: "10:00–10:45", title: "難波八阪神社參拜拍照", trans: "walk", must: true, desc: "拍攝超震撼巨大獅子殿，停留時間輕鬆不趕。", map: "Namba Yasaka Shrine" },
-      { time: "10:45–13:00", title: "回飯店取行李・前往關西機場", trans: "train", must: false, desc: "11:30–12:00 搭車前往機場，目標 13:00 抵達 KIX。", map: "Kansai International Airport" },
-      { time: "16:15", title: "關西機場起飛（CX565）返台", trans: "train", must: false, desc: "報到託運、逛免稅店，18:30 平安抵達桃園機場！", map: "Taoyuan International Airport Terminal 1" }
-    ]
+// 網頁完全乾淨，無任何寫死的私密資料或網址
+let dbState = {
+  isAdmin: false,
+  activeTripId: "",
+  trips: []
+};
+let activeDayIdx = 0;
+
+const syncStatusEl = document.getElementById('syncStatus');
+const emptyView = document.getElementById('emptyView');
+const tripView = document.getElementById('tripView');
+const tripSwitcherBox = document.getElementById('tripSwitcherBox');
+const toggleEditBtn = document.getElementById('toggleEditBtn');
+const tripSelect = document.getElementById('tripSelect');
+
+function getConfig() {
+  return {
+    url: (localStorage.getItem('travel_gas_url') || '').trim(),
+    pwd: (localStorage.getItem('travel_gas_pwd') || '').trim()
+  };
+}
+
+function getCurrentTrip() {
+  if (!dbState.trips || dbState.trips.length === 0) return null;
+  let trip = dbState.trips.find(t => t.id === dbState.activeTripId);
+  if (!trip) {
+    trip = dbState.trips[0];
+    dbState.activeTripId = trip.id;
   }
-];
+  return trip;
+}
 
-const DEFAULT_NOTICES = [
-  { level: "warn", title: "❄️ 2 月北京都冬季路況與雪胎", desc: "2 月天橋立、伊根與宮津一帶可能有積雪、路面結冰或低溫。取車務必確認雪胎、保險與兒童安全座椅；出發前先查道路狀況，天候不佳時優先縮減景點，切勿勉強趕路。" },
-  { level: "warn", title: "🧳 大阪飯店跨夜行李寄放", desc: "2/6 退房自駕北上只帶 1–2 件行李，其餘寄放 ESLEAD HOTEL 至 2/8 回大阪取回；2/10 退房後也需寄放至 10:45。飯店櫃檯空間有限，務必事先取得明確書面確認，並備妥車站外付費寄放備案。" },
-  { level: "warn", title: "🚗 D4 嵐山・映畫村・還車時間緩衝", desc: "2/8 需從京都開往嵐山、太秦映畫村再回大阪市區還車（18:30 前），行程偏滿且同行有 2 歲及 4 歲幼兒。若前段玩得較久，請彈性縮短一處景點，確保準時加油還車。" },
-  { level: "info", title: "🍡 京都錦市場禮儀與停車", desc: "錦市場禁止邊走邊吃，請在購買店家前或店內食用完畢；2/7 伊根開往京都約 3 小時，建議先查好錦市場周邊停車場。" },
-  { level: "warn", title: "🎢 USJ 環球影城開園時間與幼兒體力", desc: "若 9:00 開園則 06:30 出門（07:30 抵達）；若提早至 8:00 開園則全部提早 1 小時（05:30 出門）。同行有 2 歲及 4 歲小朋友，避免連續久排，適時安排室內設施與休息。" },
-  { level: "info", title: "✈️ 回程日機場緩衝時間", desc: "2/10 回程班機 16:15 起飛，建議 11:30–12:00 搭車、13:00 抵達關西機場。若交通或天氣有變，優先縮短難波八阪神社停留時間。" }
-];
+// 從 Google Sheet 讀取（依據密碼權限過濾）
+async function loadFromCloud() {
+  const { url, pwd } = getConfig();
+  if (!url) {
+    syncStatusEl.textContent = '📌 尚未設定資料庫網址';
+    showEmptyState('目前尚未連線到 Google Sheet 資料庫。<br>請點擊下方按鈕輸入網址與密碼！');
+    return;
+  }
 
-const DEFAULT_TODO = [
-  { id: "todo_1", text: "確認租車公司、取還車點（2/6 早上取、2/8 18:30 還）、兒童安全座椅、ETC 與雪胎", checked: false },
-  { id: "todo_2", text: "再次取得大阪飯店書面確認：2/6–2/8 跨夜寄放行李，以及 2/10 退房寄放至 10:45", checked: false },
-  { id: "todo_3", text: "確認宮津 Airbnb 入住方式、車位，以及 FamilyMart 宮津日置店順路路線", checked: false },
-  { id: "todo_4", text: "確認京都住宿 Kevin's Place Annex 停車位預約成功（¥800/晚）及車型限制", checked: false },
-  { id: "todo_5", text: "查好 2/7 錦市場周邊停車場、2/8 嵐山停車場與 Rilakkuma 商店營業時間", checked: false },
-  { id: "todo_6", text: "接近出發時確認 2027 年 2 月天橋立 View Land、伊根遊覽船、太秦映畫村營業時間", checked: false },
-  { id: "todo_7", text: "出發前確認 USJ 實際開園時間（9:00 或 8:00）、門票與整理券規則", checked: false }
-];
+  syncStatusEl.textContent = '🔄 正在驗證權限並讀取手冊...';
+  try {
+    const fetchUrl = `${url}?pwd=${encodeURIComponent(pwd)}`;
+    const res = await fetch(fetchUrl);
+    const data = await res.json();
 
-const DEFAULT_PACKING = [
-  { group: "📁 必帶重要物品", items: [
-    { id: "pk_1", text: "4 本護照（2 大 2 小）➔ 隨身行李", checked: false },
-    { id: "pk_2", text: "2 張台灣駕照", checked: false },
-    { id: "pk_3", text: "2 份日文譯本", checked: false },
-    { id: "pk_4", text: "信用卡", checked: false },
-    { id: "pk_5", text: "日幣現金", checked: false },
-    { id: "pk_6", text: "手機 ➔ 隨身行李", checked: false }
-  ]},
-  { group: "👶 小孩隨身包", items: [
-    { id: "pk_7", text: "尿布（夜用／白天）", checked: false },
-    { id: "pk_8", text: "水壺 × 2", checked: false },
-    { id: "pk_9", text: "零食（飛機上吃）", checked: false },
-    { id: "pk_10", text: "替換衣物", checked: false },
-    { id: "pk_11", text: "平板 ➔ 隨身行李", checked: false },
-    { id: "pk_12", text: "濕紙巾", checked: false }
-  ]},
-  { group: "👕 衣物與防寒（洋蔥式穿搭）", items: [
-    { id: "pk_13", text: "2 大人衣物（衣服、褲子、內衣褲、襪子）", checked: false },
-    { id: "pk_14", text: "2 小孩衣物（衣服、褲子、內褲、襪子）", checked: false },
-    { id: "pk_15", text: "厚外套 × 4", checked: false },
-    { id: "pk_16", text: "毛帽 × 4", checked: false },
-    { id: "pk_17", text: "芮 kitty 耳罩", checked: false },
-    { id: "pk_18", text: "手套 × 4", checked: false },
-    { id: "pk_19", text: "暖暖包（大人、小孩）", checked: false },
-    { id: "pk_20", text: "口罩（大人、小孩）", checked: false }
-  ]},
-  { group: "🛁 盥洗與個人用品", items: [
-    { id: "pk_21", text: "眼鏡、隱形眼鏡", checked: false },
-    { id: "pk_22", text: "化妝包、洗面乳", checked: false },
-    { id: "pk_23", text: "牙刷、牙膏", checked: false }
-  ]},
-  { group: "🔌 充電 / 3C 用品", items: [
-    { id: "pk_24", text: "手機充電器 × 2、充電頭 × 2", checked: false },
-    { id: "pk_25", text: "USB-C / Lightning 充電線", checked: false },
-    { id: "pk_26", text: "行動電源 ➔ 隨身行李（不可託運）", checked: false },
-    { id: "pk_27", text: "Apple Watch 充電器", checked: false },
-    { id: "pk_28", text: "AirPods ➔ 隨身行李", checked: false }
-  ]},
-  { group: "🍼 奶瓶 / 奶粉", items: [
-    { id: "pk_29", text: "奶粉 × 5 天量", checked: false },
-    { id: "pk_30", text: "奶瓶 × 2", checked: false },
-    { id: "pk_31", text: "冷水壺、保溫瓶", checked: false }
-  ]},
-  { group: "💊 備用藥品", items: [
-    { id: "pk_32", text: "退燒藥水、感冒藥水", checked: false },
-    { id: "pk_33", text: "腸胃藥、OK 繃", checked: false },
-    { id: "pk_34", text: "克流感、塞劑、酸痛貼布", checked: false }
-  ]},
-  { group: "🎒 其他雜項", items: [
-    { id: "pk_35", text: "購物袋（去超商／超市用）", checked: false },
-    { id: "pk_36", text: "備用行李袋（回國打包用）", checked: false },
-    { id: "pk_37", text: "食物剪刀 ➔ 託運（不可隨身）", checked: false },
-    { id: "pk_38", text: "指甲剪 ➔ 託運（不可隨身）", checked: false },
-    { id: "pk_39", text: "兒童餐具", checked: false },
-    { id: "pk_40", text: "推車 × 1 ➔ 機邊託運", checked: false }
-  ]}
-];
+    dbState.isAdmin = !!data.isAdmin;
+    dbState.trips = Array.isArray(data.trips) ? data.trips : [];
+    document.body.classList.toggle('is-admin', dbState.isAdmin);
+
+    if (dbState.trips.length === 0) {
+      syncStatusEl.textContent = dbState.isAdmin ? '👑 管理員已連線（試算表目前無手冊）' : '🔒 密碼錯誤或目前無可檢視的公開手冊';
+      if (dbState.isAdmin) {
+        tripSwitcherBox.classList.remove('hidden');
+        toggleEditBtn.classList.remove('hidden');
+        showEmptyState('👑 您已以管理員身分連線！<br>請開啟右上角「✏️ 編輯」並點擊「➕ 新旅程」建立第一本手冊。');
+      } else {
+        showEmptyState('🔒 找不到符合此密碼的旅遊手冊。<br>請確認您輸入的「旅遊專屬密碼」是否正確！');
+      }
+      return;
+    }
+
+    const roleText = dbState.isAdmin ? '👑 管理員模式' : '☁️ 旅伴共用模式';
+    syncStatusEl.textContent = `${roleText}（已載入 ${dbState.trips.length} 本手冊）`;
+    emptyView.classList.add('hidden');
+    tripView.classList.remove('hidden');
+    tripSwitcherBox.classList.remove('hidden');
+    toggleEditBtn.classList.remove('hidden');
+    renderAll();
+  } catch (err) {
+    syncStatusEl.textContent = '❌ 連線失敗，請確認網址或網路狀態';
+    showEmptyState('❌ 無法連線至 Google Sheet，請檢查 Apps Script 網址是否正確且已設為「所有人可存取」。');
+  }
+}
+
+function showEmptyState(htmlMsg) {
+  tripView.classList.add('hidden');
+  emptyView.classList.remove('hidden');
+  document.getElementById('emptyMsg').innerHTML = htmlMsg;
+}
+
+// 儲存單本手冊至 Google Sheet（局部更新，不影響其他手冊）
+async function saveCurrentTripToCloud(action = 'save_trip', targetTrip = null) {
+  const { url, pwd } = getConfig();
+  const trip = targetTrip || getCurrentTrip();
+  if (!url || !trip) return;
+
+  syncStatusEl.textContent = '⏳ 正在同步儲存至 Google Sheet...';
+  try {
+    await fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({
+        action: action,
+        pwd: pwd,
+        trip: trip
+      })
+    });
+    const roleText = dbState.isAdmin ? '👑 管理員模式' : '☁️ 旅伴共用模式';
+    syncStatusEl.textContent = `${roleText}・已同步儲存！`;
+  } catch (err) {
+    syncStatusEl.textContent = '❌ 雲端儲存失敗，請檢查網路';
+  }
+}
+
+document.getElementById('btnManualSync').addEventListener('click', loadFromCloud);
+
+// 資料庫設定視窗
+window.openDbModal = function() {
+  const { url, pwd } = getConfig();
+  document.getElementById('inputGasUrl').value = url;
+  document.getElementById('inputTripPwd').value = pwd;
+  document.getElementById('dbModal').classList.add('open');
+};
+document.getElementById('btnOpenDbModal').addEventListener('click', openDbModal);
+
+document.getElementById('btnSaveDbConfig').addEventListener('click', () => {
+  const url = document.getElementById('inputGasUrl').value.trim();
+  const pwd = document.getElementById('inputTripPwd').value.trim();
+  if (url && !url.startsWith('https://script.google.com/')) {
+    alert('請確認貼上的是 Google Apps Script 網頁應用程式網址（https://script.google.com/...）');
+    return;
+  }
+  localStorage.setItem('travel_gas_url', url);
+  localStorage.setItem('travel_gas_pwd', pwd);
+  closeModal('dbModal');
+  loadFromCloud();
+});
+
+document.getElementById('btnLogoutDb').addEventListener('click', () => {
+  localStorage.removeItem('travel_gas_url');
+  localStorage.removeItem('travel_gas_pwd');
+  dbState = { isAdmin: false, activeTripId: "", trips: [] };
+  document.body.classList.remove('is-admin', 'edit-mode');
+  tripSwitcherBox.classList.add('hidden');
+  toggleEditBtn.classList.add('hidden');
+  closeModal('dbModal');
+  loadFromCloud();
+});
+
+window.closeModal = function(id) { document.getElementById(id).classList.remove('open'); };
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+}
+
+// 旅程切換
+tripSelect.addEventListener('change', (e) => {
+  dbState.activeTripId = e.target.value;
+  activeDayIdx = 0;
+  renderAll();
+});
+
+// 建立新旅程（僅管理員可見）
+document.getElementById('btnNewTrip').addEventListener('click', () => {
+  openGenericModal('➕ 建立新旅遊手冊', `
+    <div class="form-group"><label>旅遊標題</label><input type="text" id="ntTitle" placeholder="例如：2027 東京迪士尼 5 天 4 夜"></div>
+    <div class="form-group"><label>分享密碼（設定後只有輸入此密碼的旅伴看得到）</label><input type="text" id="ntPwd" placeholder="例如：tokyo2027（留空則為公開）"></div>
+    <div class="form-group"><label>副標題 / 景點摘要</label><input type="text" id="ntSub" placeholder="例如：淺草 ・ 晴空塔 ・ 迪士尼海洋"></div>
+    <div class="form-group"><label>標籤徽章（英文裝飾）</label><input type="text" id="ntBadge" value="FAMILY TRIP · JAPAN"></div>
+    <div class="form-group"><label>日期區間</label><input type="text" id="ntDate" placeholder="例如：📅 2027/07/10 – 07/14"></div>
+    <div class="form-group"><label>同行成員</label><input type="text" id="ntMembers" placeholder="例如：👨‍👩‍👧‍👦 2 大 2 小"></div>
+    <div class="form-group"><label>交通方式</label><input type="text" id="ntTrans" placeholder="例如：🚃 全程大眾運輸"></div>
+    <div class="form-group"><label><input type="checkbox" id="ntCopyPack" checked> 複製目前手冊的「行李清單」作為範本</label></div>
+  `, () => {
+    const title = document.getElementById('ntTitle').value.trim();
+    if (!title) { alert('請輸入旅遊標題！'); return false; }
+    const curTrip = getCurrentTrip();
+    const copyPack = document.getElementById('ntCopyPack').checked && curTrip;
+    const newPacking = copyPack
+      ? JSON.parse(JSON.stringify(curTrip.packing)).map(g => ({ ...g, items: g.items.map(i => ({ text: i.text, done: false })) }))
+      : [{ group: "📁 必帶重要物品", items: [{ text: "護照", done: false }, { text: "信用卡 / 外幣", done: false }] }];
+
+    const newTrip = {
+      id: "trip_" + Date.now(),
+      _password: document.getElementById('ntPwd').value.trim(),
+      badge: document.getElementById('ntBadge').value.trim() || "TRAVEL HANDY BOOK",
+      title,
+      sub: document.getElementById('ntSub').value.trim() || "快樂出發去旅行！",
+      pills: [
+        document.getElementById('ntDate').value.trim() || "📅 日期待定",
+        document.getElementById('ntMembers').value.trim() || "👨‍👩‍👧‍👦 親子出遊",
+        document.getElementById('ntTrans').value.trim() || "✈️ 自由行"
+      ],
+      flights: [
+        { type: "go", label: "去程航班", code: "TBD", depTime: "09:00", depPort: "出發地", arrTime: "13:00", arrPort: "目的地", note: "⏱️ 點擊編輯填寫航班資訊" }
+      ],
+      baggageNote: "🧳 行李額度：請依實際搭乘航空公司規定填寫（行動電源務必隨身攜帶）。",
+      itinerary: [
+        {
+          day: "D1", date: "Day 1", title: "抵達目的地・飯店入住", sub: "開啟美好旅程", svgType: "plane",
+          stops: [{ time: "13:00", title: "抵達機場・前往市區", trans: "train", must: true, desc: "領取行李並搭乘交通工具前往飯店。", map: "" }]
+        }
+      ],
+      notes: ["📌 點擊右上角「✏️ 編輯」即可自由新增、修改或上下調整所有注意事項與行程！"],
+      hotels: [{ name: "預訂飯店名稱", price: "入住日期｜費用估算", desc: "飯店地址與交通備註", map: "", link: "", linkText: "" }],
+      todos: [{ text: "預訂機票與住宿", done: false }],
+      packing: newPacking
+    };
+
+    dbState.trips.push(newTrip);
+    dbState.activeTripId = newTrip.id;
+    activeDayIdx = 0;
+    emptyView.classList.add('hidden');
+    tripView.classList.remove('hidden');
+    renderAll();
+    saveCurrentTripToCloud('save_trip', newTrip);
+    return true;
+  });
+});
+
+// 編輯標題與密碼（管理員還可修改該本手冊的存取密碼）
+document.getElementById('btnEditTripMeta').addEventListener('click', () => {
+  const trip = getCurrentTrip();
+  const pwdFieldHtml = dbState.isAdmin
+    ? `<div class="form-group"><label>🔐 此手冊分享密碼（管理員專屬設定）</label><input type="text" id="emPwd" value="${escapeHtml(trip._password || '')}" placeholder="留空代表公開手冊"></div>`
+    : '';
+
+  openGenericModal('✏️ 編輯手冊標題與基本資訊', `
+    <div class="form-group"><label>旅遊標題</label><input type="text" id="emTitle" value="${escapeHtml(trip.title)}"></div>
+    ${pwdFieldHtml}
+    <div class="form-group"><label>副標題 / 景點摘要</label><input type="text" id="emSub" value="${escapeHtml(trip.sub)}"></div>
+    <div class="form-group"><label>標籤徽章</label><input type="text" id="emBadge" value="${escapeHtml(trip.badge)}"></div>
+    <div class="form-group"><label>標籤 1（日期）</label><input type="text" id="emP1" value="${escapeHtml(trip.pills[0] || '')}"></div>
+    <div class="form-group"><label>標籤 2（成員）</label><input type="text" id="emP2" value="${escapeHtml(trip.pills[1] || '')}"></div>
+    <div class="form-group"><label>標籤 3（交通）</label><input type="text" id="emP3" value="${escapeHtml(trip.pills[2] || '')}"></div>
+  `, () => {
+    const title = document.getElementById('emTitle').value.trim();
+    if (!title) { alert('請輸入標題'); return false; }
+    trip.title = title;
+    if (dbState.isAdmin) {
+      trip._password = document.getElementById('emPwd').value.trim();
+    }
+    trip.sub = document.getElementById('emSub').value.trim();
+    trip.badge = document.getElementById('emBadge').value.trim();
+    trip.pills = [
+      document.getElementById('emP1').value.trim(),
+      document.getElementById('emP2').value.trim(),
+      document.getElementById('emP3').value.trim()
+    ].filter(Boolean);
+    renderAll();
+    saveCurrentTripToCloud();
+    return true;
+  });
+});
+
+// 刪除整本手冊（僅管理員）
+document.getElementById('btnDeleteTrip').addEventListener('click', () => {
+  const trip = getCurrentTrip();
+  if (!trip) return;
+  if (confirm(`確定要從 Google Sheet 永久刪除「${trip.title}」嗎？此動作無法復原！`)) {
+    saveCurrentTripToCloud('delete_trip', trip);
+    dbState.trips = dbState.trips.filter(t => t.id !== trip.id);
+    if (dbState.trips.length === 0) {
+      showEmptyState('已刪除手冊。點擊「➕ 新旅程」建立新的旅遊手冊！');
+    } else {
+      dbState.activeTripId = dbState.trips[0].id;
+      activeDayIdx = 0;
+      renderAll();
+    }
+  }
+});
+
+// 通用彈窗
+function openGenericModal(title, bodyHtml, onSave) {
+  document.getElementById('gModalTitle').textContent = title;
+  document.getElementById('gModalBody').innerHTML = bodyHtml;
+  const saveBtn = document.getElementById('gModalSaveBtn');
+  const newBtn = saveBtn.cloneNode(true);
+  saveBtn.parentNode.replaceChild(newBtn, saveBtn);
+  newBtn.addEventListener('click', () => { if (onSave()) closeModal('genericModal'); });
+  document.getElementById('genericModal').classList.add('open');
+}
 
 function getDaySVG(type) {
   const svgs = {
-    plane: `<svg viewBox="0 0 90 70" width="76" height="60"><path d="M10,45 L50,35 L68,18 L75,20 L63,36 L80,34 L84,28 L88,29 L84,41 L55,48 L42,60 L36,59 L43,49 L14,52 Z" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><circle cx="48" cy="39" r="9" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><circle cx="48" cy="41" r="4" fill="#FFF"/></svg>`,
-    amanohashidate: `<svg viewBox="0 0 90 70" width="76" height="60"><path d="M8,55 Q45,25 82,55" fill="none" stroke="#9D6B43" stroke-width="8" stroke-linecap="round"/><path d="M8,55 Q45,25 82,55" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="4 4"/><circle cx="45" cy="24" r="13" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/><circle cx="35" cy="14" r="5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><circle cx="55" cy="14" r="5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><ellipse cx="45" cy="27" rx="5.5" ry="4" fill="#FFF"/></svg>`,
-    ine: `<svg viewBox="0 0 90 70" width="76" height="60"><path d="M15,44 L30,26 L60,26 L75,44 Z" fill="#9D6B43" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><rect x="24" y="44" width="42" height="14" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3"/><path d="M8,60 Q25,55 45,60 T82,60" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><circle cx="45" cy="38" r="7" fill="#FFF8EB" stroke="#3E3A39" stroke-width="2.5"/></svg>`,
-    arashiyama: `<svg viewBox="0 0 90 70" width="76" height="60"><rect x="16" y="10" width="7" height="50" fill="#A8D5BA" stroke="#3E3A39" stroke-width="2.5"/><rect x="67" y="10" width="7" height="50" fill="#A8D5BA" stroke="#3E3A39" stroke-width="2.5"/><circle cx="45" cy="40" r="15" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/><circle cx="33" cy="28" r="5.5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><circle cx="57" cy="28" r="5.5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><ellipse cx="45" cy="43" rx="6" ry="4.5" fill="#FFF"/></svg>`,
-    usj: `<svg viewBox="0 0 90 70" width="76" height="60"><circle cx="45" cy="36" r="22" fill="#D1ECF1" stroke="#3E3A39" stroke-width="3"/><ellipse cx="45" cy="36" rx="26" ry="9" fill="none" stroke="#F7D358" stroke-width="5"/><ellipse cx="45" cy="36" rx="26" ry="9" fill="none" stroke="#3E3A39" stroke-width="2.5"/><circle cx="45" cy="24" r="9" fill="#FFF8EB" stroke="#3E3A39" stroke-width="2.5"/></svg>`,
-    shrine: `<svg viewBox="0 0 90 70" width="76" height="60"><circle cx="45" cy="38" r="21" fill="#A8D5BA" stroke="#3E3A39" stroke-width="3"/><rect x="33" y="42" width="24" height="10" rx="3" fill="#F7D358" stroke="#3E3A39" stroke-width="2.5"/><circle cx="37" cy="32" r="4" fill="#FFF" stroke="#3E3A39" stroke-width="2"/><circle cx="53" cy="32" r="4" fill="#FFF" stroke="#3E3A39" stroke-width="2"/></svg>`
+    plane: `<svg viewBox="0 0 90 70" width="74" height="58"><path d="M10,45 L50,35 L68,18 L75,20 L63,36 L80,34 L84,28 L88,29 L84,41 L55,48 L42,60 L36,59 L43,49 L14,52 Z" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><circle cx="48" cy="39" r="9" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><circle cx="48" cy="41" r="4" fill="#FFF"/></svg>`,
+    amanohashidate: `<svg viewBox="0 0 90 70" width="74" height="58"><path d="M8,55 Q45,25 82,55" fill="none" stroke="#9D6B43" stroke-width="8" stroke-linecap="round"/><path d="M8,55 Q45,25 82,55" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="4 4"/><circle cx="45" cy="24" r="13" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/><circle cx="35" cy="14" r="5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><circle cx="55" cy="14" r="5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><ellipse cx="45" cy="27" rx="5.5" ry="4" fill="#FFF"/></svg>`,
+    ine: `<svg viewBox="0 0 90 70" width="74" height="58"><path d="M15,44 L30,26 L60,26 L75,44 Z" fill="#9D6B43" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><rect x="24" y="44" width="42" height="14" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3"/><path d="M8,60 Q25,55 45,60 T82,60" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><circle cx="45" cy="38" r="7" fill="#FFF8EB" stroke="#3E3A39" stroke-width="2.5"/></svg>`,
+    arashiyama: `<svg viewBox="0 0 90 70" width="74" height="58"><rect x="16" y="10" width="7" height="50" fill="#A8D5BA" stroke="#3E3A39" stroke-width="2.5"/><rect x="67" y="10" width="7" height="50" fill="#A8D5BA" stroke="#3E3A39" stroke-width="2.5"/><circle cx="45" cy="40" r="15" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/><circle cx="33" cy="28" r="5.5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><circle cx="57" cy="28" r="5.5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><ellipse cx="45" cy="43" rx="6" ry="4.5" fill="#FFF"/></svg>`,
+    usj: `<svg viewBox="0 0 90 70" width="74" height="58"><circle cx="45" cy="36" r="22" fill="#D1ECF1" stroke="#3E3A39" stroke-width="3"/><ellipse cx="45" cy="36" rx="26" ry="9" fill="none" stroke="#F7D358" stroke-width="5"/><ellipse cx="45" cy="36" rx="26" ry="9" fill="none" stroke="#3E3A39" stroke-width="2.5"/><circle cx="45" cy="24" r="9" fill="#FFF8EB" stroke="#3E3A39" stroke-width="2.5"/></svg>`,
+    shrine: `<svg viewBox="0 0 90 70" width="74" height="58"><circle cx="45" cy="38" r="21" fill="#A8D5BA" stroke="#3E3A39" stroke-width="3"/><rect x="33" y="42" width="24" height="10" rx="3" fill="#F7D358" stroke="#3E3A39" stroke-width="2.5"/><circle cx="37" cy="32" r="4" fill="#FFF" stroke="#3E3A39" stroke-width="2"/><circle cx="53" cy="32" r="4" fill="#FFF" stroke="#3E3A39" stroke-width="2"/></svg>`
   };
   return svgs[type] || svgs.plane;
 }
 
-function loadStorage(key, fallback) {
-  try {
-    const raw = localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : JSON.parse(JSON.stringify(fallback));
-  } catch (e) {
-    return JSON.parse(JSON.stringify(fallback));
-  }
-}
-function saveStorage(key, data) {
-  try {
-    localStorage.setItem(key, JSON.stringify(data));
-  } catch (e) {
-    console.warn('無法儲存至 localStorage', e);
-  }
+// 渲染各區塊
+function renderHeader() {
+  const trip = getCurrentTrip();
+  tripSelect.innerHTML = dbState.trips.map(t => {
+    const lockIcon = (dbState.isAdmin && t._password) ? ` 🔒(${t._password})` : '';
+    return `<option value="${t.id}" ${t.id === trip.id ? 'selected' : ''}>${escapeHtml(t.title)}${escapeHtml(lockIcon)}</option>`;
+  }).join('');
+  document.getElementById('heroBadge').textContent = trip.badge;
+  document.getElementById('heroTitle').textContent = trip.title;
+  document.getElementById('heroSub').textContent = trip.sub;
+  document.getElementById('heroPills').innerHTML = trip.pills.map(p => `<span class="pill">${escapeHtml(p)}</span>`).join('');
 }
 
-let itineraryData = loadStorage('kansai_rilakkuma_itinerary', DEFAULT_ITINERARY);
-let noticesData = loadStorage('kansai_rilakkuma_notices', DEFAULT_NOTICES);
-let todoData = loadStorage('kansai_rilakkuma_todo', DEFAULT_TODO);
-let packingData = loadStorage('kansai_rilakkuma_packing', DEFAULT_PACKING);
-
-let activeDayIdx = 0;
-let editingStopIdx = null;
-let pendingConfirmAction = null;
-let itemModalContext = null;
-
-function saveItinerary() {
-  saveStorage('kansai_rilakkuma_itinerary', itineraryData);
+function renderFlights() {
+  const trip = getCurrentTrip();
+  document.getElementById('flightsGrid').innerHTML = trip.flights.map((f, idx) => `
+    <div class="flight-box ${f.type === 'return' ? 'return' : ''}">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;">
+        <strong>${escapeHtml(f.label)}</strong>
+        <span class="pill" style="background:${f.type === 'return' ? 'var(--korilakkuma-pink)' : 'var(--rilakkuma-yellow)'};">${escapeHtml(f.code)}</span>
+      </div>
+      <div class="flight-route">
+        <div><strong>${escapeHtml(f.depTime)}</strong><div style="font-size:0.8rem;">${escapeHtml(f.depPort)}</div></div>
+        <div>🛫 ➔ 🛬</div>
+        <div style="text-align:right;"><strong>${escapeHtml(f.arrTime)}</strong><div style="font-size:0.8rem;">${escapeHtml(f.arrPort)}</div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:0.85rem;">${escapeHtml(f.note)}</span>
+        <div class="edit-controls">
+          <button type="button" class="btn-mini" onclick="editFlight(${idx})">編輯</button>
+          <button type="button" class="btn-mini del" onclick="delFlight(${idx})">刪除</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('baggageNote').textContent = trip.baggageNote;
 }
 
-const confirmModal = document.getElementById('confirmModal');
-function showCustomConfirm(message, onConfirm) {
-  document.getElementById('confirmText').textContent = message;
-  pendingConfirmAction = onConfirm;
-  confirmModal.classList.add('open');
-}
-document.getElementById('btnConfirmCancel').addEventListener('click', () => {
-  confirmModal.classList.remove('open');
-  pendingConfirmAction = null;
+window.editFlight = function(idx) {
+  const trip = getCurrentTrip();
+  const isNew = idx === null;
+  const f = isNew ? { type: "go", label: "去程｜日期", code: "", depTime: "", depPort: "", arrTime: "", arrPort: "", note: "⏱️ " } : trip.flights[idx];
+  openGenericModal(isNew ? '➕ 新增航班' : '✏️ 編輯航班', `
+    <div class="form-group"><label>航段類型</label><select id="flType"><option value="go" ${f.type==='go'?'selected':''}>去程（鵝黃底）</option><option value="return" ${f.type==='return'?'selected':''}>回程（櫻花粉底）</option></select></div>
+    <div class="form-group"><label>標題日期</label><input type="text" id="flLabel" value="${escapeHtml(f.label)}"></div>
+    <div class="form-group"><label>航班代號</label><input type="text" id="flCode" value="${escapeHtml(f.code)}"></div>
+    <div class="form-group"><label>起飛時間 / 機場</label><div style="display:flex;gap:6px;"><input type="text" id="flDepT" value="${escapeHtml(f.depTime)}" placeholder="11:15"><input type="text" id="flDepP" value="${escapeHtml(f.depPort)}" placeholder="桃園 TPE"></div></div>
+    <div class="form-group"><label>抵達時間 / 機場</label><div style="display:flex;gap:6px;"><input type="text" id="flArrT" value="${escapeHtml(f.arrTime)}" placeholder="14:45"><input type="text" id="flArrP" value="${escapeHtml(f.arrPort)}" placeholder="關西 KIX"></div></div>
+    <div class="form-group"><label>備註</label><input type="text" id="flNote" value="${escapeHtml(f.note)}"></div>
+  `, () => {
+    const obj = {
+      type: document.getElementById('flType').value,
+      label: document.getElementById('flLabel').value.trim() || '航班',
+      code: document.getElementById('flCode').value.trim(),
+      depTime: document.getElementById('flDepT').value.trim(),
+      depPort: document.getElementById('flDepP').value.trim(),
+      arrTime: document.getElementById('flArrT').value.trim(),
+      arrPort: document.getElementById('flArrP').value.trim(),
+      note: document.getElementById('flNote').value.trim()
+    };
+    if (isNew) trip.flights.push(obj); else trip.flights[idx] = obj;
+    renderFlights(); saveCurrentTripToCloud(); return true;
+  });
+};
+document.getElementById('btnAddFlight').addEventListener('click', () => editFlight(null));
+window.delFlight = function(idx) { if (confirm('確定刪除此航班？')) { getCurrentTrip().flights.splice(idx, 1); renderFlights(); saveCurrentTripToCloud(); } };
+document.getElementById('btnEditBaggage').addEventListener('click', () => {
+  const trip = getCurrentTrip();
+  const val = prompt('編輯行李規定備註：', trip.baggageNote);
+  if (val !== null) { trip.baggageNote = val.trim(); renderFlights(); saveCurrentTripToCloud(); }
 });
-document.getElementById('btnConfirmOk').addEventListener('click', () => {
-  confirmModal.classList.remove('open');
-  if (typeof pendingConfirmAction === 'function') pendingConfirmAction();
-  pendingConfirmAction = null;
-});
 
+// 每日行程
 function renderTabs() {
-  const tabsEl = document.getElementById('dayTabs');
-  tabsEl.innerHTML = itineraryData.map((d, idx) => `
+  const trip = getCurrentTrip();
+  if (activeDayIdx >= trip.itinerary.length) activeDayIdx = Math.max(0, trip.itinerary.length - 1);
+  document.getElementById('dayTabs').innerHTML = trip.itinerary.map((d, idx) => `
     <button type="button" class="day-tab ${idx === activeDayIdx ? 'active' : ''}" onclick="selectDay(${idx})">
-      <strong>${d.day}</strong>
-      <span>${d.date.split(' ')[0]}</span>
+      <strong>${escapeHtml(d.day)}</strong><span>${escapeHtml(d.date.split(' ')[0])}</span>
     </button>
   `).join('');
 }
 
-window.selectDay = function(idx) {
-  activeDayIdx = idx;
-  renderTabs();
-  renderDayContent();
-};
+window.selectDay = function(idx) { activeDayIdx = idx; renderTabs(); renderDayContent(); };
 
 function renderDayContent() {
-  const day = itineraryData[activeDayIdx];
+  const trip = getCurrentTrip();
+  const day = trip.itinerary[activeDayIdx];
   const container = document.getElementById('dayContent');
+  if (!day) { container.innerHTML = '<p>尚無行程，請點擊「新增一天」</p>'; return; }
+
   container.classList.remove('day-content');
   void container.offsetWidth;
   container.classList.add('day-content');
@@ -1159,11 +885,8 @@ function renderDayContent() {
     walk: '<span class="badge-trans trans-walk">🚶 步行/體驗</span>'
   };
 
-  const totalStops = day.stops.length;
   const stopsHtml = day.stops.map((s, sIdx) => {
     const mapUrl = s.map ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(s.map)}` : '';
-    const isFirst = sIdx === 0;
-    const isLast = sIdx === totalStops - 1;
     return `
       <div class="stop-item">
         <div class="stop-header">
@@ -1171,9 +894,9 @@ function renderDayContent() {
           ${transLabel[s.trans] || transLabel.walk}
           ${s.must ? '<span class="badge-must">⭐ 必去</span>' : ''}
           <div class="edit-controls">
-            <button type="button" class="btn-mini move" onclick="moveStop(${sIdx}, -1)" ${isFirst ? 'disabled' : ''} title="上移">⬆️</button>
-            <button type="button" class="btn-mini move" onclick="moveStop(${sIdx}, 1)" ${isLast ? 'disabled' : ''} title="下移">⬇️</button>
-            <button type="button" class="btn-mini" onclick="openEditModal(${sIdx})">編輯</button>
+            <button type="button" class="btn-mini" ${sIdx === 0 ? 'disabled' : ''} onclick="moveStop(${sIdx}, -1)">⬆️</button>
+            <button type="button" class="btn-mini" ${sIdx === day.stops.length - 1 ? 'disabled' : ''} onclick="moveStop(${sIdx}, 1)">⬇️</button>
+            <button type="button" class="btn-mini" onclick="editStop(${sIdx})">編輯</button>
             <button type="button" class="btn-mini del" onclick="deleteStop(${sIdx})">刪除</button>
           </div>
         </div>
@@ -1190,9 +913,9 @@ function renderDayContent() {
   container.innerHTML = `
     <div class="day-banner">
       <div>
-        <div style="font-size:0.85rem;color:var(--rilakkuma-brown);font-weight:bold;">${day.day} ・ ${day.date}</div>
-        <h3 style="margin:2px 0 4px;font-size:1.18rem;">${escapeHtml(day.title)}</h3>
-        <div style="font-size:0.86rem;">${escapeHtml(day.sub)}</div>
+        <div style="font-size:0.85rem;color:var(--rilakkuma-brown);font-weight:bold;">${escapeHtml(day.day)} ・ ${escapeHtml(day.date)}</div>
+        <h3 style="margin:2px 0 4px;font-size:1.15rem;">${escapeHtml(day.title)}</h3>
+        <div style="font-size:0.85rem;">${escapeHtml(day.sub)}</div>
       </div>
       <div class="svg-wiggle">${getDaySVG(day.svgType)}</div>
     </div>
@@ -1200,366 +923,244 @@ function renderDayContent() {
   `;
 }
 
-window.moveStop = function(stopIdx, direction) {
-  const stops = itineraryData[activeDayIdx].stops;
-  const targetIdx = stopIdx + direction;
-  if (targetIdx < 0 || targetIdx >= stops.length) return;
-  [stops[stopIdx], stops[targetIdx]] = [stops[targetIdx], stops[stopIdx]];
-  saveItinerary();
-  renderDayContent();
+window.editStop = function(stopIdx) {
+  const day = getCurrentTrip().itinerary[activeDayIdx];
+  const isNew = stopIdx === null;
+  const s = isNew ? { time: "", title: "", trans: "walk", must: false, desc: "", map: "", link: "", linkText: "" } : day.stops[stopIdx];
+  openGenericModal(isNew ? '➕ 新增行程項目' : '✏️ 編輯行程項目', `
+    <div class="form-group"><label>時間</label><input type="text" id="stTime" value="${escapeHtml(s.time)}" placeholder="例如：09:00–12:00"></div>
+    <div class="form-group"><label>行程標題</label><input type="text" id="stTitle" value="${escapeHtml(s.title)}"></div>
+    <div class="form-group"><label>交通方式</label><select id="stTrans"><option value="car" ${s.trans==='car'?'selected':''}>🚗 自駕開車</option><option value="train" ${s.trans==='train'?'selected':''}>🚃 大眾運輸 / 搭船 / 飛機</option><option value="walk" ${s.trans==='walk'?'selected':''}>🚶 步行 / 逛街 / 住宿</option></select></div>
+    <div class="form-group"><label><input type="checkbox" id="stMust" ${s.must?'checked':''}> ⭐ 標記為「必去」重點行程</label></div>
+    <div class="form-group"><label>備註說明</label><textarea id="stDesc" rows="3">${escapeHtml(s.desc)}</textarea></div>
+    <div class="form-group"><label>Google 地圖導航地點（留空則不顯示按鈕）</label><input type="text" id="stMap" value="${escapeHtml(s.map)}"></div>
+    <div class="form-group"><label>外部連結網址（選填）</label><input type="url" id="stLink" value="${escapeHtml(s.link || '')}" placeholder="https://..."></div>
+  `, () => {
+    const title = document.getElementById('stTitle').value.trim();
+    if (!title) { alert('請輸入行程標題！'); return false; }
+    const obj = {
+      time: document.getElementById('stTime').value.trim() || '彈性時間',
+      title,
+      trans: document.getElementById('stTrans').value,
+      must: document.getElementById('stMust').checked,
+      desc: document.getElementById('stDesc').value.trim(),
+      map: document.getElementById('stMap').value.trim(),
+      link: document.getElementById('stLink').value.trim(),
+      linkText: s.linkText || '網站'
+    };
+    if (isNew) day.stops.push(obj); else day.stops[stopIdx] = obj;
+    renderDayContent(); saveCurrentTripToCloud(); return true;
+  });
+};
+document.getElementById('btnAddStop').addEventListener('click', () => editStop(null));
+
+window.moveStop = function(idx, dir) {
+  const stops = getCurrentTrip().itinerary[activeDayIdx].stops;
+  const t = idx + dir;
+  if (t < 0 || t >= stops.length) return;
+  [stops[idx], stops[t]] = [stops[t], stops[idx]];
+  renderDayContent(); saveCurrentTripToCloud();
+};
+window.deleteStop = function(idx) {
+  if (confirm('確定刪除此行程項目？')) { getCurrentTrip().itinerary[activeDayIdx].stops.splice(idx, 1); renderDayContent(); saveCurrentTripToCloud(); }
 };
 
-function escapeHtml(str) {
-  if (!str) return '';
-  return str.replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
-}
+document.getElementById('btnEditDayInfo').addEventListener('click', () => {
+  const day = getCurrentTrip().itinerary[activeDayIdx];
+  openGenericModal('✏️ 修改當日標題與插圖', `
+    <div class="form-group"><label>天數代號</label><input type="text" id="dyCode" value="${escapeHtml(day.day)}"></div>
+    <div class="form-group"><label>日期</label><input type="text" id="dyDate" value="${escapeHtml(day.date)}"></div>
+    <div class="form-group"><label>當日主標題</label><input type="text" id="dyTitle" value="${escapeHtml(day.title)}"></div>
+    <div class="form-group"><label>副標題</label><input type="text" id="dySub" value="${escapeHtml(day.sub)}"></div>
+    <div class="form-group"><label>拉拉熊主題插圖</label><select id="dySvg">
+      <option value="plane" ${day.svgType==='plane'?'selected':''}>✈️ 拉拉熊搭飛機</option>
+      <option value="amanohashidate" ${day.svgType==='amanohashidate'?'selected':''}>🌲 天橋立松林</option>
+      <option value="ine" ${day.svgType==='ine'?'selected':''}>🚤 伊根海上舟屋</option>
+      <option value="arashiyama" ${day.svgType==='arashiyama'?'selected':''}>🎋 嵐山竹林</option>
+      <option value="usj" ${day.svgType==='usj'?'selected':''}>🌎 環球影城地球</option>
+      <option value="shrine" ${day.svgType==='shrine'?'selected':''}>🦁 難波八阪神社</option>
+    </select></div>
+  `, () => {
+    day.day = document.getElementById('dyCode').value.trim() || day.day;
+    day.date = document.getElementById('dyDate').value.trim() || day.date;
+    day.title = document.getElementById('dyTitle').value.trim() || day.title;
+    day.sub = document.getElementById('dySub').value.trim();
+    day.svgType = document.getElementById('dySvg').value;
+    renderTabs(); renderDayContent(); saveCurrentTripToCloud(); return true;
+  });
+});
 
-const toggleEditBtn = document.getElementById('toggleEditBtn');
+document.getElementById('btnAddDay').addEventListener('click', () => {
+  const trip = getCurrentTrip();
+  const nextNum = trip.itinerary.length + 1;
+  trip.itinerary.push({
+    day: `D${nextNum}`, date: `Day ${nextNum}`, title: "新增旅遊日", sub: "點擊「修改當日標題」自訂內容", svgType: "plane",
+    stops: [{ time: "09:00", title: "出發展開新行程", trans: "walk", must: false, desc: "點擊編輯新增詳細景點", map: "" }]
+  });
+  activeDayIdx = trip.itinerary.length - 1;
+  renderTabs(); renderDayContent(); saveCurrentTripToCloud();
+});
+
+document.getElementById('btnDelDay').addEventListener('click', () => {
+  const trip = getCurrentTrip();
+  if (trip.itinerary.length <= 1) { alert('至少要保留一天行程喔！'); return; }
+  if (confirm(`確定要刪除「${trip.itinerary[activeDayIdx].day}」整天行程嗎？`)) {
+    trip.itinerary.splice(activeDayIdx, 1);
+    activeDayIdx = Math.max(0, activeDayIdx - 1);
+    renderTabs(); renderDayContent(); saveCurrentTripToCloud();
+  }
+});
+
+// 注意事項
+function renderNotes() {
+  const notes = getCurrentTrip().notes;
+  document.getElementById('notesList').innerHTML = notes.map((text, idx) => `
+    <div class="note-item">
+      <div style="flex:1;">${escapeHtml(text)}</div>
+      <div class="edit-controls">
+        <button type="button" class="btn-mini" ${idx === 0 ? 'disabled' : ''} onclick="moveNote(${idx}, -1)">⬆️</button>
+        <button type="button" class="btn-mini" ${idx === notes.length - 1 ? 'disabled' : ''} onclick="moveNote(${idx}, 1)">⬇️</button>
+        <button type="button" class="btn-mini" onclick="editNote(${idx})">編輯</button>
+        <button type="button" class="btn-mini del" onclick="delNote(${idx})">刪除</button>
+      </div>
+    </div>
+  `).join('');
+}
+window.moveNote = function(idx, dir) { const n = getCurrentTrip().notes; const t = idx + dir; if (t>=0 && t<n.length) { [n[idx], n[t]] = [n[t], n[idx]]; renderNotes(); saveCurrentTripToCloud(); } };
+window.editNote = function(idx) { const n = getCurrentTrip().notes; const v = prompt('編輯注意事項：', n[idx]); if (v!==null && v.trim()) { n[idx]=v.trim(); renderNotes(); saveCurrentTripToCloud(); } };
+window.delNote = function(idx) { if (confirm('確定刪除？')) { getCurrentTrip().notes.splice(idx, 1); renderNotes(); saveCurrentTripToCloud(); } };
+document.getElementById('btnAddNote').addEventListener('click', () => { const v = prompt('輸入新的注意事項：'); if (v && v.trim()) { getCurrentTrip().notes.push(v.trim()); renderNotes(); saveCurrentTripToCloud(); } });
+
+// 住宿
+function renderHotels() {
+  const hotels = getCurrentTrip().hotels;
+  document.getElementById('hotelsList').innerHTML = hotels.map((h, idx) => {
+    const mapUrl = h.map ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(h.map)}` : '';
+    return `
+      <div class="hotel-item">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <strong>${escapeHtml(h.name)}</strong>
+          <div class="edit-controls">
+            <button type="button" class="btn-mini" onclick="editHotel(${idx})">編輯</button>
+            <button type="button" class="btn-mini del" onclick="delHotel(${idx})">刪除</button>
+          </div>
+        </div>
+        ${h.price ? `<div><span class="price-tag">${escapeHtml(h.price)}</span></div>` : ''}
+        <p style="font-size:0.9rem;margin:6px 0;">${escapeHtml(h.desc)}</p>
+        <div class="stop-actions">
+          ${mapUrl ? `<a class="btn-map" target="_blank" rel="noopener" href="${mapUrl}">🗺️ Google 路線</a>` : ''}
+          ${h.link ? `<a class="btn-link" target="_blank" rel="noopener" href="${h.link}">🔗 ${escapeHtml(h.linkText || '訂房連結')}</a>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+window.editHotel = function(idx) {
+  const hotels = getCurrentTrip().hotels;
+  const isNew = idx === null;
+  const h = isNew ? { name: "", price: "", desc: "", map: "", link: "", linkText: "訂房資訊" } : hotels[idx];
+  openGenericModal(isNew ? '➕ 新增住宿資訊' : '✏️ 編輯住宿資訊', `
+    <div class="form-group"><label>飯店 / 民宿名稱</label><input type="text" id="htName" value="${escapeHtml(h.name)}"></div>
+    <div class="form-group"><label>入住日期與費用標籤</label><input type="text" id="htPrice" value="${escapeHtml(h.price)}"></div>
+    <div class="form-group"><label>地址與說明</label><textarea id="htDesc" rows="3">${escapeHtml(h.desc)}</textarea></div>
+    <div class="form-group"><label>Google 地圖導航地點</label><input type="text" id="htMap" value="${escapeHtml(h.map)}"></div>
+    <div class="form-group"><label>訂房網址（選填）</label><input type="url" id="htLink" value="${escapeHtml(h.link || '')}"></div>
+  `, () => {
+    const name = document.getElementById('htName').value.trim();
+    if (!name) { alert('請輸入飯店名稱'); return false; }
+    const obj = {
+      name,
+      price: document.getElementById('htPrice').value.trim(),
+      desc: document.getElementById('htDesc').value.trim(),
+      map: document.getElementById('htMap').value.trim(),
+      link: document.getElementById('htLink').value.trim(),
+      linkText: h.linkText || '訂房資訊'
+    };
+    if (isNew) hotels.push(obj); else hotels[idx] = obj;
+    renderHotels(); saveCurrentTripToCloud(); return true;
+  });
+};
+document.getElementById('btnAddHotel').addEventListener('click', () => editHotel(null));
+window.delHotel = function(idx) { if (confirm('確定刪除此住宿資訊？')) { getCurrentTrip().hotels.splice(idx, 1); renderHotels(); saveCurrentTripToCloud(); } };
+
+// 出發前待確認
+function renderTodos() {
+  const todos = getCurrentTrip().todos;
+  document.getElementById('todoContainer').innerHTML = `<ul class="pack-list">` + todos.map((item, idx) => `
+    <li>
+      <label><input type="checkbox" ${item.done ? 'checked' : ''} onchange="toggleTodo(${idx}, this.checked)"><span>${escapeHtml(item.text)}</span></label>
+      <div class="edit-controls">
+        <button type="button" class="btn-mini" ${idx === 0 ? 'disabled' : ''} onclick="moveTodo(${idx}, -1)">⬆️</button>
+        <button type="button" class="btn-mini" ${idx === todos.length - 1 ? 'disabled' : ''} onclick="moveTodo(${idx}, 1)">⬇️</button>
+        <button type="button" class="btn-mini" onclick="editTodo(${idx})">編輯</button>
+        <button type="button" class="btn-mini del" onclick="delTodo(${idx})">刪除</button>
+      </div>
+    </li>
+  `).join('') + `</ul>`;
+}
+window.toggleTodo = function(idx, checked) { getCurrentTrip().todos[idx].done = checked; saveCurrentTripToCloud(); };
+window.moveTodo = function(idx, dir) { const arr = getCurrentTrip().todos; const t = idx + dir; if (t>=0 && t<arr.length) { [arr[idx], arr[t]] = [arr[t], arr[idx]]; renderTodos(); saveCurrentTripToCloud(); } };
+window.editTodo = function(idx) { const arr = getCurrentTrip().todos; const v = prompt('編輯待辦項目：', arr[idx].text); if (v!==null && v.trim()) { arr[idx].text=v.trim(); renderTodos(); saveCurrentTripToCloud(); } };
+window.delTodo = function(idx) { if (confirm('確定刪除？')) { getCurrentTrip().todos.splice(idx, 1); renderTodos(); saveCurrentTripToCloud(); } };
+document.getElementById('btnAddTodo').addEventListener('click', () => { const v = prompt('新增待辦項目：'); if (v && v.trim()) { getCurrentTrip().todos.push({ text: v.trim(), done: false }); renderTodos(); saveCurrentTripToCloud(); } });
+
+// 行李清單
+function renderPacking() {
+  const packing = getCurrentTrip().packing;
+  document.getElementById('packingContainer').innerHTML = packing.map((cat, gIdx) => `
+    <div class="pack-group">
+      <div class="pack-group-head">
+        <strong>${escapeHtml(cat.group)}</strong>
+        <div class="edit-controls">
+          <button type="button" class="btn-mini" onclick="addPackItem(${gIdx})">➕ 項目</button>
+          <button type="button" class="btn-mini del" onclick="delPackGroup(${gIdx})">刪分類</button>
+        </div>
+      </div>
+      <ul class="pack-list">
+        ${cat.items.map((item, iIdx) => `
+          <li>
+            <label><input type="checkbox" ${item.done ? 'checked' : ''} onchange="togglePack(${gIdx}, ${iIdx}, this.checked)"><span>${escapeHtml(item.text)}</span></label>
+            <div class="edit-controls">
+              <button type="button" class="btn-mini" ${iIdx === 0 ? 'disabled' : ''} onclick="movePack(${gIdx}, ${iIdx}, -1)">⬆️</button>
+              <button type="button" class="btn-mini" ${iIdx === cat.items.length - 1 ? 'disabled' : ''} onclick="movePack(${gIdx}, ${iIdx}, 1)">⬇️</button>
+              <button type="button" class="btn-mini" onclick="editPack(${gIdx}, ${iIdx})">編輯</button>
+              <button type="button" class="btn-mini del" onclick="delPack(${gIdx}, ${iIdx})">刪除</button>
+            </div>
+          </li>
+        `).join('')}
+      </ul>
+    </div>
+  `).join('');
+}
+window.togglePack = function(gIdx, iIdx, checked) { getCurrentTrip().packing[gIdx].items[iIdx].done = checked; saveCurrentTripToCloud(); };
+window.movePack = function(gIdx, iIdx, dir) { const arr = getCurrentTrip().packing[gIdx].items; const t = iIdx + dir; if (t>=0 && t<arr.length) { [arr[iIdx], arr[t]] = [arr[t], arr[iIdx]]; renderPacking(); saveCurrentTripToCloud(); } };
+window.editPack = function(gIdx, iIdx) { const arr = getCurrentTrip().packing[gIdx].items; const v = prompt('編輯行李項目：', arr[iIdx].text); if (v!==null && v.trim()) { arr[iIdx].text=v.trim(); renderPacking(); saveCurrentTripToCloud(); } };
+window.delPack = function(gIdx, iIdx) { if (confirm('確定刪除？')) { getCurrentTrip().packing[gIdx].items.splice(iIdx, 1); renderPacking(); saveCurrentTripToCloud(); } };
+window.addPackItem = function(gIdx) { const cat = getCurrentTrip().packing[gIdx]; const v = prompt(`在「${cat.group}」新增項目：`); if (v && v.trim()) { cat.items.push({ text: v.trim(), done: false }); renderPacking(); saveCurrentTripToCloud(); } };
+window.delPackGroup = function(gIdx) { const p = getCurrentTrip().packing; if (confirm(`確定刪除整個「${p[gIdx].group}」分類？`)) { p.splice(gIdx, 1); renderPacking(); saveCurrentTripToCloud(); } };
+document.getElementById('btnAddPackGroup').addEventListener('click', () => { const v = prompt('輸入新的行李分類名稱（例如：📷 攝影器材）：'); if (v && v.trim()) { getCurrentTrip().packing.push({ group: v.trim(), items: [] }); renderPacking(); saveCurrentTripToCloud(); } });
+
+// 編輯模式總開關
 toggleEditBtn.addEventListener('click', () => {
   document.body.classList.toggle('edit-mode');
   const isEdit = document.body.classList.contains('edit-mode');
   toggleEditBtn.classList.toggle('active', isEdit);
-  toggleEditBtn.textContent = isEdit ? '✅ 完成編輯' : '✏️ 編輯模式';
+  toggleEditBtn.textContent = isEdit ? '✅ 完成編輯' : '✏️ 編輯';
 });
 
-const editModal = document.getElementById('editModal');
-const modalWarnMsg = document.getElementById('modalWarnMsg');
-window.openEditModal = function(stopIdx) {
-  editingStopIdx = stopIdx;
-  modalWarnMsg.style.display = 'none';
-  const isNew = stopIdx === null;
-  document.getElementById('modalTitle').textContent = isNew ? '➕ 新增行程項目' : '✏️ 編輯行程項目';
-  
-  if (isNew) {
-    document.getElementById('fTime').value = '';
-    document.getElementById('fTitle').value = '';
-    document.getElementById('fTrans').value = 'walk';
-    document.getElementById('fMust').checked = false;
-    document.getElementById('fDesc').value = '';
-    document.getElementById('fMap').value = '';
-  } else {
-    const s = itineraryData[activeDayIdx].stops[stopIdx];
-    document.getElementById('fTime').value = s.time;
-    document.getElementById('fTitle').value = s.title;
-    document.getElementById('fTrans').value = s.trans || 'walk';
-    document.getElementById('fMust').checked = !!s.must;
-    document.getElementById('fDesc').value = s.desc || '';
-    document.getElementById('fMap').value = s.map || '';
-  }
-  editModal.classList.add('open');
-};
-
-document.getElementById('btnAddStop').addEventListener('click', () => openEditModal(null));
-document.getElementById('btnCancelModal').addEventListener('click', () => editModal.classList.remove('open'));
-
-document.getElementById('btnSaveModal').addEventListener('click', () => {
-  const time = document.getElementById('fTime').value.trim() || '彈性時間';
-  const title = document.getElementById('fTitle').value.trim();
-  if (!title) {
-    modalWarnMsg.style.display = 'block';
-    return;
-  }
-
-  const newStop = {
-    time,
-    title,
-    trans: document.getElementById('fTrans').value,
-    must: document.getElementById('fMust').checked,
-    desc: document.getElementById('fDesc').value.trim(),
-    map: document.getElementById('fMap').value.trim()
-  };
-
-  if (editingStopIdx === null) {
-    itineraryData[activeDayIdx].stops.push(newStop);
-  } else {
-    const old = itineraryData[activeDayIdx].stops[editingStopIdx];
-    itineraryData[activeDayIdx].stops[editingStopIdx] = { ...old, ...newStop };
-  }
-
-  saveItinerary();
+function renderAll() {
+  renderHeader();
+  renderFlights();
+  renderTabs();
   renderDayContent();
-  editModal.classList.remove('open');
-});
-
-window.deleteStop = function(stopIdx) {
-  showCustomConfirm('確定要刪除這個行程項目嗎？', () => {
-    itineraryData[activeDayIdx].stops.splice(stopIdx, 1);
-    saveItinerary();
-    renderDayContent();
-  });
-};
-
-document.getElementById('btnResetData').addEventListener('click', () => {
-  showCustomConfirm('確定要清除所有手動修改，還原回原始行程嗎？', () => {
-    try { localStorage.removeItem('kansai_rilakkuma_itinerary'); } catch (e) {}
-    itineraryData = JSON.parse(JSON.stringify(DEFAULT_ITINERARY));
-    renderDayContent();
-  });
-});
-
-// ================= 通用項目編輯彈窗（注意事項 / 待確認 / 行李） =================
-const itemModal = document.getElementById('itemModal');
-const itemModalWarn = document.getElementById('itemModalWarn');
-
-window.openItemModal = function(type, groupIdx, itemIdx) {
-  itemModalContext = { type, groupIdx, itemIdx };
-  itemModalWarn.style.display = 'none';
-  const isNew = itemIdx === null;
-
-  const levelGroup = document.getElementById('itemLevelGroup');
-  const descGroup = document.getElementById('itemDescGroup');
-  const titleLabel = document.getElementById('fItemTitleLabel');
-  const titleInput = document.getElementById('fItemTitle');
-  const descInput = document.getElementById('fItemDesc');
-  const levelSelect = document.getElementById('fItemLevel');
-
-  if (type === 'notice') {
-    document.getElementById('itemModalTitle').textContent = isNew ? '➕ 新增旅遊注意事項' : '✏️ 編輯旅遊注意事項';
-    levelGroup.style.display = 'block';
-    descGroup.style.display = 'block';
-    titleLabel.textContent = '提醒標題';
-    if (isNew) {
-      levelSelect.value = 'warn';
-      titleInput.value = '';
-      descInput.value = '';
-    } else {
-      const n = noticesData[itemIdx];
-      levelSelect.value = n.level || 'warn';
-      titleInput.value = n.title;
-      descInput.value = n.desc || '';
-    }
-  } else if (type === 'todo') {
-    document.getElementById('itemModalTitle').textContent = isNew ? '➕ 新增待確認事項' : '✏️ 編輯待確認事項';
-    levelGroup.style.display = 'none';
-    descGroup.style.display = 'none';
-    titleLabel.textContent = '待確認內容';
-    titleInput.value = isNew ? '' : todoData[itemIdx].text;
-  } else if (type === 'packing') {
-    document.getElementById('itemModalTitle').textContent = isNew ? `➕ 新增至「${packingData[groupIdx].group}」` : '✏️ 編輯行李項目';
-    levelGroup.style.display = 'none';
-    descGroup.style.display = 'none';
-    titleLabel.textContent = '行李物品名稱';
-    titleInput.value = isNew ? '' : packingData[groupIdx].items[itemIdx].text;
-  }
-
-  itemModal.classList.add('open');
-};
-
-document.getElementById('btnCancelItemModal').addEventListener('click', () => itemModal.classList.remove('open'));
-
-document.getElementById('btnSaveItemModal').addEventListener('click', () => {
-  const titleVal = document.getElementById('fItemTitle').value.trim();
-  if (!titleVal) {
-    itemModalWarn.style.display = 'block';
-    return;
-  }
-
-  const { type, groupIdx, itemIdx } = itemModalContext;
-  if (type === 'notice') {
-    const itemObj = {
-      level: document.getElementById('fItemLevel').value,
-      title: titleVal,
-      desc: document.getElementById('fItemDesc').value.trim()
-    };
-    if (itemIdx === null) noticesData.push(itemObj);
-    else noticesData[itemIdx] = itemObj;
-    saveStorage('kansai_rilakkuma_notices', noticesData);
-    renderNotices();
-  } else if (type === 'todo') {
-    if (itemIdx === null) {
-      todoData.push({ id: 'todo_' + Date.now(), text: titleVal, checked: false });
-    } else {
-      todoData[itemIdx].text = titleVal;
-    }
-    saveStorage('kansai_rilakkuma_todo', todoData);
-    renderTodoList();
-  } else if (type === 'packing') {
-    if (itemIdx === null) {
-      packingData[groupIdx].items.push({ id: 'pk_' + Date.now(), text: titleVal, checked: false });
-    } else {
-      packingData[groupIdx].items[itemIdx].text = titleVal;
-    }
-    saveStorage('kansai_rilakkuma_packing', packingData);
-    renderPackingList();
-  }
-
-  itemModal.classList.remove('open');
-});
-
-// ================= 1. 旅遊注意事項 =================
-function renderNotices() {
-  const container = document.getElementById('noticesContainer');
-  container.innerHTML = noticesData.map((n, idx) => {
-    const isFirst = idx === 0;
-    const isLast = idx === noticesData.length - 1;
-    return `
-      <div class="notice-item ${n.level === 'warn' ? 'warn' : ''}">
-        <div class="notice-header">
-          <h3 class="notice-title">${escapeHtml(n.title)}</h3>
-          <div class="edit-controls">
-            <button type="button" class="btn-mini move" onclick="moveNotice(${idx}, -1)" ${isFirst ? 'disabled' : ''} title="上移">⬆️</button>
-            <button type="button" class="btn-mini move" onclick="moveNotice(${idx}, 1)" ${isLast ? 'disabled' : ''} title="下移">⬇️</button>
-            <button type="button" class="btn-mini" onclick="openItemModal('notice', null, ${idx})">編輯</button>
-            <button type="button" class="btn-mini del" onclick="deleteNotice(${idx})">刪除</button>
-          </div>
-        </div>
-        <p class="notice-desc">${escapeHtml(n.desc)}</p>
-      </div>
-    `;
-  }).join('');
+  renderNotes();
+  renderHotels();
+  renderTodos();
+  renderPacking();
 }
 
-window.moveNotice = function(idx, dir) {
-  const target = idx + dir;
-  if (target < 0 || target >= noticesData.length) return;
-  [noticesData[idx], noticesData[target]] = [noticesData[target], noticesData[idx]];
-  saveStorage('kansai_rilakkuma_notices', noticesData);
-  renderNotices();
-};
-
-window.deleteNotice = function(idx) {
-  showCustomConfirm('確定要刪除這則注意事項嗎？', () => {
-    noticesData.splice(idx, 1);
-    saveStorage('kansai_rilakkuma_notices', noticesData);
-    renderNotices();
-  });
-};
-
-document.getElementById('btnAddNotice').addEventListener('click', () => openItemModal('notice', null, null));
-document.getElementById('btnResetNotices').addEventListener('click', () => {
-  showCustomConfirm('確定要還原預設的旅遊注意事項嗎？', () => {
-    noticesData = JSON.parse(JSON.stringify(DEFAULT_NOTICES));
-    saveStorage('kansai_rilakkuma_notices', noticesData);
-    renderNotices();
-  });
-});
-
-// ================= 2. 出發前待確認事項 =================
-function renderTodoList() {
-  const container = document.getElementById('todoContainer');
-  const lis = todoData.map((item, idx) => {
-    const isFirst = idx === 0;
-    const isLast = idx === todoData.length - 1;
-    return `
-      <li>
-        <label>
-          <input type="checkbox" ${item.checked ? 'checked' : ''} onchange="toggleTodo(${idx}, this.checked)">
-          <span>${escapeHtml(item.text)}</span>
-        </label>
-        <div class="edit-controls">
-          <button type="button" class="btn-mini move" onclick="moveTodo(${idx}, -1)" ${isFirst ? 'disabled' : ''} title="上移">⬆️</button>
-          <button type="button" class="btn-mini move" onclick="moveTodo(${idx}, 1)" ${isLast ? 'disabled' : ''} title="下移">⬇️</button>
-          <button type="button" class="btn-mini" onclick="openItemModal('todo', null, ${idx})">編輯</button>
-          <button type="button" class="btn-mini del" onclick="deleteTodo(${idx})">刪除</button>
-        </div>
-      </li>
-    `;
-  }).join('');
-  container.innerHTML = `<ul class="pack-list">${lis}</ul>`;
-}
-
-window.toggleTodo = function(idx, checked) {
-  todoData[idx].checked = checked;
-  saveStorage('kansai_rilakkuma_todo', todoData);
-};
-
-window.moveTodo = function(idx, dir) {
-  const target = idx + dir;
-  if (target < 0 || target >= todoData.length) return;
-  [todoData[idx], todoData[target]] = [todoData[target], todoData[idx]];
-  saveStorage('kansai_rilakkuma_todo', todoData);
-  renderTodoList();
-};
-
-window.deleteTodo = function(idx) {
-  showCustomConfirm('確定要刪除這項待確認事項嗎？', () => {
-    todoData.splice(idx, 1);
-    saveStorage('kansai_rilakkuma_todo', todoData);
-    renderTodoList();
-  });
-};
-
-document.getElementById('btnAddTodo').addEventListener('click', () => openItemModal('todo', null, null));
-document.getElementById('btnResetTodo').addEventListener('click', () => {
-  showCustomConfirm('確定要還原預設的待確認事項嗎？', () => {
-    todoData = JSON.parse(JSON.stringify(DEFAULT_TODO));
-    saveStorage('kansai_rilakkuma_todo', todoData);
-    renderTodoList();
-  });
-});
-
-// ================= 3. 親子行李清單 =================
-function renderPackingList() {
-  const container = document.getElementById('packingContainer');
-  container.innerHTML = packingData.map((cat, gIdx) => {
-    const lis = cat.items.map((item, iIdx) => {
-      const isFirst = iIdx === 0;
-      const isLast = iIdx === cat.items.length - 1;
-      return `
-        <li>
-          <label>
-            <input type="checkbox" ${item.checked ? 'checked' : ''} onchange="togglePackItem(${gIdx}, ${iIdx}, this.checked)">
-            <span>${escapeHtml(item.text)}</span>
-          </label>
-          <div class="edit-controls">
-            <button type="button" class="btn-mini move" onclick="movePackItem(${gIdx}, ${iIdx}, -1)" ${isFirst ? 'disabled' : ''} title="上移">⬆️</button>
-            <button type="button" class="btn-mini move" onclick="movePackItem(${gIdx}, ${iIdx}, 1)" ${isLast ? 'disabled' : ''} title="下移">⬇️</button>
-            <button type="button" class="btn-mini" onclick="openItemModal('packing', ${gIdx}, ${iIdx})">編輯</button>
-            <button type="button" class="btn-mini del" onclick="deletePackItem(${gIdx}, ${iIdx})">刪除</button>
-          </div>
-        </li>
-      `;
-    }).join('');
-    return `
-      <div class="pack-group">
-        <div class="pack-group-header">
-          <h3>${escapeHtml(cat.group)}</h3>
-          <div class="edit-controls">
-            <button type="button" class="btn-mini" style="background:var(--rilakkuma-yellow);" onclick="openItemModal('packing', ${gIdx}, null)">➕ 新增</button>
-          </div>
-        </div>
-        <ul class="pack-list">${lis}</ul>
-      </div>
-    `;
-  }).join('');
-}
-
-window.togglePackItem = function(gIdx, iIdx, checked) {
-  packingData[gIdx].items[iIdx].checked = checked;
-  saveStorage('kansai_rilakkuma_packing', packingData);
-};
-
-window.movePackItem = function(gIdx, iIdx, dir) {
-  const items = packingData[gIdx].items;
-  const target = iIdx + dir;
-  if (target < 0 || target >= items.length) return;
-  [items[iIdx], items[target]] = [items[target], items[iIdx]];
-  saveStorage('kansai_rilakkuma_packing', packingData);
-  renderPackingList();
-};
-
-window.deletePackItem = function(gIdx, iIdx) {
-  showCustomConfirm('確定要刪除這項行李物品嗎？', () => {
-    packingData[gIdx].items.splice(iIdx, 1);
-    saveStorage('kansai_rilakkuma_packing', packingData);
-    renderPackingList();
-  });
-};
-
-document.getElementById('btnResetPacking').addEventListener('click', () => {
-  showCustomConfirm('確定要還原預設的行李清單嗎？（目前的勾選與自訂項目將會重置）', () => {
-    packingData = JSON.parse(JSON.stringify(DEFAULT_PACKING));
-    saveStorage('kansai_rilakkuma_packing', packingData);
-    renderPackingList();
-  });
-});
-
-// 初始化渲染
-renderTabs();
-renderDayContent();
-renderNotices();
-renderTodoList();
-renderPackingList();
+// 啟動時檢查本機設定並載入
+loadFromCloud();
 </script>
 </body>
 </html>
