@@ -3,496 +3,1563 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#8B5E3C">
 <title>關西親子自駕旅遊手冊｜2027.02.05–02.10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#F5EFE3;--paper:#FFF9EC;--ink:#4A3321;--muted:#7D6650;
-  --brown:#8B5E3C;--brown-dark:#6B4429;--yellow:#F2C94C;--yellow-soft:#FBEBB5;
-  --line:#E6D9C0;--cream2:#F8EFD8;--shadow:0 8px 24px rgba(139,94,60,.12);
+:root {
+  --bg: #FFFCF6;
+  --paper: #FFFFFF;
+  --ink: #3E3A39;
+  --rilakkuma-brown: #9D6B43;
+  --rilakkuma-light: #DFBA94;
+  --rilakkuma-yellow: #F7D358;
+  --korilakkuma-cream: #FFF8EB;
+  --korilakkuma-pink: #F5B2B8;
+  --korilakkuma-red: #E85A60;
+  --tag-car: #D4EDDA;
+  --tag-train: #D1ECF1;
+  --tag-walk: #FFF3CD;
+  --border-w: 3px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --shadow: 4px 4px 0px #3E3A39;
+  --shadow-sm: 2px 2px 0px #3E3A39;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.65}
-a{color:var(--brown-dark);text-decoration:none}
-a:focus,button:focus{outline:3px solid var(--yellow);outline-offset:2px}
-.hero{padding:30px 20px 25px;background:linear-gradient(145deg,#EBDDBF,#F5EFE3 65%,#FFF9EC);border-bottom:4px solid var(--yellow);border-radius:0 0 28px 28px}
-.hero-inner{max-width:820px;margin:auto}
-.eyebrow{font-size:.78rem;letter-spacing:.12em;color:var(--brown);font-weight:800}
-h1{font-size:clamp(1.75rem,6vw,2.65rem);line-height:1.2;margin:9px 0 12px;color:var(--brown)}
-.hero p{margin:0;color:#6B5240}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.pill{background:var(--paper);border:1px solid var(--yellow);border-radius:999px;padding:6px 11px;font-size:.82rem}
-.quick{max-width:820px;margin:16px auto;padding:0 14px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.quick a{display:block;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:12px 8px;text-align:center;color:var(--ink);box-shadow:var(--shadow);font-size:.85rem}
-.quick strong{display:block;font-size:1rem;color:var(--brown)}
-.sticky{position:sticky;top:0;z-index:10;background:var(--brown);backdrop-filter:blur(12px);border-bottom:1px solid var(--brown-dark);padding:8px 10px}
-.nav{max-width:820px;margin:auto;display:flex;gap:7px;overflow-x:auto;padding:2px 0;scrollbar-width:none}
-.nav::-webkit-scrollbar{display:none}
-.nav a{white-space:nowrap;flex:0 0 auto;padding:8px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--paper);font-size:.84rem;color:var(--brown-dark)}
-.nav a.active{background:var(--yellow);color:#4A3321;border-color:var(--yellow);font-weight:800}
-main{max-width:820px;margin:20px auto;padding:0 14px 50px}
-.section-title{font-size:1.25rem;margin:28px 4px 12px;color:var(--brown)}
-.day{background:var(--paper);border:1px solid var(--line);border-radius:20px;margin:14px 0;padding:18px;box-shadow:var(--shadow);scroll-margin-top:90px}
-.day-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px}
-.day-no{flex:0 0 48px;height:48px;border-radius:15px;background:var(--yellow);display:grid;place-items:center;color:#4A3321;font-weight:900}
-.day h2{font-size:1.12rem;line-height:1.4;margin:0 0 3px;color:var(--brown)}
-.date{font-size:.83rem;color:var(--muted)}
-.tag{display:inline-block;background:var(--yellow-soft);color:#5C3A1E;border-radius:7px;padding:3px 8px;font-size:.75rem;font-weight:700;margin:3px 4px 3px 0}
-.timeline{border-left:2px solid var(--line);margin:15px 0 8px 8px;padding-left:17px}
-.stop{position:relative;margin:0 0 17px}
-.stop:before{content:"";position:absolute;left:-24px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--yellow);border:2px solid var(--paper);box-shadow:0 0 0 1px var(--brown)}
-.stop h3{font-size:.98rem;margin:0 0 4px;color:var(--brown-dark)}
-.stop p{margin:3px 0;color:#5E4a3a;font-size:.91rem}
-.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.meta span{font-size:.78rem;padding:5px 8px;background:var(--cream2);border-radius:8px;color:#675040}
-.note{border-radius:13px;padding:12px 13px;margin:12px 0;font-size:.89rem}
-.note.warn{background:var(--yellow-soft);border:1px solid var(--yellow)}
-.note.info{background:var(--cream2);border:1px solid var(--line);color:var(--brown-dark)}
-.note.good{background:var(--cream2);border:1px solid var(--line)}
-.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:9px 12px;font-size:.84rem;font-weight:700}
-.btn.primary{background:var(--brown);color:#FFF9EC;border-color:var(--brown)}
-.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}
-.panel h3{margin:0 0 8px;font-size:1.02rem}
-ul.checklist{list-style:none;padding:0;margin:8px 0}
-ul.checklist li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
-ul.checklist li:last-child{border:0}
-ul.checklist li:before{content:"□";margin-right:9px;color:var(--brown);font-weight:800}
-.hotel-price{font-size:1.35rem;font-weight:900;color:var(--brown)}
-.small{font-size:.82rem;color:var(--muted)}
-details{border-top:1px solid var(--line);padding-top:10px;margin-top:12px}
-summary{cursor:pointer;font-weight:800;font-size:.9rem}
-footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
-@media(min-width:650px){.quick{grid-template-columns:repeat(3,1fr)}.day{padding:22px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-.back-to-top{
-  position:fixed;right:18px;bottom:calc(22px + env(safe-area-inset-bottom, 0px));z-index:50;
-  width:50px;height:50px;border:0;border-radius:50%;
-  background:var(--brown);color:#FFF9EC;box-shadow:0 5px 18px rgba(139,94,60,.35);
-  display:flex;align-items:center;justify-content:center;
-  font-size:25px;font-weight:800;cursor:pointer;
-  opacity:0;visibility:hidden;transform:translateY(8px);
-  transition:opacity .2s ease,transform .2s ease,visibility .2s;
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
-.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
-.back-to-top:focus{outline:3px solid var(--yellow);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 
-ul.checklist-interactive {
-      list-style: none;
-      padding: 0;
-      margin: 8px 0;
-    }
-    ul.checklist-interactive li {
-      padding: 8px 0;
-      border-bottom: 1px dashed var(--line);
-      font-size: .92rem;
-    }
-    ul.checklist-interactive li:last-child {
-      border: 0;
-    }
-    ul.checklist-interactive label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-    }
-    ul.checklist-interactive input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--orange);
-      cursor: pointer;
-    }
-    ul.checklist-interactive input[type="checkbox"]:checked + span,
-    ul.checklist-interactive label:has(input:checked) {
-      color: var(--muted);
-      text-decoration: line-through;
-    }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: 'Huninn', -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  line-height: 1.6;
+  padding-bottom: 60px;
+}
+
+/* 頂端固定選單 */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--rilakkuma-yellow);
+  border-bottom: var(--border-w) solid var(--ink);
+  padding: 10px 12px;
+}
+
+.nav-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.84rem;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.1s;
+}
+.nav-links a:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.edit-toggle-btn {
+  background: var(--korilakkuma-pink);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+.edit-toggle-btn.active {
+  background: var(--korilakkuma-red);
+  color: #FFF;
+}
+
+/* 容器 */
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* 卡片通用 */
+.card {
+  background: var(--paper);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* 首頁插圖 + 標題 */
+.hero-card {
+  background: var(--korilakkuma-cream);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--rilakkuma-yellow);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  margin: 6px 0 8px;
+  color: var(--ink);
+}
+
+.hero-sub {
+  font-size: 0.95rem;
+  margin: 0 0 14px;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pill {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+}
+
+/* SVG 動畫 */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.svg-float {
+  animation: floatSlow 3.5s ease-in-out infinite;
+  transform-origin: center;
+}
+.svg-wiggle {
+  animation: wiggle 2.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svg-float, .svg-wiggle, .day-content {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* 區塊標題 */
+.sec-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  margin: 28px 0 14px;
+  color: var(--ink);
+}
+
+/* 航班卡片 */
+.flight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 600px) {
+  .flight-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.flight-box {
+  background: var(--korilakkuma-cream);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+.flight-box.return {
+  background: #FFF2F4;
+}
+
+.flight-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin: 8px 0;
+  padding: 8px 0;
+  border-top: 2px dashed var(--ink);
+  border-bottom: 2px dashed var(--ink);
+}
+
+.baggage-note {
+  background: var(--rilakkuma-yellow);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  margin-top: 14px;
+}
+
+/* 每日行程日期切換 */
+.day-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 12px;
+  scrollbar-width: none;
+}
+.day-tabs::-webkit-scrollbar { display: none; }
+
+.day-tab {
+  flex: 1 0 auto;
+  min-width: 78px;
+  background: var(--paper);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s;
+}
+
+.day-tab strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.day-tab.active {
+  background: var(--rilakkuma-brown);
+  color: #FFF;
+  transform: translateY(-4px) scale(1.03);
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+  60% { opacity: 1; transform: scale(1.01) translateY(-3px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.day-content {
+  animation: bounceIn 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.day-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--korilakkuma-cream);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+
+/* 時間軸 */
+.timeline {
+  position: relative;
+  padding-left: 24px;
+  margin-left: 8px;
+  border-left: 3px dashed var(--ink);
+}
+
+.stop-item {
+  position: relative;
+  background: var(--paper);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.stop-item::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  background: var(--rilakkuma-yellow);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+}
+
+.stop-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.stop-time {
+  background: var(--ink);
+  color: #FFF;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+}
+
+.badge-must {
+  background: var(--korilakkuma-red);
+  color: #FFF;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 1px 9px;
+  font-size: 0.78rem;
+}
+
+.badge-trans {
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 1px 9px;
+  font-size: 0.78rem;
+}
+.trans-car { background: var(--tag-car); }
+.trans-train { background: var(--tag-train); }
+.trans-walk { background: var(--tag-walk); }
+
+.stop-title {
+  font-size: 1.08rem;
+  margin: 4px 0;
+  color: var(--ink);
+}
+
+.stop-desc {
+  font-size: 0.92rem;
+  margin: 4px 0 10px;
+  color: #55504E;
+}
+
+.stop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--rilakkuma-yellow);
+  color: var(--ink);
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 5px 11px;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+.btn-map:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--korilakkuma-cream);
+  color: var(--ink);
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 5px 11px;
+  font-size: 0.85rem;
+}
+
+/* 編輯控制項 */
+.edit-controls {
+  display: none;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-left: auto;
+}
+body.edit-mode .edit-controls {
+  display: flex;
+}
+.btn-mini {
+  background: #EEE;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  padding: 3px 7px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.btn-mini.move {
+  background: var(--korilakkuma-cream);
+  padding: 3px 6px;
+}
+.btn-mini.del {
+  background: var(--korilakkuma-pink);
+}
+.btn-mini:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.add-stop-bar {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFF2F4;
+  border: 3px dashed var(--ink);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-top: 12px;
+  gap: 10px;
+}
+body.edit-mode .add-stop-bar {
+  display: flex;
+}
+
+.btn-action {
+  background: var(--rilakkuma-yellow);
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.btn-action.reset {
+  background: var(--paper);
+}
+
+/* 住宿卡片 */
+.hotel-item {
+  border-bottom: 2px dashed var(--ink);
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+}
+.hotel-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.price-tag {
+  display: inline-block;
+  background: var(--korilakkuma-pink);
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 0.9rem;
+  margin: 4px 0;
+}
+
+/* 行李清單與待確認清單 */
+.pack-group {
+  margin-bottom: 18px;
+}
+.pack-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--korilakkuma-cream);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 6px 12px;
+  margin: 0 0 8px;
+  gap: 8px;
+}
+.pack-group-header h3 {
+  font-size: 1.02rem;
+  margin: 0;
+}
+.pack-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pack-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 4px;
+  border-bottom: 1px dashed #CCC;
+}
+.pack-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.94rem;
+  flex: 1;
+}
+.pack-list input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid var(--ink);
+  border-radius: 6px;
+  background: var(--paper);
+  display: grid;
+  place-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.pack-list input[type="checkbox"]:checked {
+  background: var(--rilakkuma-yellow);
+}
+.pack-list input[type="checkbox"]:checked::before {
+  content: "✔";
+  font-size: 13px;
+  color: var(--ink);
+}
+.pack-list label:has(input:checked) span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* 旅遊注意事項卡片 */
+.notice-item {
+  background: var(--korilakkuma-cream);
+  border: 2.5px solid var(--ink);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.notice-item.warn {
+  background: #FFF2F4;
+}
+.notice-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.notice-title {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--ink);
+}
+.notice-desc {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #55504E;
+}
+
+/* Modal 編輯視窗與自訂提示框 */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(62, 58, 57, 0.55);
+  z-index: 200;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.modal-backdrop.open {
+  display: flex;
+}
+.modal-box {
+  background: var(--bg);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 6px 6px 0 var(--ink);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.form-group {
+  margin-bottom: 12px;
+}
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+.form-group input[type="text"], .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--paper);
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
 </style>
 </head>
 <body>
-<header class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">FAMILY TRIP · KANSAI, JAPAN</div>
-    <h1>關西親子自駕<br>6 天 5 夜旅遊手冊</h1>
-    <p>大阪・天橋立・伊根・京都・嵐山・環球影城</p>
-    <div class="pills">
-      <span class="pill">📅 2027/02/05（五）— 02/10（三）</span>
-      <span class="pill">👨‍👩‍👧‍👦 5 位大人＋2 位小朋友</span>
-      <span class="pill">🚗 部分行程自駕</span>
+
+<!-- 頂端固定選單 -->
+<nav class="top-nav" aria-label="主導覽選單">
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="#sec-flights">✈️ 航班</a>
+      <a href="#sec-itinerary">🗓️ 行程</a>
+      <a href="#sec-hotels">🏨 住宿</a>
+      <a href="#sec-notices">⚠️ 注意</a>
+      <a href="#sec-todo">📋 待確認</a>
+      <a href="#sec-packing">🎒 行李</a>
     </div>
+    <button type="button" class="edit-toggle-btn" id="toggleEditBtn">✏️ 編輯模式</button>
   </div>
-</header>
-<div class="quick">
-  <a href="#flights"><strong>✈️ 航班</strong>時間與接駁</a>
-  <a href="#hotel"><strong>🏨 住宿</strong>訂房與行李</a>
-  <a href="#checklist"><strong>🎒 出發前</strong>重要清單</a>
-</div>
-<div class="sticky"><nav class="nav" aria-label="行程日選單">
-  <a href="#day1">D1 抵達／Outlet</a><a href="#day2">D2 天橋立／智恩寺</a><a href="#day3">D3 伊根／錦市場</a><a href="#day4">D4 嵐山／映畫村</a><a href="#day5">D5 USJ</a><a href="#day6">D6 神社／返台</a>
-</nav></div>
+</nav>
+
 <main>
-  <section id="flights">
-    <h2 class="section-title">✈️ 航班資訊</h2>
-    <div class="panel two-col">
-      <div><h3>去程｜2/5（五）・國泰航空 CX564</h3><p><strong>桃園 TPE T1 → 關西 KIX T1</strong></p><p>起飛 11:15　抵達 14:45</p><p class="small">飛行時間約 2 小時 30 分</p></div>
-      <div><h3>回程｜2/10（三）・國泰航空 CX565</h3><p><strong>關西 KIX T1 → 桃園 TPE T1</strong></p><p>起飛 16:15　抵達 18:30</p><p class="small">飛行時間約 3 小時 15 分</p></div>
+  <!-- 首頁插圖 + 標題 -->
+  <section class="card hero-card">
+    <div class="hero-badge">KANSAI FAMILY TRIP · 2027</div>
+    <!-- SVG 插圖：拉拉熊與小白熊開自駕車遊關西 -->
+    <div class="svg-float" style="max-width: 300px; margin: 4px auto 8px;">
+      <svg viewBox="0 0 320 155" width="100%" height="auto" aria-label="拉拉熊與小白熊關西自駕繪本插圖">
+        <!-- 背景富士山 -->
+        <path d="M25,115 Q45,65 80,65 Q115,65 135,115 Z" fill="#DFBA94" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M62,82 L80,65 L98,82 L88,87 L80,80 L72,87 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- 紅色鳥居 -->
+        <g transform="translate(230, 58)">
+          <rect x="12" y="14" width="7" height="44" fill="#E85A60" stroke="#3E3A39" stroke-width="3"/>
+          <rect x="45" y="14" width="7" height="44" fill="#E85A60" stroke="#3E3A39" stroke-width="3"/>
+          <path d="M2,10 Q32,16 62,10 L65,17 Q32,22 -1,17 Z" fill="#E85A60" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="7" y="25" width="50" height="6" fill="#E85A60" stroke="#3E3A39" stroke-width="3"/>
+        </g>
+        <!-- 地面線 -->
+        <line x1="12" y1="138" x2="308" y2="138" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
+        <!-- 拉拉熊 (駕駛) -->
+        <g transform="translate(95, 52)">
+          <circle cx="12" cy="12" r="10" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/>
+          <circle cx="12" cy="12" r="5" fill="#F7D358"/>
+          <circle cx="52" cy="12" r="10" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/>
+          <circle cx="52" cy="12" r="5" fill="#F7D358"/>
+          <ellipse cx="32" cy="30" rx="26" ry="22" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/>
+          <ellipse cx="32" cy="34" rx="11" ry="8.5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+          <circle cx="21" cy="26" r="2.8" fill="#3E3A39"/>
+          <circle cx="43" cy="26" r="2.8" fill="#3E3A39"/>
+          <ellipse cx="32" cy="31" rx="3" ry="2.2" fill="#3E3A39"/>
+          <path d="M32,33 L32,37 M28,38 L32,36 L36,38" fill="none" stroke="#3E3A39" stroke-width="2.3" stroke-linecap="round"/>
+        </g>
+        <!-- 小白熊 (副駕) -->
+        <g transform="translate(162, 58)">
+          <circle cx="10" cy="10" r="8.5" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3"/>
+          <circle cx="10" cy="10" r="4" fill="#F5B2B8"/>
+          <circle cx="44" cy="10" r="8.5" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3"/>
+          <circle cx="44" cy="10" r="4" fill="#F5B2B8"/>
+          <ellipse cx="27" cy="26" rx="22" ry="19" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3"/>
+          <circle cx="27" cy="43" r="4.5" fill="#E85A60" stroke="#3E3A39" stroke-width="2.5"/>
+          <ellipse cx="27" cy="30" rx="9" ry="7" fill="#FFFFFF"/>
+          <circle cx="18" cy="23" r="2.5" fill="#3E3A39"/>
+          <circle cx="36" cy="23" r="2.5" fill="#3E3A39"/>
+          <ellipse cx="27" cy="27" rx="2.5" ry="2" fill="#3E3A39"/>
+          <path d="M24,31 Q27,34 30,31" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round"/>
+        </g>
+        <!-- 黃色自駕車身 -->
+        <path d="M72,96 L236,96 Q252,96 254,114 L254,126 Q254,132 246,132 L68,132 Q60,132 60,124 L60,110 Q60,96 72,96 Z" fill="#F7D358" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="64" y="109" width="186" height="8" fill="#E85A60" stroke="#3E3A39" stroke-width="2.5"/>
+        <!-- 車輪 -->
+        <circle cx="102" cy="132" r="13" fill="#3E3A39"/>
+        <circle cx="102" cy="132" r="6" fill="#FFFFFF"/>
+        <circle cx="212" cy="132" r="13" fill="#3E3A39"/>
+        <circle cx="212" cy="132" r="6" fill="#FFFFFF"/>
+      </svg>
     </div>
-    <div class="note info">建議回程當天約12:00搭車前往關西機場， 13:00 抵達關西機場</div>
-    <div class="panel">
-      <h3>🧳 行李額度｜國泰航空</h3>
-      <div class="two-col">
-        <div>
-          <span class="tag">去程｜台北 → 大阪</span>
-          <p><strong>手提行李</strong></p>
-          <p>每人 1 件，每件最多 7 公斤；尺寸不可超過 56 × 36 × 23 公分。</p>
-          <p><strong>託運行李</strong></p>
-          <p>每人 1 件，每件最多 23 公斤。</p>
+
+    <h1 class="hero-title">關西親子自駕 6 天 5 夜</h1>
+    <p class="hero-sub">大阪 ・ 天橋立 ・ 伊根舟屋 ・ 京都嵐山 ・ 環球影城</p>
+    <div class="hero-pills">
+      <span class="pill">📅 2027/02/05（五）– 02/10（三）</span>
+      <span class="pill">👨‍👩‍👧‍👦 5 大 2 小</span>
+      <span class="pill">🚗 2/6–2/8 自駕</span>
+    </div>
+  </section>
+
+  <!-- 航班卡片 -->
+  <h2 class="sec-title" id="sec-flights">✈️ 國泰航空航班資訊</h2>
+  <section class="card">
+    <div class="flight-grid">
+      <div class="flight-box">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <strong>去程｜2/5（五）</strong>
+          <span class="pill" style="background:var(--rilakkuma-yellow);">CX564</span>
         </div>
-        <div>
-          <span class="tag">回程｜大阪 → 台北</span>
-          <p><strong>手提行李</strong></p>
-          <p>每人 1 件，每件最多 7 公斤；尺寸不可超過 56 × 36 × 23 公分。</p>
-          <p><strong>託運行李</strong></p>
-          <p>每人 1 件，每件最多 23 公斤。</p>
+        <div class="flight-route">
+          <div><strong>11:15</strong><div style="font-size:0.8rem;">桃園 TPE T1</div></div>
+          <div>🛫 ➔ 🛬</div>
+          <div style="text-align:right;"><strong>14:45</strong><div style="font-size:0.8rem;">關西 KIX T1</div></div>
         </div>
+        <div style="font-size:0.85rem;">⏱️ 飛行約 2 小時 30 分</div>
+      </div>
+
+      <div class="flight-box return">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <strong>回程｜2/10（三）</strong>
+          <span class="pill" style="background:var(--korilakkuma-pink);">CX565</span>
+        </div>
+        <div class="flight-route">
+          <div><strong>16:15</strong><div style="font-size:0.8rem;">關西 KIX T1</div></div>
+          <div>🛫 ➔ 🛬</div>
+          <div style="text-align:right;"><strong>18:30</strong><div style="font-size:0.8rem;">桃園 TPE T1</div></div>
+        </div>
+        <div style="font-size:0.85rem;">⏱️ 建議 12:00 搭車、13:00 抵機場</div>
+      </div>
+    </div>
+    <div class="baggage-note">
+      🧳 <strong>行李額度：</strong>每人手提 1 件（限 7 kg，56×36×23 cm）＋ 託運 1 件（限 23 kg）。行動電源、平板、護照務必放隨身行李！
+    </div>
+  </section>
+
+  <!-- 每日行程 -->
+  <h2 class="sec-title" id="sec-itinerary">🗓️ 每日行程與路線導航</h2>
+  <section class="card">
+    <div class="day-tabs" id="dayTabs" role="tablist"></div>
+    <div id="dayContent" class="day-content"></div>
+    <div class="add-stop-bar">
+      <button type="button" class="btn-action" id="btnAddStop">➕ 新增當日行程</button>
+      <button type="button" class="btn-action reset" id="btnResetData">🔄 還原預設行程</button>
+    </div>
+  </section>
+
+  <!-- 住宿資訊 -->
+  <h2 class="sec-title" id="sec-hotels">🏨 住宿與行李寄放</h2>
+  <section class="card">
+    <div class="hotel-item">
+      <strong>1. 大阪｜ESLEAD HOTEL Namba Daikokucho</strong>
+      <div><span class="price-tag">2/5–2/6 (1晚) ＋ 2/8–2/10 (2晚)｜合計 NT$11,077（約 NT$2,215/人）</span></div>
+      <p style="font-size:0.9rem;margin:6px 0;">5 大 2 小同房（3 張雙人床、附簡易廚房）。2/6 退房自駕北上時，僅帶 1–2 件行李，其餘先確認寄放飯店櫃檯。</p>
+      <div class="stop-actions">
+        <a class="btn-map" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=ESLEAD+HOTEL+Namba+Daikokucho">🗺️ Google 路線</a>
+        <a class="btn-link" target="_blank" rel="noopener" href="https://www.booking.com/Share-TL8xGpZ">🔗 訂房資訊</a>
+      </div>
+    </div>
+
+    <div class="hotel-item">
+      <strong>2. 京都北部｜宮津市 Airbnb 包棟民宿</strong>
+      <div><span class="price-tag">2/6（1晚）｜約 NT$17,000（約 NT$3,400/人）</span></div>
+      <p style="font-size:0.9rem;margin:6px 0;">地址：〒626-0225 京都府宮津市日置小字芒草 3956-7（位於天橋立與伊根之間，附近有 24H FamilyMart 宮津日置店）。</p>
+      <div class="stop-actions">
+        <a class="btn-map" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=3956-7+Hioki,+Miyazu,+Kyoto+626-0225">🗺️ 民宿路線</a>
+        <a class="btn-map" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=FamilyMart+Miyazu+Hioki">🏪 全家超商路線</a>
+      </div>
+    </div>
+
+    <div class="hotel-item">
+      <strong>3. 京都市區｜Kevin's Place Annex（南區東九條）</strong>
+      <div><span class="price-tag">2/7–2/8（1晚）｜NT$6,407（約 NT$1,281/人）</span></div>
+      <p style="font-size:0.9rem;margin:6px 0;">地址：34-4 Higashikujō Higashiiwamotochō, Minami Ward, Kyoto。停車位需提前預約（¥800/晚）。</p>
+      <div class="stop-actions">
+        <a class="btn-map" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=34-4+Higashikujo+Higashiiwamotocho,+Minami+Ward,+Kyoto+601-8006">🗺️ 京都住宿路線</a>
       </div>
     </div>
   </section>
 
-  <section id="day1" class="day">
-    <div class="day-head"><div class="day-no">D1</div><div><h2>抵達大阪・臨空城 Outlet</h2><div class="date">2/5（五）｜大眾運輸（不租車）</div></div></div>
-    <span class="tag">購物</span><span class="tag">入住大阪</span>
-    <div class="timeline">
-      <div class="stop"><h3>11:15｜桃園機場起飛（CX564）</h3><p>建議預先確認護照、登機文件與孩子用品。</p></div>
-      <div class="stop"><h3>14:45｜抵達關西機場</h3><p>15:00–16:00 入境、領行李，時間依現場狀況調整。</p></div>
-      <div class="stop"><h3>16:00–17:00｜前往臨空城 Outlet</h3><p>搭乘大眾交通前往 Rinku Premium Outlets。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rinku+Premium+Outlets">📍 Google 地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.premiumoutlets.co.jp/cht/rinku/">官方網站</a></div></div>
-      <div class="stop"><h3>17:00–20:00｜Outlet 購物、吃晚餐</h3><p>若不餓，可以回大阪市區再吃；依小朋友體力與店家營業時間彈性調整。</p></div>
-      <div class="stop"><h3>20:00–21:00｜搭車回大阪飯店</h3><p>前往 ESLEAD HOTEL Namba Daikokucho。</p></div>
-      <div class="stop"><h3>21:00｜Check-in，詢問行李寄放事宜</h3><p>先詢問飯店是否可寄放行李，因 2/6 退房後會自駕前往京都北部，2/8 傍晚才回大阪入住。</p></div>
-    </div>
-    <div class="note good">住宿：ESLEAD HOTEL Namba Daikokucho（2/5–2/6）。請先取得飯店對跨夜寄放行李的明確確認。</div>
-  </section>
-
-  <section id="day2" class="day">
-    <div class="day-head"><div class="day-no">D2</div><div><h2>大阪 → 天橋立 View Land → 智恩寺 → 宮津住宿</h2><div class="date">2/6（六）｜取車自駕</div></div></div>
-    <span class="tag">住宿已訂</span><span class="tag">自駕</span><span class="tag">冬季路況</span>
-    <div class="timeline">
-      <div class="stop"><h3>07:00–08:00｜早餐、退房、前往取車</h3><p>取車時確認兒童安全座椅、ETC、保險及雪胎；不帶走的行李先依飯店確認結果寄放。</p></div>
-      <div class="stop"><h3>08:00–11:00｜開車前往天橋立</h3><p>預留約 3 小時，冬季道路狀況可能影響車程，中途可安排短暫休息。</p></div>
-      <div class="stop"><h3>11:00–12:30｜吃午餐</h3><p>先吃午餐，再安排展望台；若餐廳排隊，彈性調整後續時間。</p></div>
-      <div class="stop"><h3>12:30–14:00｜天橋立 View Land（搭單軌電車）</h3><p>搭單軌電車上展望台，欣賞「飛龍觀」。冬季營業時間與設施運行狀況需出發前確認。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Amanohashidate+View+Land">View Land 地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.viewland.jp/cn/">官方網站</a></div></div>
-      <div class="stop"><h3>14:00–15:00｜智恩寺參拜</h3><p>參拜文殊菩薩、看看扇子籤，並可在附近買智慧餅。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chionji+Temple+Amanohashidate">智恩寺地圖</a></div></div>
-      <div class="stop"><h3>15:00–16:00｜周邊散步購物</h3><p>視體力與店家營業時間，簡單散步、買伴手禮。</p></div>
-      <div class="stop"><h3>16:00–17:00｜吃晚餐（或買回民宿吃）</h3><p>建議準備便利商店或外帶餐點，住宿周邊晚間選擇可能較少。</p></div>
-      <div class="stop"><h3>17:00–17:30｜前往宮津民宿</h3><p>地址：3956-7 Hioki, Miyazu, Kyoto 626-0225, Japan（〒626-0225 京都府宮津市日置小字芒草 3956-7）。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=〒626-0225+京都府宮津市日置小字芒草3956-7">住宿地圖</a></div></div>
-      <div class="stop"><h3>17:30–18:00｜Check-in、全家超商採買補給</h3><p>採買隔天早餐、飲料與小朋友零食，回住宿休息。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=FamilyMart+Miyazu+Hioki">FamilyMart 地圖</a></div></div>
-    </div>
-    <div class="note good"><strong>2/6 宮津住宿已訂：</strong>Airbnb 位於天橋立與伊根之間，費用約 NT$17,000，按 5 人分攤約 NT$3,400／人（以你提供的估算為準）。</div>
-    <div class="note warn">❄️ 2 月北部京都可能有積雪、結冰或低溫。請確認雪胎與保險，出發前查看道路資訊；若天候不佳，優先縮減景點。</div>
-  </section>
-
-  <section id="day3" class="day">
-    <div class="day-head"><div class="day-no">D3</div><div><h2>伊根舟屋 → 錦市場 → 京都車站</h2><div class="date">2/7（日）｜自駕</div></div></div>
-    <span class="tag">伊根搭船</span><span class="tag">錦市場美食</span><span class="tag">京都住宿已訂</span>
-    <div class="timeline">
-      <div class="stop"><h3>07:00–08:00｜超商買早餐、前往伊根</h3><p>先買早餐與車上點心，前往伊根搭船集合地點。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=FamilyMart+Miyazu+Hioki">FamilyMart 地圖</a></div></div>
-      <div class="stop"><h3>08:00–10:30｜伊根搭船（餵海鷗）</h3><p>依已安排的行程進行，請遵循船方規定並確認是否可餵食。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ine+Bay+Sightseeing+Boat">伊根搭船地圖</a></div></div>
-      <div class="stop"><h3>10:30–13:30｜開車前往京都錦市場</h3><p>車程約 3 小時，冬季路況可能延長，車上準備點心；若延誤請勿冒險趕路，午餐順延。請先查好錦市場周邊停車場。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto">錦市場周邊地圖</a></div></div>
-      <div class="stop"><h3>13:30–15:00｜錦市場吃美食</h3><p>請在購買店家前或店內食用，不要邊走邊吃。</p></div>
-      <div class="stop"><h3>15:00–16:00｜錦天滿宮、周邊逛街</h3><p>錦市場東側盡頭即是錦天滿宮，順路參拜，再逛周邊商店街。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nishiki+Tenmangu+Kyoto">錦天滿宮地圖</a></div></div>
-      <div class="stop"><h3>16:00–17:00｜飯店 Check-in ＆ 停車</h3><p>前往 Kevin's Place Annex，地址：34-4 Higashikujō Higashiiwamotochō, Minami Ward, Kyoto, 601-8006, Japan。停車位需提前預約，每晚 ¥800；請確認已收到預約回覆，並核對車位尺寸及進出方式。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=34-4+Higashikujo+Higashiiwamotocho+Minami+Ward+Kyoto+601-8006">京都住宿地圖</a></div></div>
-      <div class="stop"><h3>17:00–20:00｜京都車站周邊散步、吃晚餐</h3><p>可逛 Yodobashi、Uniqlo、GU，晚餐選京都車站周邊，方便帶孩子用餐。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=restaurants+near+Kyoto+Station">京都車站晚餐地圖</a></div></div>
-      <div class="stop"><h3>20:00–21:30｜逛唐吉訶德或超市</h3><p>若孩子還有體力再去採買；否則回住宿休息。</p></div>
-    </div>
-    <div class="note warn">伊根開車到京都市區約 3 小時，又要找錦市場停車位，午餐與逛街時間可能順延；冬季道路安全優先。</div>
-  </section>
-
-  <section id="day4" class="day">
-    <div class="day-head"><div class="day-no">D4</div><div><h2>嵐山・太秦映畫村・心齋橋</h2><div class="date">2/8（一）｜自駕（傍晚回大阪還車）</div></div></div>
-    <span class="tag">嵐山</span><span class="tag">映畫村</span><span class="tag">心齋橋夜遊</span>
-    <div class="timeline">
-      <div class="stop"><h3>08:00–08:30｜準備出門</h3><p>京都住宿退房（10:00 前），行李帶上車。</p></div>
-      <div class="stop"><h3>08:30–09:00｜開車前往嵐山</h3><p>預留停車時間，先確認嵐山停車場位置與費用。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Parking">嵐山停車場地圖</a></div></div>
-      <div class="stop"><h3>09:00–12:00｜竹林小徑 ➔ 渡月橋 ➔ Rilakkuma 商店</h3><p>依步行動線安排；Rilakkuma 商店的開店時間出發前先確認，若尚未開門可調整順序。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove">竹林小徑地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge+Arashiyama">渡月橋地圖</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rilakkuma+Sabo+Arashiyama">Rilakkuma 商店地圖</a></div></div>
-      <div class="stop"><h3>12:00–13:00｜嵐山午餐</h3><p>建議先挑一間主選與一間備選；熱門店可能排隊，太久就改備選。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Arashiyama+restaurants+near+Togetsukyo+Bridge">嵐山餐廳地圖</a></div></div>
-      <div class="stop"><h3>13:00–13:30｜前往太秦映畫村</h3></div>
-      <div class="stop"><h3>13:30–16:00｜太秦映畫村玩樂</h3><p>官方營業時間會依日期及整修安排變動，2027 年 2 月的實際開園時間、休村日與票價需接近出發時再查。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.eigamura.com/hours-tickets/">官方營業時間／票價 ↗</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=東映太秦映画村">太秦映畫村地圖</a></div></div>
-      <div class="stop"><h3>16:00–18:00｜開車回大阪市區</h3><p>預留塞車、加油與還車前整理時間。</p></div>
-      <div class="stop"><h3>18:00–18:30｜Check-in ＋ 拿寄放的行李</h3><p>ESLEAD HOTEL Namba Daikokucho（2/8–2/10）。</p></div>
-      <div class="stop"><h3>18:30–19:00｜還車</h3><p>還車點與加油站位置請先確認，避免繞路。</p></div>
-      <div class="stop"><h3>19:00–20:00｜吃晚餐</h3></div>
-      <div class="stop"><h3>20:00–21:30｜心齋橋、道頓堀拍照逛街</h3><p>看固力果招牌（出發前確認是否仍在維修），依孩子體力彈性調整。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka">道頓堀地圖</a></div></div>
-      <div class="stop"><h3>21:30–22:00｜回飯店休息</h3></div>
-    </div>
-    <div class="note warn"><strong>提醒：</strong>這天從京都開到嵐山、映畫村再回大阪還車，行程偏滿，且兩位小朋友年紀小；若嵐山或映畫村玩得比預期久，可縮短一處，確保 18:30 前後順利還車。</div>
-  </section>
-
-  <section id="day5" class="day">
-    <div class="day-head"><div class="day-no">D5</div><div><h2>日本環球影城 USJ</h2><div class="date">2/9（二）｜大眾運輸</div></div></div>
-    <span class="tag">親子重點</span><span class="tag">需提前準備</span>
-    <div class="timeline">
-      <div class="stop"><h3>06:00–06:30｜起床、買早餐（9:00 開園）</h3><p>若改為 8:00 開園，全部提早 1 小時：05:00 起床、05:30 出門、06:30 到場。到時再確認實際開園時間。</p></div>
-      <div class="stop"><h3>06:30–07:30｜出門前往環球影城</h3><p>06:30 出門，目標 07:30 到達。</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.usj.co.jp/web/zh/tw">USJ 官方網站</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan">📍 Google 地圖</a></div></div>
-      <div class="stop"><h3>07:30–09:00｜排隊等進場（邊吃早餐）</h3><p>先確認入園規則、App、整理券／預約方式與小朋友身高限制。</p></div>
-      <div class="stop"><h3>09:00–17:30｜USJ 暢玩一整天</h3><p>先玩最想玩的區域，安排午餐、休息與室內設施。同行有 2 歲及 4 歲小朋友，避免連續排隊太久。</p></div>
-      <div class="stop"><h3>17:30–18:30｜返回大阪市區</h3></div>
-      <div class="stop"><h3>19:00–20:00｜吃晚餐</h3></div>
-      <div class="stop"><h3>20:00–21:30｜逛唐吉訶德／藥妝／超市</h3><p>依孩子體力彈性調整，太累就直接回飯店。</p></div>
-      <div class="stop"><h3>21:30–22:00｜回飯店休息</h3></div>
-    </div>
-    <div class="note info">USJ 門票、快速通關、開園時間與熱門區域規則，建議接近出發時再確認。不要只依一般營業時間推估實際入園時段。</div>
-  </section>
-
-  <section id="day6" class="day">
-    <div class="day-head"><div class="day-no">D6</div><div><h2>難波八阪神社・返台</h2><div class="date">2/10（三）｜大眾運輸，保留機場緩衝</div></div></div>
-    <span class="tag">返程日</span><span class="tag">神社拍照</span>
-    <div class="timeline">
-      <div class="stop"><h3>08:00–09:00｜起床、整理行李、退房</h3></div>
-      <div class="stop"><h3>09:00–10:00｜吃特色早餐</h3><p>選飯店附近的店，避免排隊或繞路；出發前確認營業時間。</p></div>
-      <div class="stop"><h3>10:00–10:45｜難波八阪神社參拜拍照</h3><p>拍巨大獅子殿，停留時間不必太長。行李先寄放飯店。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Namba+Yasaka+Shrine">神社地圖</a></div></div>
-      <div class="stop"><h3>10:45–11:30｜回飯店取行李、前往車站</h3></div>
-      <div class="stop"><h3>11:30–12:30｜前往關西機場</h3></div>
-      <div class="stop"><h3>13:00–16:15｜抵達機場、報到／托運／逛免稅店</h3></div>
-      <div class="stop"><h3>16:15｜關西機場起飛（CX565）</h3><p>18:30 抵達桃園機場，結束旅程。</p></div>
-    </div>
-    <div class="note warn">返程日不要再排遠距離景點；若交通或天氣有變，優先縮短神社停留，確保準時到機場。</div>
-  </section>
-
-  <section id="hotel">
-    <h2 class="section-title">🏨 住宿與行李安排</h2>
-    <div class="panel">
-      <h3>大阪｜ESLEAD HOTEL Namba Daikokucho</h3>
-      <p>已訂日期：<strong>2/5–2/6（1 晚）</strong>、<strong>2/8–2/10（2 晚）</strong></p>
-      <p>入住安排：2/5 21:00 抵達；2/8 約 18:00 入住；2/10 08:00–09:00 退房。</p>
-      <p>房型資訊：同一房間入住 5 位大人＋2 位小朋友，3 張雙人床，附簡易廚房、1 間浴室（依訂房內容為準）。</p>
-      <p class="hotel-price">目前顯示合計 NT$11,077</p>
-      <p><strong>按 5 人分攤：約 NT$2,215／人</strong>（精算 NT$2,215.4／人）。</p>
-      <p class="small">第一段 NT$3,634；第二段 NT$7,443。兩段合計 NT$11,077 ÷ 5 人。尚未實際扣款，最終金額以訂房平台／帳單為準。</p>
-      <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.booking.com/Share-TL8xGpZ">查看大阪訂房</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESLEAD+HOTEL+Namba+Daikokucho">飯店地圖</a></div>
-    </div>
-    <div class="panel">
-      <h3>京都北部｜Airbnb（2/6，1 晚）</h3>
-      <p><strong>住宿地址：</strong>〒626-0225 京都府宮津市日置小字芒草 3956-7</p>
-      <p><strong>位置與安排：</strong>位於天橋立與伊根之間；2/6 先玩天橋立、智恩寺，晚上入住，2/7 一早再前往伊根。</p>
-      <div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=〒626-0225+京都府宮津市日置小字芒草3956-7">📍 用住宿地址開啟 Google 地圖</a></div>
-      <p><strong>住宿費用：</strong>約 NT$17,000；按 5 人分攤約 <strong>NT$3,400／人</strong>（此為使用者提供的估算，最終以 Airbnb 訂單為準）。</p>
-      <p><strong>附近補給：</strong>FamilyMart 宮津日置店（ファミリーマート 宮津日置店，24 小時；建議導航前再核對路線是否順路）。可先買早餐、飲料與孩子零食。</p>
-      <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.airbnb.com.tw/rooms/1515579300252466166?unique_share_id=8408b2e9-484d-4c87-a4d0-292f525551a4&viralityEntryPoint=1&s=76">查看 Airbnb 訂房 ↗</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=FamilyMart+Miyazu+Hioki">FamilyMart 地圖 ↗</a></div>
-    </div>
-    <div class="panel">
-      <h3>京都市區｜Kevin's Place Annex（2/7–2/8，1 晚，南區東九條）</h3>
-      <p><strong>地址：</strong>34-4 Higashikujō Higashiiwamotochō, Minami Ward, Kyoto, 601-8006, Japan</p>
-      <p><strong>入住：</strong>2/7（日）15:00 後（預計 16:00–17:00 抵達並停車）；<strong>退房：</strong>2/8（一）10:00 前。</p>
-      <p class="hotel-price">住宿費用：NT$6,407</p>
-      <p><strong>按 5 人分攤：約 NT$1,281／人</strong>（精算 NT$1,281.4／人）。</p>
-      <p><strong>停車：</strong>需事先預約，¥800／晚。請確認停車預約已成功，並確認車位可容納租用車型。</p>
-      <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://www.airbnb.com.tw/rooms/1670074389679264421?unique_share_id=07bc90b4-7cf9-4bf0-baca-aecd2b8d129b&viralityEntryPoint=1&s=76">查看京都 Airbnb ↗</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=34-4+Higashikujo+Higashiiwamotocho+Minami+Ward+Kyoto+601-8006">京都住宿地圖</a></div>
-    </div>
-    <div class="panel">
-      <h3>行李寄放計畫（務必再確認）</h3>
-      <ul class="checklist">
-        <li>2/6 退房後，只帶 1–2 件行李自駕前往京都北部。</li>
-        <li>希望其餘行李寄放大阪飯店，2/8 約 18:00 回大阪 Check-in 時取回；2/10 退房後也要寄放行李，10:45 回飯店取。</li>
-        <li>飯店回覆：可協助處理 4 件行李，但行李架空間有限，寄放位置需視當天情況由櫃檯安排。</li>
-        <li>目前尚未明確保證能從 2/6 退房後寄放到 2/8 再入住，請再次取得書面確認；也請確認 2/10 退房後可繼續寄放到 10:45。</li>
-        <li>若飯店無法寄放，提前查找其他行李寄存服務；大型行李與多件行李不一定放得進車站置物櫃。</li>
-      </ul>
-      <div class="note warn">不要在未確認前把「可寄放兩晚」視為已保證。若行李安排不確定，需重新比較飯店寄存、付費行李寄存服務或調整租車／住宿方案。</div>
+  <!-- 旅遊注意事項 -->
+  <h2 class="sec-title" id="sec-notices">⚠️ 旅遊注意事項</h2>
+  <section class="card">
+    <div id="noticesContainer"></div>
+    <div class="add-stop-bar">
+      <button type="button" class="btn-action" id="btnAddNotice">➕ 新增注意事項</button>
+      <button type="button" class="btn-action reset" id="btnResetNotices">🔄 還原預設提醒</button>
     </div>
   </section>
 
-  <section id="checklist">
-    <h2 class="section-title">🎒 出發前確認清單</h2>
-    <div class="panel">
-      <h3>自駕與冬季安全</h3>
-      <ul class="checklist">
-        <li>確認租車公司、取還車時間、兒童安全座椅、ETC 與保險內容。</li>
-        <li>北京都路線確認雪胎；查詢天氣、積雪與道路管制。</li>
-        <li>準備台灣駕照、日文譯本及租車所需文件。</li>
-        <li>預留加油、休息、停車與小朋友上廁所的時間。</li>
-      </ul>
-    </div>
-    <div class="panel">
-      <h3>訂房與門票</h3>
-      <ul class="checklist">
-        <li>已訂 2/6 天橋立與伊根之間 Airbnb；確認入住方式、停車位與入住時間。</li>
-        <li>確認大阪飯店能否跨入住日寄放行李，並取得明確回覆。</li>
-        <li>2/7 伊根搭船後開車前往京都錦市場，確認錦市場周邊停車場。</li>
-        <li>2/8 確認嵐山停車位置、Rilakkuma 商店營業時間，以及還車點與營業時間。</li>
-                <li>接近出發時確認 USJ 開園時間（9:00 開園 06:30 出門；8:00 開園 05:30 出門）、營業時間、票券、快速通關及兒童設施限制。</li>
-        <li>確認天橋立 View Land、智恩寺、伊根搭船活動、錦市場與嵐山店家營業時間。</li>
-      </ul>
-    </div>
-    <div class="panel">
-      <h3>親子與隨身用品</h3>
-      <ul class="checklist">
-        <li>護照、機票、訂房資料、保險資料及必要文件。</li>
-        <li>保暖外套、帽子、手套、防滑鞋；北京都可採洋蔥式穿搭。</li>
-        <li>兒童備用衣物、濕紙巾、常用藥品、暈車／防暈用品（依個人需求）。</li>
-        <li>行動電源、充電器、網路／eSIM、現金與信用卡。</li>
-      </ul>
-    </div>
-    <h2 class="section-title">🎒 行李清單</h2>
-    <div class="panel">
-      <h3>📁 必帶重要物品</h3>
-      <ul class="checklist-interactive">
-        <li><label><input type="checkbox" id="chk_1"> 4 本護照（2 大 2 小） ➔ 隨身行李</label></li>
-        <li><label><input type="checkbox" id="chk_2"> 2 張台灣駕照</label></li>
-        <li><label><input type="checkbox" id="chk_3"> 2 份日文譯本</label></li>
-        <li><label><input type="checkbox" id="chk_4"> 信用卡</label></li>
-        <li><label><input type="checkbox" id="chk_5"> 日幣現金</label></li>
-        <li><label><input type="checkbox" id="chk_6"> 手機 ➔ 隨身行李</label></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>👶 小孩隨身包</h3>
-      <ul class="checklist-interactive">
-        <li><label><input type="checkbox" id="chk_7"> 尿布（夜用／白天）</label></li>
-        <li><label><input type="checkbox" id="chk_8"> 水壺 × 2</label></li>
-        <li><label><input type="checkbox" id="chk_9"> 零食（飛機上吃）</label></li>
-        <li><label><input type="checkbox" id="chk_10"> 替換衣物</label></li>
-        <li><label><input type="checkbox" id="chk_11"> 平板 ➔ 隨身行李</label></li>
-        <li><label><input type="checkbox" id="chk_12"> 濕紙巾</label></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>👕 衣物與防寒（建議洋蔥式穿搭）</h3>
-      <ul class="checklist-interactive">
-        <li><label><input type="checkbox" id="chk_13"> 2 大人衣物（衣服、褲子、內衣褲、襪子）</label></li>
-        <li><label><input type="checkbox" id="chk_14"> 2 小孩衣物（衣服、褲子、內褲、襪子）</label></li>
-        <li><label><input type="checkbox" id="chk_15"> 厚外套 × 4</label></li>
-        <li><label><input type="checkbox" id="chk_16"> 毛帽 × 4</label></li>
-        <li><label><input type="checkbox" id="chk_17"> 芮 kitty 耳罩</label></li>
-        <li><label><input type="checkbox" id="chk_18"> 手套 × 4</label></li>
-        <li><label><input type="checkbox" id="chk_19"> 暖暖包（大人、小孩）</label></li>
-        <li><label><input type="checkbox" id="chk_20"> 口罩（大人、小孩）</label></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>🛁 盥洗與個人用品</h3>
-      <ul class="checklist-interactive">
-        <li><label><input type="checkbox" id="chk_21"> 眼鏡、隱形眼鏡</label></li>
-        <li><label><input type="checkbox" id="chk_22"> 化妝包、洗面乳</label></li>
-        <li><label><input type="checkbox" id="chk_23"> 牙刷、牙膏</label></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>🔌 充電 / 3C 用品</h3>
-      <ul class="checklist-interactive">
-        <li><label><input type="checkbox" id="chk_24"> 手機充電器 × 2、充電頭 × 2</label></li>
-        <li><label><input type="checkbox" id="chk_25"> USB-C / Lightning 充電線</label></li>
-        <li><label><input type="checkbox" id="chk_26"> 行動電源 ➔ 隨身行李（不可託運）</label></li>
-        <li><label><input type="checkbox" id="chk_27"> Apple Watch 充電器</label></li>
-        <li><label><input type="checkbox" id="chk_28"> AirPods ➔ 隨身行李</label></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>🍼 奶瓶 / 奶粉</h3>
-      <ul class="checklist-interactive">
-        <li><label><input type="checkbox" id="chk_29"> 奶粉 × 5 天量</label></li>
-        <li><label><input type="checkbox" id="chk_30"> 奶瓶 × 2</label></li>
-        <li><label><input type="checkbox" id="chk_31"> 冷水壺、保溫瓶</label></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>💊 備用藥品</h3>
-      <ul class="checklist-interactive">
-        <li><label><input type="checkbox" id="chk_32"> 退燒藥水、感冒藥水</label></li>
-        <li><label><input type="checkbox" id="chk_33"> 腸胃藥、OK 繃</label></li>
-        <li><label><input type="checkbox" id="chk_34"> 克流感、塞劑、酸痛貼布</label></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>🎒 其他雜項</h3>
-      <ul class="checklist-interactive">
-        <li><label><input type="checkbox" id="chk_35"> 購物袋（去超商／超市買東西裝）</label></li>
-        <li><label><input type="checkbox" id="chk_36"> 備用行李袋（回國打包用）</label></li>
-        <li><label><input type="checkbox" id="chk_37"> 食物剪刀 ➔ 託運（不可隨身）</label></li>
-        <li><label><input type="checkbox" id="chk_38"> 指甲剪 ➔ 託運（不可隨身）</label></li>
-        <li><label><input type="checkbox" id="chk_39"> 兒童餐具</label></li>
-        <li><label><input type="checkbox" id="chk_40"> 推車 × 1 ➔ 機邊託運</label></li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>🚗 自駕與行程備忘</h3>
-      <ul class="checklist-interactive">
-        <li><label><input type="checkbox" id="chk_41"> 確認租車公司、取還車時間、兒童安全座椅、ETC 與雪胎。</label></li>
-        <li><label><input type="checkbox" id="chk_42"> 11/1 起嘗試預訂伊根舟屋住宿，確認最多入住人數及餐食。</label></li>
-        <li><label><input type="checkbox" id="chk_43"> 確認大阪飯店能否跨入住日寄放行李。</label></li>
-      </ul>
+  <!-- 出發前待確認事項 -->
+  <h2 class="sec-title" id="sec-todo">📋 出發前待確認事項</h2>
+  <section class="card">
+    <div id="todoContainer"></div>
+    <div class="add-stop-bar">
+      <button type="button" class="btn-action" id="btnAddTodo">➕ 新增待確認事項</button>
+      <button type="button" class="btn-action reset" id="btnResetTodo">🔄 還原預設事項</button>
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">📌 目前仍待定案</h2>
-    <div class="panel">
-      <ul class="checklist">
-        <li>確認 Airbnb 入住資訊、停車方式，以及 FamilyMart 的實際路線。</li>
-        <li>大阪飯店能否從 2/6 寄放行李至 2/8。</li>
-        <li>2/7 錦市場停車、2/8 嵐山及太秦映畫村停車安排；京都住宿停車位需預約（¥800／晚）。</li>
-        <li>租車取車點（2/6 早上）、還車點（2/8 18:30）與實際路線。</li>
-        <li>USJ 實際開園時間（9:00 或 8:00）。</li>
-        <li>冬季天氣與景點營業時間。</li>
-      </ul>
-      <p class="small">這份手冊是目前規劃版，未確認的時刻與順序都保留彈性。出發前請再核對官方公告、訂房回覆及道路資訊。</p>
+  <!-- 行李清單 -->
+  <h2 class="sec-title" id="sec-packing">🎒 親子行李清單（自動儲存勾選）</h2>
+  <section class="card">
+    <div id="packingContainer"></div>
+    <div class="add-stop-bar">
+      <span style="font-size:0.86rem;color:var(--rilakkuma-brown);">💡 點擊各分類右側「➕ 新增」可增加物品</span>
+      <button type="button" class="btn-action reset" id="btnResetPacking">🔄 還原預設行李</button>
     </div>
   </section>
 </main>
-<footer>關西親子自駕旅遊手冊 · 2027/02/05–02/10<br>手機瀏覽版｜建議加入瀏覽器書籤，方便旅途中快速查看</footer>
-<script>
-const navLinks=[...document.querySelectorAll('.nav a')];
-const sections=navLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
-if('IntersectionObserver' in window){
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));
-      }
-    });
-  },{rootMargin:'-22% 0px -68% 0px'});
-  sections.forEach(s=>io.observe(s));
-}
-</script>
 
-<button class="back-to-top" id="backToTop" type="button" aria-label="回到最上方" title="回到最上方">↑</button>
+<!-- 編輯行程彈窗 -->
+<div class="modal-backdrop" id="editModal">
+  <div class="modal-box">
+    <h3 id="modalTitle" style="margin-top:0;">✏️ 編輯行程項目</h3>
+    <div id="modalWarnMsg" style="display:none;background:#FFF2F4;border:2px solid #E85A60;border-radius:10px;padding:8px 12px;margin-bottom:10px;font-size:0.88rem;color:#E85A60;">⚠️ 請輸入行程標題！</div>
+    <div class="form-group">
+      <label for="fTime">時間</label>
+      <input type="text" id="fTime" placeholder="例如：09:00–12:00">
+    </div>
+    <div class="form-group">
+      <label for="fTitle">行程標題</label>
+      <input type="text" id="fTitle" placeholder="例如：天橋立 View Land">
+    </div>
+    <div class="form-group">
+      <label for="fTrans">交通方式</label>
+      <select id="fTrans">
+        <option value="car">🚗 自駕開車</option>
+        <option value="train">🚃 大眾運輸 / 搭船 / 飛機</option>
+        <option value="walk">🚶 步行 / 逛街 / 住宿</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label><input type="checkbox" id="fMust"> ⭐ 標記為「必去」重點行程</label>
+    </div>
+    <div class="form-group">
+      <label for="fDesc">備註說明</label>
+      <textarea id="fDesc" rows="3" placeholder="輸入注意事項或提醒..."></textarea>
+    </div>
+    <div class="form-group">
+      <label for="fMap">Google 地圖導航地點（留空則不顯示按鈕）</label>
+      <input type="text" id="fMap" placeholder="例如：Rinku Premium Outlets">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn-action reset" id="btnCancelModal">取消</button>
+      <button type="button" class="btn-action" id="btnSaveModal">💾 儲存</button>
+    </div>
+  </div>
+</div>
+
+<!-- 通用項目編輯彈窗（注意事項 / 待確認 / 行李） -->
+<div class="modal-backdrop" id="itemModal">
+  <div class="modal-box">
+    <h3 id="itemModalTitle" style="margin-top:0;">✏️ 編輯項目</h3>
+    <div id="itemModalWarn" style="display:none;background:#FFF2F4;border:2px solid #E85A60;border-radius:10px;padding:8px 12px;margin-bottom:10px;font-size:0.88rem;color:#E85A60;">⚠️ 請輸入內容！</div>
+    <div class="form-group" id="itemLevelGroup" style="display:none;">
+      <label for="fItemLevel">重要程度</label>
+      <select id="fItemLevel">
+        <option value="warn">🚨 重要提醒（粉紅底）</option>
+        <option value="info">💡 一般叮嚀（奶油底）</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="fItemTitle" id="fItemTitleLabel">項目名稱</label>
+      <input type="text" id="fItemTitle" placeholder="請輸入內容...">
+    </div>
+    <div class="form-group" id="itemDescGroup" style="display:none;">
+      <label for="fItemDesc">詳細說明</label>
+      <textarea id="fItemDesc" rows="3" placeholder="請輸入詳細提醒說明..."></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn-action reset" id="btnCancelItemModal">取消</button>
+      <button type="button" class="btn-action" id="btnSaveItemModal">💾 儲存</button>
+    </div>
+  </div>
+</div>
+
+<!-- 自訂確認視窗（取代原生 confirm） -->
+<div class="modal-backdrop" id="confirmModal">
+  <div class="modal-box" style="max-width:360px;text-align:center;">
+    <h3 style="margin-top:0;">🐻 確認操作</h3>
+    <p id="confirmText" style="margin:12px 0 20px;font-size:0.95rem;"></p>
+    <div class="modal-footer" style="justify-content:center;">
+      <button type="button" class="btn-action reset" id="btnConfirmCancel">取消</button>
+      <button type="button" class="btn-action" style="background:var(--korilakkuma-pink);" id="btnConfirmOk">確定執行</button>
+    </div>
+  </div>
+</div>
+
 <script>
-(() => {
-  const button = document.getElementById('backToTop');
-  if (!button) return;
-  const updateButton = () => button.classList.toggle('visible', window.scrollY > 320);
-  window.addEventListener('scroll', updateButton, {passive:true});
-  updateButton();
-  button.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-})();
+const DEFAULT_ITINERARY = [
+  {
+    day: "D1", date: "2/5 (五)", title: "抵達大阪・臨空城 Outlet",
+    sub: "大眾運輸（不租車）｜入住大阪",
+    svgType: "plane",
+    stops: [
+      { time: "11:15", title: "桃園機場起飛（CX564）", trans: "train", must: false, desc: "預先確認護照、登機文件與孩子隨身用品。", map: "Taoyuan International Airport Terminal 1" },
+      { time: "14:45", title: "抵達關西機場 KIX", trans: "train", must: false, desc: "15:00–16:00 入境、領行李，時間依現場狀況彈性調整。", map: "Kansai International Airport" },
+      { time: "16:00–20:00", title: "臨空城 Outlet 購物・晚餐", trans: "train", must: true, desc: "搭大眾交通前往 Rinku Premium Outlets 逛街吃晚餐；若不餓可回大阪市區再吃。", map: "Rinku Premium Outlets", link: "https://www.premiumoutlets.co.jp/cht/rinku/", linkText: "官網" },
+      { time: "20:00–21:00", title: "入住大阪飯店・確認寄放行李", trans: "train", must: false, desc: "前往 ESLEAD HOTEL Namba Daikokucho Check-in，確認 2/6 退房跨夜寄放行李事宜。", map: "ESLEAD HOTEL Namba Daikokucho" }
+    ]
+  },
+  {
+    day: "D2", date: "2/6 (六)", title: "天橋立 View Land・智恩寺・宮津住宿",
+    sub: "取車自駕｜注意冬季積雪路況",
+    svgType: "amanohashidate",
+    stops: [
+      { time: "07:00–08:00", title: "退房寄放行李・前往取車", trans: "car", must: false, desc: "只帶 1–2 件行李北上；取車時務必確認兒童安全座椅、ETC、保險與雪胎。", map: "Namba Station Osaka" },
+      { time: "08:00–12:30", title: "開車前往天橋立・享用午餐", trans: "car", must: false, desc: "車程預留約 3 小時（視冬季路況調整），抵達後先吃午餐。", map: "Amanohashidate" },
+      { time: "12:30–14:00", title: "天橋立 View Land（搭單軌電車）", trans: "train", must: true, desc: "搭單軌電車上展望台欣賞「飛龍觀」絕景。", map: "Amanohashidate View Land", link: "https://www.viewland.jp/cn/", linkText: "官網" },
+      { time: "14:00–16:00", title: "智恩寺參拜・周邊散步", trans: "walk", must: true, desc: "參拜文殊菩薩、抽可愛扇子籤、品嚐智慧餅與買伴手禮。", map: "Chionji Temple Amanohashidate" },
+      { time: "16:00–18:00", title: "採買晚餐・入住宮津 Airbnb", trans: "car", must: false, desc: "先買好晚餐與全家超商補給（早餐/零食），前往宮津市日置小字芒草 3956-7 Check-in。", map: "3956-7 Hioki, Miyazu, Kyoto 626-0225" }
+    ]
+  },
+  {
+    day: "D3", date: "2/7 (日)", title: "伊根舟屋遊覽船・錦市場・京都車站",
+    sub: "自駕移動｜京都住宿已訂",
+    svgType: "ine",
+    stops: [
+      { time: "07:00–08:00", title: "超商買早餐・出發前往伊根", trans: "car", must: false, desc: "先至 FamilyMart 宮津日置店買早餐與車上點心，前往伊根搭船處。", map: "FamilyMart Miyazu Hioki" },
+      { time: "08:00–10:30", title: "伊根灣遊覽船（餵海鷗）", trans: "train", must: true, desc: "欣賞海上舟屋群，依船方規定體驗餵海鷗（小心老鷹）。", map: "Ine Bay Sightseeing Boat" },
+      { time: "10:30–13:30", title: "開車前往京都錦市場", trans: "car", must: false, desc: "車程約 3 小時，冬季安全優先；先找好錦市場周邊停車場。", map: "Nishiki Market Kyoto" },
+      { time: "13:30–16:00", title: "錦市場美食・錦天滿宮參拜", trans: "walk", must: true, desc: "請在店家前或店內食用（勿邊走邊吃），順路逛東側盡頭的錦天滿宮。", map: "Nishiki Tenmangu Kyoto" },
+      { time: "16:00–17:00", title: "入住 Kevin's Place Annex ＆ 停車", trans: "car", must: false, desc: "地址：34-4 Higashikujō Higashiiwamotochō。確認已預約車位（¥800/晚）。", map: "34-4 Higashikujo Higashiiwamotocho, Minami Ward, Kyoto 601-8006" },
+      { time: "17:00–21:30", title: "京都車站晚餐・逛街採買", trans: "walk", must: false, desc: "逛 Yodobashi、Uniqlo、GU 並吃晚餐，視體力逛唐吉訶德或超市。", map: "Kyoto Station" }
+    ]
+  },
+  {
+    day: "D4", date: "2/8 (一)", title: "嵐山・拉拉熊茶房・映畫村・心齋橋",
+    sub: "自駕｜18:30 回大阪還車",
+    svgType: "arashiyama",
+    stops: [
+      { time: "08:00–09:00", title: "京都退房・開車前往嵐山", trans: "car", must: false, desc: "10:00 前退房行李上車，前往嵐山停車場。", map: "Arashiyama Parking" },
+      { time: "09:00–12:00", title: "竹林小徑 ➔ 渡月橋 ➔ Rilakkuma 商店", trans: "walk", must: true, desc: "散步拍照並逛嵐山拉拉熊茶房／商店（出發前確認開店時間）。", map: "Rilakkuma Sabo Arashiyama" },
+      { time: "12:00–13:00", title: "嵐山享用午餐", trans: "walk", must: false, desc: "建議準備主選與備選餐廳，避免排隊影響下午行程。", map: "Togetsukyo Bridge Arashiyama" },
+      { time: "13:30–16:00", title: "東映太秦映畫村", trans: "car", must: true, desc: "親子體驗江戶時代街景與設施（接近出發時再核對 2027 年 2 月營業時間）。", map: "Toei Kyoto Studio Park", link: "https://www.eigamura.com/hours-tickets/", linkText: "官網票價" },
+      { time: "16:00–19:00", title: "開回大阪・Check-in・加油還車", trans: "car", must: false, desc: "18:00 先回 ESLEAD HOTEL 放行李與領寄放行李，18:30 前完成加油還車。", map: "ESLEAD HOTEL Namba Daikokucho" },
+      { time: "19:00–21:30", title: "心齋橋、道頓堀晚餐逛街", trans: "walk", must: false, desc: "看固力果招牌、吃大阪美食，依孩子體力彈性回飯店休息。", map: "Dotonbori Osaka" }
+    ]
+  },
+  {
+    day: "D5", date: "2/9 (二)", title: "日本環球影城 USJ 暢玩整天",
+    sub: "大眾運輸｜親子重點日",
+    svgType: "usj",
+    stops: [
+      { time: "06:30–07:30", title: "出門前往環球影城", trans: "train", must: false, desc: "若 9:00 開園則 06:30 出門；若提早至 8:00 開園則全部提早 1 小時（05:30 出門）。", map: "Universal Studios Japan", link: "https://www.usj.co.jp/web/zh/tw", linkText: "USJ 官網" },
+      { time: "07:30–17:30", title: "USJ 環球影城全天體驗", trans: "walk", must: true, desc: "排隊時邊吃早餐；先攻最想玩的區域，適時安排室內設施與休息（2 歲與 4 歲幼兒避免連續久排）。", map: "Universal Studios Japan" },
+      { time: "17:30–21:30", title: "返回大阪市區晚餐・採買", trans: "train", must: false, desc: "回難波吃晚餐，視體力逛唐吉訶德、藥妝或超市。", map: "Namba Osaka" }
+    ]
+  },
+  {
+    day: "D6", date: "2/10 (三)", title: "難波八阪神社・關西機場返台",
+    sub: "大眾運輸｜預留充足機場緩衝",
+    svgType: "shrine",
+    stops: [
+      { time: "08:00–10:00", title: "整理行李退房・飯店附近早餐", trans: "walk", must: false, desc: "行李先寄放飯店櫃檯，就近享用特色早餐。", map: "ESLEAD HOTEL Namba Daikokucho" },
+      { time: "10:00–10:45", title: "難波八阪神社參拜拍照", trans: "walk", must: true, desc: "拍攝超震撼巨大獅子殿，停留時間輕鬆不趕。", map: "Namba Yasaka Shrine" },
+      { time: "10:45–13:00", title: "回飯店取行李・前往關西機場", trans: "train", must: false, desc: "11:30–12:00 搭車前往機場，目標 13:00 抵達 KIX。", map: "Kansai International Airport" },
+      { time: "16:15", title: "關西機場起飛（CX565）返台", trans: "train", must: false, desc: "報到託運、逛免稅店，18:30 平安抵達桃園機場！", map: "Taoyuan International Airport Terminal 1" }
+    ]
+  }
+];
+
+const DEFAULT_NOTICES = [
+  { level: "warn", title: "❄️ 2 月北京都冬季路況與雪胎", desc: "2 月天橋立、伊根與宮津一帶可能有積雪、路面結冰或低溫。取車務必確認雪胎、保險與兒童安全座椅；出發前先查道路狀況，天候不佳時優先縮減景點，切勿勉強趕路。" },
+  { level: "warn", title: "🧳 大阪飯店跨夜行李寄放", desc: "2/6 退房自駕北上只帶 1–2 件行李，其餘寄放 ESLEAD HOTEL 至 2/8 回大阪取回；2/10 退房後也需寄放至 10:45。飯店櫃檯空間有限，務必事先取得明確書面確認，並備妥車站外付費寄放備案。" },
+  { level: "warn", title: "🚗 D4 嵐山・映畫村・還車時間緩衝", desc: "2/8 需從京都開往嵐山、太秦映畫村再回大阪市區還車（18:30 前），行程偏滿且同行有 2 歲及 4 歲幼兒。若前段玩得較久，請彈性縮短一處景點，確保準時加油還車。" },
+  { level: "info", title: "🍡 京都錦市場禮儀與停車", desc: "錦市場禁止邊走邊吃，請在購買店家前或店內食用完畢；2/7 伊根開往京都約 3 小時，建議先查好錦市場周邊停車場。" },
+  { level: "warn", title: "🎢 USJ 環球影城開園時間與幼兒體力", desc: "若 9:00 開園則 06:30 出門（07:30 抵達）；若提早至 8:00 開園則全部提早 1 小時（05:30 出門）。同行有 2 歲及 4 歲小朋友，避免連續久排，適時安排室內設施與休息。" },
+  { level: "info", title: "✈️ 回程日機場緩衝時間", desc: "2/10 回程班機 16:15 起飛，建議 11:30–12:00 搭車、13:00 抵達關西機場。若交通或天氣有變，優先縮短難波八阪神社停留時間。" }
+];
+
+const DEFAULT_TODO = [
+  { id: "todo_1", text: "確認租車公司、取還車點（2/6 早上取、2/8 18:30 還）、兒童安全座椅、ETC 與雪胎", checked: false },
+  { id: "todo_2", text: "再次取得大阪飯店書面確認：2/6–2/8 跨夜寄放行李，以及 2/10 退房寄放至 10:45", checked: false },
+  { id: "todo_3", text: "確認宮津 Airbnb 入住方式、車位，以及 FamilyMart 宮津日置店順路路線", checked: false },
+  { id: "todo_4", text: "確認京都住宿 Kevin's Place Annex 停車位預約成功（¥800/晚）及車型限制", checked: false },
+  { id: "todo_5", text: "查好 2/7 錦市場周邊停車場、2/8 嵐山停車場與 Rilakkuma 商店營業時間", checked: false },
+  { id: "todo_6", text: "接近出發時確認 2027 年 2 月天橋立 View Land、伊根遊覽船、太秦映畫村營業時間", checked: false },
+  { id: "todo_7", text: "出發前確認 USJ 實際開園時間（9:00 或 8:00）、門票與整理券規則", checked: false }
+];
+
+const DEFAULT_PACKING = [
+  { group: "📁 必帶重要物品", items: [
+    { id: "pk_1", text: "4 本護照（2 大 2 小）➔ 隨身行李", checked: false },
+    { id: "pk_2", text: "2 張台灣駕照", checked: false },
+    { id: "pk_3", text: "2 份日文譯本", checked: false },
+    { id: "pk_4", text: "信用卡", checked: false },
+    { id: "pk_5", text: "日幣現金", checked: false },
+    { id: "pk_6", text: "手機 ➔ 隨身行李", checked: false }
+  ]},
+  { group: "👶 小孩隨身包", items: [
+    { id: "pk_7", text: "尿布（夜用／白天）", checked: false },
+    { id: "pk_8", text: "水壺 × 2", checked: false },
+    { id: "pk_9", text: "零食（飛機上吃）", checked: false },
+    { id: "pk_10", text: "替換衣物", checked: false },
+    { id: "pk_11", text: "平板 ➔ 隨身行李", checked: false },
+    { id: "pk_12", text: "濕紙巾", checked: false }
+  ]},
+  { group: "👕 衣物與防寒（洋蔥式穿搭）", items: [
+    { id: "pk_13", text: "2 大人衣物（衣服、褲子、內衣褲、襪子）", checked: false },
+    { id: "pk_14", text: "2 小孩衣物（衣服、褲子、內褲、襪子）", checked: false },
+    { id: "pk_15", text: "厚外套 × 4", checked: false },
+    { id: "pk_16", text: "毛帽 × 4", checked: false },
+    { id: "pk_17", text: "芮 kitty 耳罩", checked: false },
+    { id: "pk_18", text: "手套 × 4", checked: false },
+    { id: "pk_19", text: "暖暖包（大人、小孩）", checked: false },
+    { id: "pk_20", text: "口罩（大人、小孩）", checked: false }
+  ]},
+  { group: "🛁 盥洗與個人用品", items: [
+    { id: "pk_21", text: "眼鏡、隱形眼鏡", checked: false },
+    { id: "pk_22", text: "化妝包、洗面乳", checked: false },
+    { id: "pk_23", text: "牙刷、牙膏", checked: false }
+  ]},
+  { group: "🔌 充電 / 3C 用品", items: [
+    { id: "pk_24", text: "手機充電器 × 2、充電頭 × 2", checked: false },
+    { id: "pk_25", text: "USB-C / Lightning 充電線", checked: false },
+    { id: "pk_26", text: "行動電源 ➔ 隨身行李（不可託運）", checked: false },
+    { id: "pk_27", text: "Apple Watch 充電器", checked: false },
+    { id: "pk_28", text: "AirPods ➔ 隨身行李", checked: false }
+  ]},
+  { group: "🍼 奶瓶 / 奶粉", items: [
+    { id: "pk_29", text: "奶粉 × 5 天量", checked: false },
+    { id: "pk_30", text: "奶瓶 × 2", checked: false },
+    { id: "pk_31", text: "冷水壺、保溫瓶", checked: false }
+  ]},
+  { group: "💊 備用藥品", items: [
+    { id: "pk_32", text: "退燒藥水、感冒藥水", checked: false },
+    { id: "pk_33", text: "腸胃藥、OK 繃", checked: false },
+    { id: "pk_34", text: "克流感、塞劑、酸痛貼布", checked: false }
+  ]},
+  { group: "🎒 其他雜項", items: [
+    { id: "pk_35", text: "購物袋（去超商／超市用）", checked: false },
+    { id: "pk_36", text: "備用行李袋（回國打包用）", checked: false },
+    { id: "pk_37", text: "食物剪刀 ➔ 託運（不可隨身）", checked: false },
+    { id: "pk_38", text: "指甲剪 ➔ 託運（不可隨身）", checked: false },
+    { id: "pk_39", text: "兒童餐具", checked: false },
+    { id: "pk_40", text: "推車 × 1 ➔ 機邊託運", checked: false }
+  ]}
+];
+
+function getDaySVG(type) {
+  const svgs = {
+    plane: `<svg viewBox="0 0 90 70" width="76" height="60"><path d="M10,45 L50,35 L68,18 L75,20 L63,36 L80,34 L84,28 L88,29 L84,41 L55,48 L42,60 L36,59 L43,49 L14,52 Z" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><circle cx="48" cy="39" r="9" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><circle cx="48" cy="41" r="4" fill="#FFF"/></svg>`,
+    amanohashidate: `<svg viewBox="0 0 90 70" width="76" height="60"><path d="M8,55 Q45,25 82,55" fill="none" stroke="#9D6B43" stroke-width="8" stroke-linecap="round"/><path d="M8,55 Q45,25 82,55" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="4 4"/><circle cx="45" cy="24" r="13" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/><circle cx="35" cy="14" r="5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><circle cx="55" cy="14" r="5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><ellipse cx="45" cy="27" rx="5.5" ry="4" fill="#FFF"/></svg>`,
+    ine: `<svg viewBox="0 0 90 70" width="76" height="60"><path d="M15,44 L30,26 L60,26 L75,44 Z" fill="#9D6B43" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><rect x="24" y="44" width="42" height="14" fill="#FFF8EB" stroke="#3E3A39" stroke-width="3"/><path d="M8,60 Q25,55 45,60 T82,60" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><circle cx="45" cy="38" r="7" fill="#FFF8EB" stroke="#3E3A39" stroke-width="2.5"/></svg>`,
+    arashiyama: `<svg viewBox="0 0 90 70" width="76" height="60"><rect x="16" y="10" width="7" height="50" fill="#A8D5BA" stroke="#3E3A39" stroke-width="2.5"/><rect x="67" y="10" width="7" height="50" fill="#A8D5BA" stroke="#3E3A39" stroke-width="2.5"/><circle cx="45" cy="40" r="15" fill="#9D6B43" stroke="#3E3A39" stroke-width="3"/><circle cx="33" cy="28" r="5.5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><circle cx="57" cy="28" r="5.5" fill="#9D6B43" stroke="#3E3A39" stroke-width="2.5"/><ellipse cx="45" cy="43" rx="6" ry="4.5" fill="#FFF"/></svg>`,
+    usj: `<svg viewBox="0 0 90 70" width="76" height="60"><circle cx="45" cy="36" r="22" fill="#D1ECF1" stroke="#3E3A39" stroke-width="3"/><ellipse cx="45" cy="36" rx="26" ry="9" fill="none" stroke="#F7D358" stroke-width="5"/><ellipse cx="45" cy="36" rx="26" ry="9" fill="none" stroke="#3E3A39" stroke-width="2.5"/><circle cx="45" cy="24" r="9" fill="#FFF8EB" stroke="#3E3A39" stroke-width="2.5"/></svg>`,
+    shrine: `<svg viewBox="0 0 90 70" width="76" height="60"><circle cx="45" cy="38" r="21" fill="#A8D5BA" stroke="#3E3A39" stroke-width="3"/><rect x="33" y="42" width="24" height="10" rx="3" fill="#F7D358" stroke="#3E3A39" stroke-width="2.5"/><circle cx="37" cy="32" r="4" fill="#FFF" stroke="#3E3A39" stroke-width="2"/><circle cx="53" cy="32" r="4" fill="#FFF" stroke="#3E3A39" stroke-width="2"/></svg>`
+  };
+  return svgs[type] || svgs.plane;
+}
+
+function loadStorage(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : JSON.parse(JSON.stringify(fallback));
+  } catch (e) {
+    return JSON.parse(JSON.stringify(fallback));
+  }
+}
+function saveStorage(key, data) {
+  try {
+    localStorage.setItem(key, JSON.stringify(data));
+  } catch (e) {
+    console.warn('無法儲存至 localStorage', e);
+  }
+}
+
+let itineraryData = loadStorage('kansai_rilakkuma_itinerary', DEFAULT_ITINERARY);
+let noticesData = loadStorage('kansai_rilakkuma_notices', DEFAULT_NOTICES);
+let todoData = loadStorage('kansai_rilakkuma_todo', DEFAULT_TODO);
+let packingData = loadStorage('kansai_rilakkuma_packing', DEFAULT_PACKING);
+
+let activeDayIdx = 0;
+let editingStopIdx = null;
+let pendingConfirmAction = null;
+let itemModalContext = null;
+
+function saveItinerary() {
+  saveStorage('kansai_rilakkuma_itinerary', itineraryData);
+}
+
+const confirmModal = document.getElementById('confirmModal');
+function showCustomConfirm(message, onConfirm) {
+  document.getElementById('confirmText').textContent = message;
+  pendingConfirmAction = onConfirm;
+  confirmModal.classList.add('open');
+}
+document.getElementById('btnConfirmCancel').addEventListener('click', () => {
+  confirmModal.classList.remove('open');
+  pendingConfirmAction = null;
+});
+document.getElementById('btnConfirmOk').addEventListener('click', () => {
+  confirmModal.classList.remove('open');
+  if (typeof pendingConfirmAction === 'function') pendingConfirmAction();
+  pendingConfirmAction = null;
+});
+
+function renderTabs() {
+  const tabsEl = document.getElementById('dayTabs');
+  tabsEl.innerHTML = itineraryData.map((d, idx) => `
+    <button type="button" class="day-tab ${idx === activeDayIdx ? 'active' : ''}" onclick="selectDay(${idx})">
+      <strong>${d.day}</strong>
+      <span>${d.date.split(' ')[0]}</span>
+    </button>
+  `).join('');
+}
+
+window.selectDay = function(idx) {
+  activeDayIdx = idx;
+  renderTabs();
+  renderDayContent();
+};
+
+function renderDayContent() {
+  const day = itineraryData[activeDayIdx];
+  const container = document.getElementById('dayContent');
+  container.classList.remove('day-content');
+  void container.offsetWidth;
+  container.classList.add('day-content');
+
+  const transLabel = {
+    car: '<span class="badge-trans trans-car">🚗 自駕</span>',
+    train: '<span class="badge-trans trans-train">🚃 交通/搭船</span>',
+    walk: '<span class="badge-trans trans-walk">🚶 步行/體驗</span>'
+  };
+
+  const totalStops = day.stops.length;
+  const stopsHtml = day.stops.map((s, sIdx) => {
+    const mapUrl = s.map ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(s.map)}` : '';
+    const isFirst = sIdx === 0;
+    const isLast = sIdx === totalStops - 1;
+    return `
+      <div class="stop-item">
+        <div class="stop-header">
+          <span class="stop-time">${escapeHtml(s.time)}</span>
+          ${transLabel[s.trans] || transLabel.walk}
+          ${s.must ? '<span class="badge-must">⭐ 必去</span>' : ''}
+          <div class="edit-controls">
+            <button type="button" class="btn-mini move" onclick="moveStop(${sIdx}, -1)" ${isFirst ? 'disabled' : ''} title="上移">⬆️</button>
+            <button type="button" class="btn-mini move" onclick="moveStop(${sIdx}, 1)" ${isLast ? 'disabled' : ''} title="下移">⬇️</button>
+            <button type="button" class="btn-mini" onclick="openEditModal(${sIdx})">編輯</button>
+            <button type="button" class="btn-mini del" onclick="deleteStop(${sIdx})">刪除</button>
+          </div>
+        </div>
+        <h4 class="stop-title">${escapeHtml(s.title)}</h4>
+        <p class="stop-desc">${escapeHtml(s.desc)}</p>
+        <div class="stop-actions">
+          ${mapUrl ? `<a class="btn-map" target="_blank" rel="noopener" href="${mapUrl}">📍 Google 路線導航</a>` : ''}
+          ${s.link ? `<a class="btn-link" target="_blank" rel="noopener" href="${s.link}">🔗 ${escapeHtml(s.linkText || '網站')}</a>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="day-banner">
+      <div>
+        <div style="font-size:0.85rem;color:var(--rilakkuma-brown);font-weight:bold;">${day.day} ・ ${day.date}</div>
+        <h3 style="margin:2px 0 4px;font-size:1.18rem;">${escapeHtml(day.title)}</h3>
+        <div style="font-size:0.86rem;">${escapeHtml(day.sub)}</div>
+      </div>
+      <div class="svg-wiggle">${getDaySVG(day.svgType)}</div>
+    </div>
+    <div class="timeline">${stopsHtml}</div>
+  `;
+}
+
+window.moveStop = function(stopIdx, direction) {
+  const stops = itineraryData[activeDayIdx].stops;
+  const targetIdx = stopIdx + direction;
+  if (targetIdx < 0 || targetIdx >= stops.length) return;
+  [stops[stopIdx], stops[targetIdx]] = [stops[targetIdx], stops[stopIdx]];
+  saveItinerary();
+  renderDayContent();
+};
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+}
+
+const toggleEditBtn = document.getElementById('toggleEditBtn');
+toggleEditBtn.addEventListener('click', () => {
+  document.body.classList.toggle('edit-mode');
+  const isEdit = document.body.classList.contains('edit-mode');
+  toggleEditBtn.classList.toggle('active', isEdit);
+  toggleEditBtn.textContent = isEdit ? '✅ 完成編輯' : '✏️ 編輯模式';
+});
+
+const editModal = document.getElementById('editModal');
+const modalWarnMsg = document.getElementById('modalWarnMsg');
+window.openEditModal = function(stopIdx) {
+  editingStopIdx = stopIdx;
+  modalWarnMsg.style.display = 'none';
+  const isNew = stopIdx === null;
+  document.getElementById('modalTitle').textContent = isNew ? '➕ 新增行程項目' : '✏️ 編輯行程項目';
+  
+  if (isNew) {
+    document.getElementById('fTime').value = '';
+    document.getElementById('fTitle').value = '';
+    document.getElementById('fTrans').value = 'walk';
+    document.getElementById('fMust').checked = false;
+    document.getElementById('fDesc').value = '';
+    document.getElementById('fMap').value = '';
+  } else {
+    const s = itineraryData[activeDayIdx].stops[stopIdx];
+    document.getElementById('fTime').value = s.time;
+    document.getElementById('fTitle').value = s.title;
+    document.getElementById('fTrans').value = s.trans || 'walk';
+    document.getElementById('fMust').checked = !!s.must;
+    document.getElementById('fDesc').value = s.desc || '';
+    document.getElementById('fMap').value = s.map || '';
+  }
+  editModal.classList.add('open');
+};
+
+document.getElementById('btnAddStop').addEventListener('click', () => openEditModal(null));
+document.getElementById('btnCancelModal').addEventListener('click', () => editModal.classList.remove('open'));
+
+document.getElementById('btnSaveModal').addEventListener('click', () => {
+  const time = document.getElementById('fTime').value.trim() || '彈性時間';
+  const title = document.getElementById('fTitle').value.trim();
+  if (!title) {
+    modalWarnMsg.style.display = 'block';
+    return;
+  }
+
+  const newStop = {
+    time,
+    title,
+    trans: document.getElementById('fTrans').value,
+    must: document.getElementById('fMust').checked,
+    desc: document.getElementById('fDesc').value.trim(),
+    map: document.getElementById('fMap').value.trim()
+  };
+
+  if (editingStopIdx === null) {
+    itineraryData[activeDayIdx].stops.push(newStop);
+  } else {
+    const old = itineraryData[activeDayIdx].stops[editingStopIdx];
+    itineraryData[activeDayIdx].stops[editingStopIdx] = { ...old, ...newStop };
+  }
+
+  saveItinerary();
+  renderDayContent();
+  editModal.classList.remove('open');
+});
+
+window.deleteStop = function(stopIdx) {
+  showCustomConfirm('確定要刪除這個行程項目嗎？', () => {
+    itineraryData[activeDayIdx].stops.splice(stopIdx, 1);
+    saveItinerary();
+    renderDayContent();
+  });
+};
+
+document.getElementById('btnResetData').addEventListener('click', () => {
+  showCustomConfirm('確定要清除所有手動修改，還原回原始行程嗎？', () => {
+    try { localStorage.removeItem('kansai_rilakkuma_itinerary'); } catch (e) {}
+    itineraryData = JSON.parse(JSON.stringify(DEFAULT_ITINERARY));
+    renderDayContent();
+  });
+});
+
+// ================= 通用項目編輯彈窗（注意事項 / 待確認 / 行李） =================
+const itemModal = document.getElementById('itemModal');
+const itemModalWarn = document.getElementById('itemModalWarn');
+
+window.openItemModal = function(type, groupIdx, itemIdx) {
+  itemModalContext = { type, groupIdx, itemIdx };
+  itemModalWarn.style.display = 'none';
+  const isNew = itemIdx === null;
+
+  const levelGroup = document.getElementById('itemLevelGroup');
+  const descGroup = document.getElementById('itemDescGroup');
+  const titleLabel = document.getElementById('fItemTitleLabel');
+  const titleInput = document.getElementById('fItemTitle');
+  const descInput = document.getElementById('fItemDesc');
+  const levelSelect = document.getElementById('fItemLevel');
+
+  if (type === 'notice') {
+    document.getElementById('itemModalTitle').textContent = isNew ? '➕ 新增旅遊注意事項' : '✏️ 編輯旅遊注意事項';
+    levelGroup.style.display = 'block';
+    descGroup.style.display = 'block';
+    titleLabel.textContent = '提醒標題';
+    if (isNew) {
+      levelSelect.value = 'warn';
+      titleInput.value = '';
+      descInput.value = '';
+    } else {
+      const n = noticesData[itemIdx];
+      levelSelect.value = n.level || 'warn';
+      titleInput.value = n.title;
+      descInput.value = n.desc || '';
+    }
+  } else if (type === 'todo') {
+    document.getElementById('itemModalTitle').textContent = isNew ? '➕ 新增待確認事項' : '✏️ 編輯待確認事項';
+    levelGroup.style.display = 'none';
+    descGroup.style.display = 'none';
+    titleLabel.textContent = '待確認內容';
+    titleInput.value = isNew ? '' : todoData[itemIdx].text;
+  } else if (type === 'packing') {
+    document.getElementById('itemModalTitle').textContent = isNew ? `➕ 新增至「${packingData[groupIdx].group}」` : '✏️ 編輯行李項目';
+    levelGroup.style.display = 'none';
+    descGroup.style.display = 'none';
+    titleLabel.textContent = '行李物品名稱';
+    titleInput.value = isNew ? '' : packingData[groupIdx].items[itemIdx].text;
+  }
+
+  itemModal.classList.add('open');
+};
+
+document.getElementById('btnCancelItemModal').addEventListener('click', () => itemModal.classList.remove('open'));
+
+document.getElementById('btnSaveItemModal').addEventListener('click', () => {
+  const titleVal = document.getElementById('fItemTitle').value.trim();
+  if (!titleVal) {
+    itemModalWarn.style.display = 'block';
+    return;
+  }
+
+  const { type, groupIdx, itemIdx } = itemModalContext;
+  if (type === 'notice') {
+    const itemObj = {
+      level: document.getElementById('fItemLevel').value,
+      title: titleVal,
+      desc: document.getElementById('fItemDesc').value.trim()
+    };
+    if (itemIdx === null) noticesData.push(itemObj);
+    else noticesData[itemIdx] = itemObj;
+    saveStorage('kansai_rilakkuma_notices', noticesData);
+    renderNotices();
+  } else if (type === 'todo') {
+    if (itemIdx === null) {
+      todoData.push({ id: 'todo_' + Date.now(), text: titleVal, checked: false });
+    } else {
+      todoData[itemIdx].text = titleVal;
+    }
+    saveStorage('kansai_rilakkuma_todo', todoData);
+    renderTodoList();
+  } else if (type === 'packing') {
+    if (itemIdx === null) {
+      packingData[groupIdx].items.push({ id: 'pk_' + Date.now(), text: titleVal, checked: false });
+    } else {
+      packingData[groupIdx].items[itemIdx].text = titleVal;
+    }
+    saveStorage('kansai_rilakkuma_packing', packingData);
+    renderPackingList();
+  }
+
+  itemModal.classList.remove('open');
+});
+
+// ================= 1. 旅遊注意事項 =================
+function renderNotices() {
+  const container = document.getElementById('noticesContainer');
+  container.innerHTML = noticesData.map((n, idx) => {
+    const isFirst = idx === 0;
+    const isLast = idx === noticesData.length - 1;
+    return `
+      <div class="notice-item ${n.level === 'warn' ? 'warn' : ''}">
+        <div class="notice-header">
+          <h3 class="notice-title">${escapeHtml(n.title)}</h3>
+          <div class="edit-controls">
+            <button type="button" class="btn-mini move" onclick="moveNotice(${idx}, -1)" ${isFirst ? 'disabled' : ''} title="上移">⬆️</button>
+            <button type="button" class="btn-mini move" onclick="moveNotice(${idx}, 1)" ${isLast ? 'disabled' : ''} title="下移">⬇️</button>
+            <button type="button" class="btn-mini" onclick="openItemModal('notice', null, ${idx})">編輯</button>
+            <button type="button" class="btn-mini del" onclick="deleteNotice(${idx})">刪除</button>
+          </div>
+        </div>
+        <p class="notice-desc">${escapeHtml(n.desc)}</p>
+      </div>
+    `;
+  }).join('');
+}
+
+window.moveNotice = function(idx, dir) {
+  const target = idx + dir;
+  if (target < 0 || target >= noticesData.length) return;
+  [noticesData[idx], noticesData[target]] = [noticesData[target], noticesData[idx]];
+  saveStorage('kansai_rilakkuma_notices', noticesData);
+  renderNotices();
+};
+
+window.deleteNotice = function(idx) {
+  showCustomConfirm('確定要刪除這則注意事項嗎？', () => {
+    noticesData.splice(idx, 1);
+    saveStorage('kansai_rilakkuma_notices', noticesData);
+    renderNotices();
+  });
+};
+
+document.getElementById('btnAddNotice').addEventListener('click', () => openItemModal('notice', null, null));
+document.getElementById('btnResetNotices').addEventListener('click', () => {
+  showCustomConfirm('確定要還原預設的旅遊注意事項嗎？', () => {
+    noticesData = JSON.parse(JSON.stringify(DEFAULT_NOTICES));
+    saveStorage('kansai_rilakkuma_notices', noticesData);
+    renderNotices();
+  });
+});
+
+// ================= 2. 出發前待確認事項 =================
+function renderTodoList() {
+  const container = document.getElementById('todoContainer');
+  const lis = todoData.map((item, idx) => {
+    const isFirst = idx === 0;
+    const isLast = idx === todoData.length - 1;
+    return `
+      <li>
+        <label>
+          <input type="checkbox" ${item.checked ? 'checked' : ''} onchange="toggleTodo(${idx}, this.checked)">
+          <span>${escapeHtml(item.text)}</span>
+        </label>
+        <div class="edit-controls">
+          <button type="button" class="btn-mini move" onclick="moveTodo(${idx}, -1)" ${isFirst ? 'disabled' : ''} title="上移">⬆️</button>
+          <button type="button" class="btn-mini move" onclick="moveTodo(${idx}, 1)" ${isLast ? 'disabled' : ''} title="下移">⬇️</button>
+          <button type="button" class="btn-mini" onclick="openItemModal('todo', null, ${idx})">編輯</button>
+          <button type="button" class="btn-mini del" onclick="deleteTodo(${idx})">刪除</button>
+        </div>
+      </li>
+    `;
+  }).join('');
+  container.innerHTML = `<ul class="pack-list">${lis}</ul>`;
+}
+
+window.toggleTodo = function(idx, checked) {
+  todoData[idx].checked = checked;
+  saveStorage('kansai_rilakkuma_todo', todoData);
+};
+
+window.moveTodo = function(idx, dir) {
+  const target = idx + dir;
+  if (target < 0 || target >= todoData.length) return;
+  [todoData[idx], todoData[target]] = [todoData[target], todoData[idx]];
+  saveStorage('kansai_rilakkuma_todo', todoData);
+  renderTodoList();
+};
+
+window.deleteTodo = function(idx) {
+  showCustomConfirm('確定要刪除這項待確認事項嗎？', () => {
+    todoData.splice(idx, 1);
+    saveStorage('kansai_rilakkuma_todo', todoData);
+    renderTodoList();
+  });
+};
+
+document.getElementById('btnAddTodo').addEventListener('click', () => openItemModal('todo', null, null));
+document.getElementById('btnResetTodo').addEventListener('click', () => {
+  showCustomConfirm('確定要還原預設的待確認事項嗎？', () => {
+    todoData = JSON.parse(JSON.stringify(DEFAULT_TODO));
+    saveStorage('kansai_rilakkuma_todo', todoData);
+    renderTodoList();
+  });
+});
+
+// ================= 3. 親子行李清單 =================
+function renderPackingList() {
+  const container = document.getElementById('packingContainer');
+  container.innerHTML = packingData.map((cat, gIdx) => {
+    const lis = cat.items.map((item, iIdx) => {
+      const isFirst = iIdx === 0;
+      const isLast = iIdx === cat.items.length - 1;
+      return `
+        <li>
+          <label>
+            <input type="checkbox" ${item.checked ? 'checked' : ''} onchange="togglePackItem(${gIdx}, ${iIdx}, this.checked)">
+            <span>${escapeHtml(item.text)}</span>
+          </label>
+          <div class="edit-controls">
+            <button type="button" class="btn-mini move" onclick="movePackItem(${gIdx}, ${iIdx}, -1)" ${isFirst ? 'disabled' : ''} title="上移">⬆️</button>
+            <button type="button" class="btn-mini move" onclick="movePackItem(${gIdx}, ${iIdx}, 1)" ${isLast ? 'disabled' : ''} title="下移">⬇️</button>
+            <button type="button" class="btn-mini" onclick="openItemModal('packing', ${gIdx}, ${iIdx})">編輯</button>
+            <button type="button" class="btn-mini del" onclick="deletePackItem(${gIdx}, ${iIdx})">刪除</button>
+          </div>
+        </li>
+      `;
+    }).join('');
+    return `
+      <div class="pack-group">
+        <div class="pack-group-header">
+          <h3>${escapeHtml(cat.group)}</h3>
+          <div class="edit-controls">
+            <button type="button" class="btn-mini" style="background:var(--rilakkuma-yellow);" onclick="openItemModal('packing', ${gIdx}, null)">➕ 新增</button>
+          </div>
+        </div>
+        <ul class="pack-list">${lis}</ul>
+      </div>
+    `;
+  }).join('');
+}
+
+window.togglePackItem = function(gIdx, iIdx, checked) {
+  packingData[gIdx].items[iIdx].checked = checked;
+  saveStorage('kansai_rilakkuma_packing', packingData);
+};
+
+window.movePackItem = function(gIdx, iIdx, dir) {
+  const items = packingData[gIdx].items;
+  const target = iIdx + dir;
+  if (target < 0 || target >= items.length) return;
+  [items[iIdx], items[target]] = [items[target], items[iIdx]];
+  saveStorage('kansai_rilakkuma_packing', packingData);
+  renderPackingList();
+};
+
+window.deletePackItem = function(gIdx, iIdx) {
+  showCustomConfirm('確定要刪除這項行李物品嗎？', () => {
+    packingData[gIdx].items.splice(iIdx, 1);
+    saveStorage('kansai_rilakkuma_packing', packingData);
+    renderPackingList();
+  });
+};
+
+document.getElementById('btnResetPacking').addEventListener('click', () => {
+  showCustomConfirm('確定要還原預設的行李清單嗎？（目前的勾選與自訂項目將會重置）', () => {
+    packingData = JSON.parse(JSON.stringify(DEFAULT_PACKING));
+    saveStorage('kansai_rilakkuma_packing', packingData);
+    renderPackingList();
+  });
+});
+
+// 初始化渲染
+renderTabs();
+renderDayContent();
+renderNotices();
+renderTodoList();
+renderPackingList();
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const checkboxes = document.querySelectorAll('.checklist-interactive input[type="checkbox"]');
-      
-      // 讀取已儲存的勾選狀態
-      checkboxes.forEach(cb => {
-        const savedState = localStorage.getItem('packing_' + cb.id);
-        if (savedState === 'true') {
-          cb.checked = true;
-        }
-        
-        // 當勾選狀能改變時，自動寫入 localStorage
-        cb.addEventListener('change', (e) => {
-          localStorage.setItem('packing_' + e.target.id, e.target.checked);
-        });
-      });
-    });
-  </script>
 </body>
 </html>
